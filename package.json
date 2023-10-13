@@ -1,0 +1,44 @@
+{
+  "name": "adocao-caosciente-qa",
+  "version": "1.0.0",
+  "description": "Automation of end-to-end tests of Simple Connect project with Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "tests": "cypress run",
+    "reports:all": "cypress run --spec cypress/e2e/**/*.cy.js --reporter-options reportDir=reports,overwrite=false,html=true,json=false,timestamp=mmddyyyy_HHMMss",
+    "reports:specific": "node ./scripts/generate-report.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Projeto-Adocao-Caosciente/adocao-caosciente-qa"
+  },
+  "keywords": [
+    "Cypress",
+    "automation",
+    "QA",
+    "e2e",
+    "end-to-end"
+  ],
+  "author": "João Lucas Pereira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Projeto-Adocao-Caosciente/adocao-caosciente-qa/issues"
+  },
+  "homepage": "https://github.com/Projeto-Adocao-Caosciente/adocao-caosciente-qa#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^8.1.0",
+    "chai": "^4.3.10",
+    "cypress": "^13.3.1",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-localstorage-commands": "^2.2.4",
+    "cypress-mochawesome-reporter": "^3.6.1",
+    "cypress-plugin-api": "^2.11.1",
+    "cypress-promise": "^1.1.0",
+    "cypress-wait-until": "^2.0.1",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
