@@ -3,7 +3,7 @@ let Routes = {
   home: "/",
   login: "/login",
 
-  signup: "/register",
+  register: "/register",
 
   recoverPassword: "/recover-password",
 

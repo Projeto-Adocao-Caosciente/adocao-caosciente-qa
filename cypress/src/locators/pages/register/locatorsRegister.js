@@ -1,4 +1,4 @@
-const locatorsSignup = {
+const locatorsRegister = {
     ong: {
         profilePhoto: 'input[type="file"]',
         name: 'input[name="name"]:last', 
@@ -12,7 +12,12 @@ const locatorsSignup = {
         foundationDate: 'input[name="foundationDate"]',
         password: 'input[name="password"]',
         confirmPassword: 'input[name="passwordConfirmation"]',
+    },
+
+    navigation: {
+        registerButton: 'button[type="submit"]',
+        alreadyHaveAnAccount: 'a.relative',
     }
 };
 
-export default { locatorsSignup };
+export default { locatorsRegister };

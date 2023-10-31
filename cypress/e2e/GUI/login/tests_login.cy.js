@@ -113,9 +113,9 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
 
   context("Context 04: Validar Redirecionamento de Links na Página de Login.", () => {
     it("CT10: Validar a funcionalidade do botão 'Cadastre-se'.", () => {
-      const routeExpected = Routes.signup;
+      const routeExpected = Routes.register;
   
-      login.clickOnSignup();
+      login.clickOnRegister();
   
       cy.url().then((routeObtained) => {
           Asserts_ST00.CT10(routeObtained, routeExpected);
