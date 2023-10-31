@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports = defineConfig({
     e2e: {
-        baseUrl: 'https://www.google.com.br/',
+        baseUrl: 'https://adocao-caosciente-frontend.vercel.app',
         env: {
             hideCredentials: true,
             requestMode: true,

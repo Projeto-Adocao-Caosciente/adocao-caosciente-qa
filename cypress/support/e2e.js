@@ -32,3 +32,9 @@ import "./cyRequest.js";
 import "./cyValidate.js";
 
 import "./cySaveFile.js";
+
+import "./cyLogin.js";
+
+import "./cyLogout.js";
+
+import "./cyAttribute.js";

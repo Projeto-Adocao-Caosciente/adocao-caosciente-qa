@@ -36,6 +36,7 @@
     "cypress-plugin-api": "^2.11.1",
     "cypress-promise": "^1.1.0",
     "cypress-wait-until": "^2.0.1",
+    "faker-br": "^0.4.1",
     "yargs": "^17.7.2"
   },
   "dependencies": {
