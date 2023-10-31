@@ -32,8 +32,8 @@ class login {
     cy.get(locatorsLogin.RecoverPassword).click();
   }
 
-  clickOnSignup() {
-    cy.get(locatorsLogin.signup).click();
+  clickOnRegister() {
+    cy.get(locatorsLogin.register).click();
   }
 }
 

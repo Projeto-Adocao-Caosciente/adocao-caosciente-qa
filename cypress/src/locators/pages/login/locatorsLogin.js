@@ -8,7 +8,7 @@ const locatorsLogin = {
     loginButton: '#login-button', 
 
     // Link's
-    signup: '#register-linkup',
+    register: '#register-linkup',
     recoverPassword: '#recover-password-linkup',
 }
 

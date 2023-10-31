@@ -16,7 +16,7 @@ describe("ST01: Visitar todas as páginas da aplicação.", () => {
     });
 
     it("CT02: Visitar a rota de Cadastro.", () => {
-      const routeExpected = Routes.signup;
+      const routeExpected = Routes.register;
   
       cy.visit(routeExpected);
       cy.url().then((routeObtained) => {
