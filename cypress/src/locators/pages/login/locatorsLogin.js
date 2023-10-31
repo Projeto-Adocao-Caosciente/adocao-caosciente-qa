@@ -4,11 +4,12 @@ const locatorsLogin = {
     password: 'input[name="password"]',
 
     // Button's
-    changeHiddenPassword: 'button:first',
+    changePasswordHiding: 'button:first',
     loginButton: '#login-button', 
 
     // Link's
     signup: '#register-linkup',
+    recoverPassword: '#recover-password-linkup',
 }
 
 export default { locatorsLogin };

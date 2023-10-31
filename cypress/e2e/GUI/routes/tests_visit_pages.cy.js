@@ -35,7 +35,7 @@ describe("ST01: Visitar todas as páginas da aplicação.", () => {
   });
 
   context("Context 02: Área logada.", () => {
-    before(() => {
+    beforeEach(() => {
       cy.login();
     });
 
