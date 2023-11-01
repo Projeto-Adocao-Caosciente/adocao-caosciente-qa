@@ -1,12 +1,13 @@
 let Routes = {
+  baseUrl: Cypress.config("baseUrl"),
+
   // Commom Pages
   home: "/",
   login: "/login",
-
   register: "/register",
-
   recoverPassword: "/recover-password",
 
+  // Logged Pages
   account: {
     details: "/account",
     edit: "/edit",

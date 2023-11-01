@@ -4,6 +4,7 @@ import { locatorsRegister } from "../../../src/locators/pages/register/locatorsR
 
 // Page Objects
 import ongRegister from "../../../src/pageObjects/register/ongRegister";
+import login from "../../../src/pageObjects/login/login";
 
 // Asserts to Suite Test 03: Análise do Funcionamento da Página de Cadastro de ONG
 import Asserts_ST03 from "./asserts_ong_register";
@@ -15,30 +16,61 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => 
 
   context("Context 01: Testes Funcionais nos Campos na Página de Cadastro de ONG", () => {
     it("CT01: Validar obrigatoriedade dos Campos.", () => {
+      ongRegister.clickOnRegisterButton();
+
+      Asserts_ST03.CT01();
     });
 
     it("CT02: Validar formato específico do campo CNPJ/CPF.", () => {
+      // TODO: Change for the correct validation (11111111111111) and nothing happens 1234
+      const invalidCnpj = "1234";
+
+      ongRegister.fillCnpjField(invalidCnpj);
+      ongRegister.clickOnRegisterButton();
+
+      Asserts_ST03.CT02();
     });
 
     it("CT03: Validar formato específico do campo E-mail.", () => {
+      const invalidEmail = "invalidEmail";
+
+      ongRegister.fillEmailField(invalidEmail);
+      ongRegister.clickOnRegisterButton();
+
+      Asserts_ST03.CT03();
     });
 
     it("CT04: Validar formato específico do campo Telefone", () => {
+      const invalidPhoneNumber = "1234";
+
+      ongRegister.fillPhoneNumberField(invalidPhoneNumber);
+      ongRegister.clickOnRegisterButton();
+
+      Asserts_ST03.CT04();
     });
 
     it("CT05: Validar formato específico do campo Imagem da ONG", () => {
+      //TODO: Add validation for profile photo
     });
   });
 
   context("Context 02: Cenários de Sucesso de Criação de ONG.", () => {
-    it.only("CT11: Preenchimento de Todos os Campos.", () => {
+    it("CT11: Preenchimento de Todos os Campos.", () => {
       const ongData = ongRegister.fillAllFields(true);
-      ongRegister.registerOng();
 
-      console.log(ongData);
+      ongRegister.registerOng();
+      login.loginWithoutValidation(ongData.getCnpj(), ongData.getPassword());
+
+      Asserts_ST03.CT11();
     });
 
-    it("CT12: Preenchimento de Todos os Campos Obrigatórios.", () => {
+    it("CT12: Preenchimento de Apenas os Campos Obrigatórios.", () => {
+      const ongData = ongRegister.fillAllRequiredFields();
+
+      ongRegister.registerOng();
+      login.loginWithoutValidation(ongData.getCnpj(), ongData.getPassword());
+
+      Asserts_ST03.CT12();
     });
   });
 
@@ -55,6 +87,13 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => 
 
   context("Context 04: Validar Redirecionamento de Links na Página de Criação de ONG.", () => {
     it("CT31: Validar Redirecionamento para a Página de Login.", () => {
+      const routeExpected = Routes.login;
+  
+      ongRegister.clickOnAlreadyHaveAnAccount();
+  
+      cy.url().then((routeObtained) => {
+          Asserts_ST03.CT31(routeObtained, routeExpected);
+      });
     });
   });
 });

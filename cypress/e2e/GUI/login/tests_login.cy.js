@@ -21,14 +21,18 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
     });
   
     it("CT02: Validar máscara do campo CNPJ/CPF.", () => {
-      cy.get(locatorsLogin.user).type("1234");
+      const invalidCnpj = "1234";
+
+      cy.get(locatorsLogin.user).type(invalidCnpj);
       login.clickOnLoginButton();
   
       Asserts_ST00.CT02();
     });
   
     it("CT03: Validar exibição/ocultação da Senha.", () => {
-      cy.get(locatorsLogin.password).type("1234");
+      const defaultPassword = "password";
+
+      cy.get(locatorsLogin.password).type(defaultPassword);
       login.changePasswordHiding();
   
       Asserts_ST00.CT03();
@@ -43,7 +47,7 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
         userType: "ONG",
       }
 
-      login.loginWithoutValidation(ongCredentials);
+      login.loginWithoutValidation(ongCredentials.username, ongCredentials.password);
       
       Asserts_ST00.CT04();
     });
@@ -55,7 +59,7 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
         userType: "ADOPTER",
       }
 
-      login.loginWithoutValidation(adopterCredentials);
+      login.loginWithoutValidation(adopterCredentials.username, adopterCredentials.password);
 
       Asserts_ST00.CT05();
     });
@@ -67,7 +71,7 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
         userType: "VOLUNTARY",
       }
 
-      login.loginWithoutValidation(voluntaryCredentials);
+      login.loginWithoutValidation(voluntaryCredentials.username, voluntaryCredentials.password);
       
       Asserts_ST00.CT06();
     });
@@ -81,7 +85,7 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
         userType: "ONG",
       }
 
-      login.loginWithoutValidation(ongCredentials, false);
+      login.loginWithoutValidation(ongCredentials.username, ongCredentials.password);
 
       Asserts_ST00.CT07();
     });
@@ -93,7 +97,7 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
         userType: "ADOPTER",
       }
 
-      login.loginWithoutValidation(adopterCredentials, false);
+      login.loginWithoutValidation(adopterCredentials.username, adopterCredentials.password);
 
       Asserts_ST00.CT08();
     });
@@ -105,7 +109,7 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
         userType: "VOLUNTARY",
       }
 
-      login.loginWithoutValidation(voluntaryCredentials, false);
+      login.loginWithoutValidation(voluntaryCredentials.username, voluntaryCredentials.password);
       
       Asserts_ST00.CT09();
     });

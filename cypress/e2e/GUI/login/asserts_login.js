@@ -6,42 +6,47 @@ import { locatorsToast } from "../../../src/locators/components/locatorsToast";
 
 class Asserts_ST00 {
   constructor() {
-    this.baseUrl = "https://adocao-caosciente-frontend.vercel.app";
   }
 
   CT01() {
-    const customSuccessMessage = "[Login] O campo CNPJ/CPF está com a obrigatoriedade correta.";
-    const customErrorMessage = "[Login] Não foi possível validar a obrigatoriedade do campo CNPJ/CPF.";
+    const customSuccessMessage = (field) => { 
+      return `[Login] O campo ${field} está com a obrigatoriedade correta.`
+    };
+    const customErrorMessage = (field) => {
+      return `[Login] Houve um problema ao validar a obrigatoriedade do campo ${field}.`
+    };
 
     cy.validateAttribute(
       locatorsLogin.user,
       "aria-invalid",
       true,
-      true,
-      customSuccessMessage,
-      customErrorMessage
+      customSuccessMessage("CNPJ/CPF"),
+      customErrorMessage("CNPJ/CPF")
     );
 
     cy.validateAttribute(
       locatorsLogin.password,
       "aria-invalid",
       true,
-      customSuccessMessage,
-      customErrorMessage
+      customSuccessMessage("Senha"),
+      customErrorMessage("Senha")
     );
   }
 
   CT02() {
-    const customSuccessMessage = "[Login] O campo CNPJ/CPF está com a máscara correta.";
-    const customErrorMessage = "[Login] Não foi possível validar a máscara do campo CNPJ/CPF.";
+    const customSuccessMessage = (field) => { 
+      return `[Login] O campo ${field} está com a máscara correta.`
+    };
+    const customErrorMessage = (field) => {
+      return `[Login] Houve um problema ao validar a máscara do campo ${field}.`
+    };
 
     cy.validateAttribute(
       locatorsLogin.user,
       "aria-invalid",
       true,
-      true,
-      customSuccessMessage,
-      customErrorMessage
+      customSuccessMessage("CNPJ/CPF"),
+      customErrorMessage("CNPJ/CPF")
     );
   }
 
@@ -53,7 +58,6 @@ class Asserts_ST00 {
       locatorsLogin.password,
       "type",
       "text",
-      false,
       customSuccessMessage,
       customErrorMessage
     );
@@ -67,7 +71,7 @@ class Asserts_ST00 {
       expected(
         $routeValue,
         "equal",
-        this.baseUrl + Routes.home,
+        Routes.baseUrl + Routes.home,
         customSuccessMessage,
         customErrorMessage
       );
@@ -90,7 +94,7 @@ class Asserts_ST00 {
       expected(
         $routeValue,
         "equal",
-        this.baseUrl + Routes.home,
+        Routes.baseUrl + Routes.home,
         customSuccessMessage,
         customErrorMessage
       );
@@ -113,7 +117,7 @@ class Asserts_ST00 {
       expected(
         $routeValue,
         "equal",
-        this.baseUrl + Routes.home,
+        Routes.baseUrl + Routes.home,
         customSuccessMessage,
         customErrorMessage
       );
@@ -144,7 +148,7 @@ class Asserts_ST00 {
       expected(
         $routeValue,
         "equal",
-        this.baseUrl + Routes.login,
+        Routes.baseUrl + Routes.login,
         customSuccessMessage,
         customErrorMessage
       );
@@ -167,7 +171,7 @@ class Asserts_ST00 {
       expected(
         $routeValue,
         "equal",
-        this.baseUrl + Routes.login,
+        Routes.baseUrl + Routes.login,
         customSuccessMessage,
         customErrorMessage
       );
@@ -190,7 +194,7 @@ class Asserts_ST00 {
       expected(
         $routeValue,
         "equal",
-        this.baseUrl + Routes.login,
+        Routes.baseUrl + Routes.login,
         customSuccessMessage,
         customErrorMessage
       );
@@ -204,7 +208,7 @@ class Asserts_ST00 {
     expected(
       routeValue,
       "equal",
-      this.baseUrl + routeExpected,
+      Routes.baseUrl + routeExpected,
       customSuccessMessage,
       customErrorMessage
     );
@@ -217,7 +221,7 @@ class Asserts_ST00 {
     expected(
       routeValue,
       "equal",
-      this.baseUrl + routeExpected,
+      Routes.baseUrl + routeExpected,
       customSuccessMessage,
       customErrorMessage
     );

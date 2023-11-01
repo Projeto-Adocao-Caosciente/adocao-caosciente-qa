@@ -13,7 +13,7 @@ class ongDto {
     this._email = `ac_ong_${this._shortName}@mailinator.com`;
     this._state = faker_br.address.state();
     this._city = faker_br.address.city();
-    this._phoneNumber = faker_br.phone.phoneNumber();
+    this._phoneNumber = faker_br.phone.phoneNumber("(##) #####-####");
     this._programsAndActivities = faker.lorem.paragraph();
     this._mission = faker.lorem.paragraph();
     this._foundationDate = faker.date.past({refDate: "2020-01-01"}).toISOString().split("T")[0];
