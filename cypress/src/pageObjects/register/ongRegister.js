@@ -1,66 +1,145 @@
 // Locators & Routes
 import { Routes } from "../../routes/routes";
 import { locatorsRegister } from "../../locators/pages/register/locatorsRegister";
+import { locatorsToast } from "../../locators/components/locatorsToast";
 
 // Data Transfer Objects
 import { ongDto } from "../../dto/register/ongDto";
 
-// Components Objects 
+// Components Objects
 
 // Utils
-import { getValue, expected, elementExpected, convertToDate } from "../../util/util";
+import {
+  getValue,
+  expected,
+  elementExpected,
+  convertToDate,
+} from "../../util/util";
 import promisify from "cypress-promise";
 
 class ongRegister {
-  constructor() {
-  }
+  constructor() {}
 
   fillAllFields(uploadImage = false) {
-   const ongData = new ongDto();
+    const ongData = new ongDto();
 
     if (uploadImage) {
-        cy.get(locatorsRegister.ong.profilePhoto).attachFile(ongData.getProfilePhoto());
+      this.setProfilePhoto(ongData.getProfilePhoto());
     }
- 
-    cy.get(locatorsRegister.ong.name).type(ongData.getName());
-    cy.get(locatorsRegister.ong.cnpj).type(ongData.getCnpj());
-    cy.get(locatorsRegister.ong.email).type(ongData.getEmail());
-    cy.get(locatorsRegister.ong.state).type(ongData.getState());
-    cy.get(locatorsRegister.ong.city).type(ongData.getCity());
-    cy.get(locatorsRegister.ong.phoneNumber).type(ongData.getPhoneNumber());
-    cy.get(locatorsRegister.ong.programsAndActivities).type(ongData.getProgramsAndActivities());
-    cy.get(locatorsRegister.ong.mission).type(ongData.getMission());
-    cy.get(locatorsRegister.ong.foundationDate).type(ongData.getFoundationDate());
-    cy.get(locatorsRegister.ong.password).type(ongData.getPassword());
-    cy.get(locatorsRegister.ong.confirmPassword).type(ongData.getPassword());
-    
+
+    this.fillNameField(ongData.getName());
+    this.fillCnpjField(ongData.getCnpj());
+    this.fillEmailField(ongData.getEmail());
+    this.fillStateField(ongData.getState());
+    this.fillCityField(ongData.getCity());
+    this.fillPhoneNumberField(ongData.getPhoneNumber());
+    this.fillProgramsAndActivitiesField(ongData.getProgramsAndActivities());
+    this.fillMissionField(ongData.getMission());
+    this.fillFoundationDateField(ongData.getFoundationDate());
+    this.fillPasswordField(ongData.getPassword());
+    this.fillConfirmPasswordField(ongData.getPassword());
+
     return ongData;
   }
 
-  fillAllRequiredFields() {
+  fillAllRequiredFields(uploadImage = false) {
     const ongData = new ongDto();
 
-    cy.get(locatorsRegister.ong.name).type(ongData.getName());
-    cy.get(locatorsRegister.ong.cnpj).type(ongData.getCnpj());
-    cy.get(locatorsRegister.ong.email).type(ongData.getEmail());
-    cy.get(locatorsRegister.ong.state).type(ongData.getState());
-    cy.get(locatorsRegister.ong.city).type(ongData.getCity());
-    cy.get(locatorsRegister.ong.phoneNumber).type(ongData.getPhoneNumber());
-    cy.get(locatorsRegister.ong.password).type(ongData.getPassword());
-    cy.get(locatorsRegister.ong.confirmPassword).type(ongData.getPassword());
+    if (uploadImage) {
+      this.setProfilePhoto(ongData.getProfilePhoto());
+    }
+
+    this.fillNameField(ongData.getName());
+    this.fillCnpjField(ongData.getCnpj());
+    this.fillEmailField(ongData.getEmail());
+    this.fillStateField(ongData.getState());
+    this.fillCityField(ongData.getCity());
+    this.fillPhoneNumberField(ongData.getPhoneNumber());
+    this.fillPasswordField(ongData.getPassword());
+    this.fillConfirmPasswordField(ongData.getPassword());
 
     return ongData;
+  }
+
+  setProfilePhoto(profilePhoto) {
+    cy.get(locatorsRegister.ong.profilePhoto).attachFile(profilePhoto);
+  }
+
+  fillNameField(name) {
+    cy.get(locatorsRegister.ong.name).type(name);
+  }
+
+  fillCnpjField(cnpj) {
+    cy.get(locatorsRegister.ong.cnpj).type(cnpj);
+  }
+
+  fillEmailField(email) {
+    cy.get(locatorsRegister.ong.email).type(email);
+  }
+
+  fillStateField(state) {
+    cy.get(locatorsRegister.ong.state).type(state);
+  }
+
+  fillCityField(city) {
+    cy.get(locatorsRegister.ong.city).type(city);
+  }
+
+  fillPhoneNumberField(phoneNumber) {
+    cy.get(locatorsRegister.ong.phoneNumber).type(phoneNumber);
+  }
+
+  fillProgramsAndActivitiesField(programsAndActivities) {
+    cy.get(locatorsRegister.ong.programsAndActivities).type(
+      programsAndActivities
+    );
+  }
+
+  fillMissionField(mission) {
+    cy.get(locatorsRegister.ong.mission).type(mission);
+  }
+
+  fillFoundationDateField(foundationDate) {
+    cy.get(locatorsRegister.ong.foundationDate).type(foundationDate);
+  }
+
+  fillPasswordField(password) {
+    cy.get(locatorsRegister.ong.password).type(password);
+  }
+
+  fillConfirmPasswordField(confirmPassword) {
+    cy.get(locatorsRegister.ong.confirmPassword).type(confirmPassword);
+  }
+
+  clickOnRegisterButton() {
+    cy.get(locatorsRegister.navigation.registerButton).click();
   }
 
   registerOng() {
     cy.get(locatorsRegister.navigation.registerButton).click();
+
+    this._checksIfRegisterIsConfirmed();
   }
 
   clickOnAlreadyHaveAnAccount() {
-    cy.get(locatorsRegister.navigation.alreadyHaveAnAccount).click();  
+    cy.get(locatorsRegister.navigation.alreadyHaveAnAccount).click();
   }
 
+  _checksIfRegisterIsConfirmed() {
+    const customSuccessMessage =
+      "[Cadastro - ONG] O Cadastro da ONG foi realizado com sucesso!";
+    const customFailureMessage =
+      "[Cadastro - ONG] Não foi possível realizar o Cadastro da ONG.";
 
+    cy.elementExpected(
+      locatorsToast.success,
+      "should",
+      "exist",
+      customSuccessMessage,
+      customFailureMessage,
+      20000
+    );
+  }
 }
 
 export default new ongRegister();

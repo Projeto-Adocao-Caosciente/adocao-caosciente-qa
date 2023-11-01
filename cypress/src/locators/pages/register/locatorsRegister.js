@@ -1,5 +1,6 @@
 const locatorsRegister = {
     ong: {
+        profilePhotoInput: 'input[name="name"]:first', 
         profilePhoto: 'input[type="file"]',
         name: 'input[name="name"]:last', 
         cnpj: 'input[name="user"]',
