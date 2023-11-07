@@ -2,7 +2,7 @@
 import { generateRandomPassword } from "../../util/randomPassword";
 import { faker } from "@faker-js/faker";
 
-var faker_br = require("faker-br");
+const faker_br = require("faker-br");
 
 class ongDto {
   constructor() {

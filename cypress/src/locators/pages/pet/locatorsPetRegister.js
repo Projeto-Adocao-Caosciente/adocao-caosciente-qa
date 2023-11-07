@@ -2,6 +2,7 @@ const locatorsPetRegister = {
     profilePhotoInput: 'input[name="name"]:first', 
     profilePhoto: 'input[type="file"]',
     name: 'input[name="name"]:last',
+    breed: 'input[name="breed"]',
     kind: 'input[name="kind"]',
     height: 'input[name="height"]',
     weight: 'input[name="weight"]',
