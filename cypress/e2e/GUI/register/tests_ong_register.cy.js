@@ -81,12 +81,15 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => 
     it("CT22: Tentativa de Criação de uma ONG cujo E-mail já está cadastrado.", () => {
     });
 
-    it("CT22: Tentativa de Criação de uma ONG com campos fora da Formatação Esperada.", () => {
+    it("CT23: Tentativa de Criação de uma ONG com campos fora da Formatação Esperada.", () => {
+    });
+
+    it("CT24: Tentativa de Criação de uma ONG não preenchendo Campos Obrigatórios.", () => {
     });
   });
 
   context("Context 04: Validar Redirecionamento de Links na Página de Criação de ONG.", () => {
-    it("CT31: Validar Redirecionamento para a Página de Login.", () => {
+    it("CT26: Validar Redirecionamento para a Página de Login.", () => {
       const routeExpected = Routes.login;
   
       ongRegister.clickOnAlreadyHaveAnAccount();
