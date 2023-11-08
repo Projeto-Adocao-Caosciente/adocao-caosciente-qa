@@ -4,7 +4,7 @@ import { locatorsPetRegister } from "../../locators/pages/pet/locatorsPetRegiste
 import { locatorsToast } from "../../locators/components/locatorsToast";
 
 // Data Transfer Objects
-import { ongDto } from "../../dto/register/ongDto";
+import { petDto } from "../../dto/pet/petDto";
 
 // Components Objects
 
@@ -20,8 +20,14 @@ import promisify from "cypress-promise";
 class petRegister {
   constructor() {}
 
+  teste() {
+    const petData = new petDto();
+
+    console.log(petData);
+  }
+
   fillAllFields(uploadImage = false) {
-    const petData = new ongDto();
+    const petData = new petDto();
 
     if (uploadImage) {
       this.setProfilePhoto(petData.getProfilePhoto());
@@ -39,7 +45,7 @@ class petRegister {
   }
 
   fillAllRequiredFields(uploadImage = false) {
-    const petData = new ongDto();
+    const petData = new petDto();
 
     if (uploadImage) {
       this.setProfilePhoto(petData.getProfilePhoto());
