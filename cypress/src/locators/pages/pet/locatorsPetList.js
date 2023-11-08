@@ -5,7 +5,8 @@ const locatorsPetList = {
   },
 
   list: {
-    card:'section:last > div',
+    cards:'section:last > div',
+    info: (arg) => `table > thead > th:nth-child(${arg})`,
 
     child: (arg) => {
       const child = `section:last > div:nth-child(${arg})`;

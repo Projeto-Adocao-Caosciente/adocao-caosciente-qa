@@ -4,6 +4,7 @@ import { locatorsPetRegister } from "../../../../src/locators/pages/pet/locators
 
 // Page Objects
 import petRegister from "../../../../src/pageObjects/pet/petRegister";
+import petList from "../../../../src/pageObjects/pet/petList";
 
 // Asserts to Suite Test 05: Análise do Funcionamento da Página de Cadastro de PET
 import Asserts_ST05 from "./asserts_pet_register";
