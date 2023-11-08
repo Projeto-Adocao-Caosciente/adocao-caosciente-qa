@@ -3,13 +3,13 @@ import { faker } from "@faker-js/faker";
 
 class petDto {
   constructor() {
-    this.type = this._getType();
+    this.setType();
     this.setAttributes();
   }
 
-  _getType() {
+  setType() {
     const typesOfPets = ["dogs", "cats", "dinosaurs", "ponies", "rabbits"];
-    return faker.helpers.arrayElement(typesOfPets);
+    this.type = faker.helpers.arrayElement(typesOfPets);
   }
 
   setAttributes() {
