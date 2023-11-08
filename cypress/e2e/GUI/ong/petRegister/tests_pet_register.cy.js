@@ -23,30 +23,42 @@ describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => 
     });
 
     it("CT04: Validar formato específico do campo Imagem da PET", () => {
-      //TODO: Add validation for profile photo
+      //TODO: Waiting for Add validation for profile photo
     });
   });
 
   context("Context 02: Cenários de Sucesso de Criação de PET.", () => {
-    it.only("CT09: Preenchimento de Todos os Campos.", () => {
+    it("CT09: Preenchimento de Todos os Campos.", async () => {
       const petData = petRegister.fillAllFields(true);
       petRegister.registerPet();
 
-      Asserts_ST05.CT09();
+      const allPets = await petList.getAllPets();
+
+      Asserts_ST05.CT09(allPets, petData);
     });
 
-    it("CT10: Preenchimento de Apenas os Campos Obrigatórios.", () => {
-      const petData = petRegister.fillAllRequiredFields();
+    it("CT10: Preenchimento de Apenas os Campos Obrigatórios.", async () => {
+      const petData = petRegister.fillAllRequiredFields(true);
+      petRegister.registerPet();
 
-      Asserts_ST05.CT10();
+      const allPets = await petList.getAllPets();
+
+      Asserts_ST05.CT10(allPets, petData);
     });
   });
 
   context("Context 03: Cenários Alternativos de Criação de PET.", () => {
     it("CT11: Tentativa de Criação de um PET com campos fora da Formatação Esperada.", () => {
+      //TODO: Waiting for Add validation for profile photo
     });
 
     it("CT12: Tentativa de Criação de um PET não preenchendo Campos Obrigatórios.", () => {
+      petRegister.fillNameField("PET01");
+      petRegister.fillBreedField("Raça do PET01");
+      petRegister.fillKindField("Tipo do PET01");
+      petRegister.registerPet();
+
+      Asserts_ST05.CT12();
     });
   });
 

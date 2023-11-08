@@ -16,6 +16,9 @@ class cards {
   async getListSize() {
     this._checkExistenceList();
 
+    // TODO: It's necessary remove this line after fix
+    await promisify(cy.wait(2000));
+
     let size = parseInt(await promisify(cy.getListSize(this.locatorsCard.cards)));
 
     return size;
