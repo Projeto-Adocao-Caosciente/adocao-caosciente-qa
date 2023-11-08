@@ -20,17 +20,11 @@ import promisify from "cypress-promise";
 class petRegister {
   constructor() {}
 
-  teste() {
-    const petData = new petDto();
-
-    console.log(petData);
-  }
-
   fillAllFields(uploadImage = false) {
     const petData = new petDto();
 
     if (uploadImage) {
-      this.setProfilePhoto(petData.getProfilePhoto());
+      this.setProfilePhoto(petData.getImage());
     }
 
     this.fillNameField(petData.getName());
@@ -38,7 +32,7 @@ class petRegister {
     this.fillKindField(petData.getKind());
     this.fillHeightField(petData.getHeight());
     this.fillWeightField(petData.getWeight());
-    this.fillSpecialNeedsField(petData.getSpecialNeeds());
+    this.selectSpecialNeedsField(petData.getSpecialNeeds());
     this.fillAdditionalInformationField(petData.getAdditionalInformation());
 
     return petData;
@@ -48,7 +42,7 @@ class petRegister {
     const petData = new petDto();
 
     if (uploadImage) {
-      this.setProfilePhoto(petData.getProfilePhoto());
+      this.setProfilePhoto(petData.getImage());
     }
 
     this.fillNameField(petData.getName());
@@ -84,12 +78,16 @@ class petRegister {
     cy.get(locatorsPetRegister.weight).type(weight);
   }
 
-  fillSpecialNeedsField(specialNeeds) {
-    cy.get(locatorsPetRegister.specialNeeds).type(specialNeeds);
+  selectSpecialNeedsField(specialNeeds) {
+    cy.get(locatorsPetRegister.specialNeeds.select).click();
+
+    specialNeeds.forEach((specialNeed) => {
+      cy.get(locatorsPetRegister.specialNeeds.option(specialNeed)).click();
+    })
   }
 
   fillAdditionalInformationField(additionalInformation) {
-    cy.get(locatorsPetRegister.additionalInformation).type(additionalInformation);
+    cy.get(locatorsPetRegister.additionalInformation).type(additionalInformation, { force: true });
   }
 
   clickOnRegisterButton() {
@@ -101,8 +99,7 @@ class petRegister {
   }
 
   registerPet() {
-    cy.get(locatorsPetRegister.navigation.registerButton).click();
-
+    this.clickOnRegisterButton();
     this._checksIfRegisterIsConfirmed();
   }
 

@@ -17,7 +17,7 @@ class petDto {
     const randomElement = faker.helpers.arrayElement(file);
 
     this._image = randomElement.image;
-    this._name = randomElement.breed;
+    this._name = `[${randomElement.kind}] ${randomElement.breed}`;
     this._breed = randomElement.breed;
     this._kind = randomElement.kind;
     this._height = randomElement.height;

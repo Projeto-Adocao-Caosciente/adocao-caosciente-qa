@@ -10,12 +10,12 @@ import Asserts_ST05 from "./asserts_pet_register";
 
 describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => {
   beforeEach(() => {
-    //cy.login();
-    //cy.visit(Routes.pet.register);
+    cy.login();
+    cy.visit(Routes.pet.register);
   });
 
   it.only("teste", () => {
-    petRegister.teste();
+    petRegister.clickOnCancel()
   })
 
   context("Context 01: Testes Funcionais nos Campos na Página de Cadastro de PET", () => {

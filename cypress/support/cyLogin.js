@@ -28,7 +28,7 @@ Cypress.Commands.add(
     { cacheSession = true } = {}
   ) => {
     const login = () => {
-      cy.visit("/");
+      cy.visit(Routes.login);
 
       cy.get(locatorsLogin.user).type(username);
       cy.get(locatorsLogin.password).type(password, { log: false });
@@ -39,7 +39,7 @@ Cypress.Commands.add(
     };
 
     const validate = () => {
-      cy.wait(2000);
+      cy.wait(4000);
 
       // This method is called to validate the session, if it is valid, it will not be necessary to login again
       cy.getCookie("token").should("exist");

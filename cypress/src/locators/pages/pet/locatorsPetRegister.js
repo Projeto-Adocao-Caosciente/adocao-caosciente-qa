@@ -6,12 +6,15 @@ const locatorsPetRegister = {
     kind: 'input[name="kind"]',
     height: 'input[name="height"]',
     weight: 'input[name="weight"]',
-    specialNeeds: 'div[data-testid="hidden-select-container"]',
+    specialNeeds: {
+        select: 'button[aria-haspopup="listbox"]',
+        option: (child) => `ul[role="listbox"] li[value=${child}]`,
+    },
     additionalInformation: 'textarea[name="additionalInformation"]',
 
     navigation: {
-        registerButton: 'button[type="submit"]',
-        cancel: 'a.relative',
+        registerButton: 'section:last button:first',
+        cancel: 'section:last button:last',
     }
 };
 
