@@ -1,0 +1,352 @@
+[
+  {
+    "breed": "American Curl",
+    "kind": "Gato",
+    "height": 25.3,
+    "weight": 3.5,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Balinese",
+    "kind": "Gato",
+    "height": 27.8,
+    "weight": 4.1,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Bambino",
+    "kind": "Gato",
+    "height": 21.5,
+    "weight": 3.9,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Bengal",
+    "kind": "Gato",
+    "height": 24.7,
+    "weight": 4.8,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Birman",
+    "kind": "Gato",
+    "height": 23.1,
+    "weight": 4.3,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Bombay",
+    "kind": "Gato",
+    "height": 22.6,
+    "weight": 4.2,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Brazilian Shorthair",
+    "kind": "Gato",
+    "height": 26.4,
+    "weight": 3.7,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "British Longhair",
+    "kind": "Gato",
+    "height": 28.9,
+    "weight": 4.5,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "British Semi-longhair",
+    "kind": "Gato",
+    "height": 25.7,
+    "weight": 3.8,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "British Shorthair",
+    "kind": "Gato",
+    "height": 27.2,
+    "weight": 4.0,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Burmese",
+    "kind": "Gato",
+    "height": 24.5,
+    "weight": 4.7,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Burmilla",
+    "kind": "Gato",
+    "height": 22.3,
+    "weight": 4.1,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Colorpoint Shorthair",
+    "kind": "Gato",
+    "height": 23.8,
+    "weight": 4.4,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Cornish Rex",
+    "kind": "Gato",
+    "height": 20.9,
+    "weight": 3.6,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Cymric",
+    "kind": "Gato",
+    "height": 25.2,
+    "weight": 3.9,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Cyprus",
+    "kind": "Gato",
+    "height": 22.6,
+    "weight": 3.7,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Devon Rex",
+    "kind": "Gato",
+    "height": 20.4,
+    "weight": 3.5,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Donskoy",
+    "kind": "Gato",
+    "height": 23.1,
+    "weight": 4.3,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Dragon Li",
+    "kind": "Gato",
+    "height": 21.8,
+    "weight": 3.8,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Dwarf cat",
+    "kind": "Gato",
+    "height": 18.7,
+    "weight": 3.2,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Egyptian Mau",
+    "kind": "Gato",
+    "height": 26.5,
+    "weight": 3.6,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "European Shorthair",
+    "kind": "Gato",
+    "height": 21.2,
+    "weight": 3.4,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Exotic Shorthair",
+    "kind": "Gato",
+    "height": 23.9,
+    "weight": 4.2,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Khao Manee",
+    "kind": "Gato",
+    "height": 25.6,
+    "weight": 3.7,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Korat",
+    "kind": "Gato",
+    "height": 24.1,
+    "weight": 3.9,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Korean Bobtail",
+    "kind": "Gato",
+    "height": 22.8,
+    "weight": 3.8,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Korn Ja",
+    "kind": "Gato",
+    "height": 21.5,
+    "weight": 3.6,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Kurilian Bobtail",
+    "kind": "Gato",
+    "height": 23.7,
+    "weight": 4.0,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "LaPerm",
+    "kind": "Gato",
+    "height": 20.6,
+    "weight": 3.3,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Lykoi",
+    "kind": "Gato",
+    "height": 19.8,
+    "weight": 3.2,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Oriental Shorthair",
+    "kind": "Gato",
+    "height": 26.2,
+    "weight": 4.1,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "PerFold",
+    "kind": "Gato",
+    "height": 18.9,
+    "weight": 3.4,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Persian (Modern)",
+    "kind": "Gato",
+    "height": 24.8,
+    "weight": 4.5,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Persian (Traditional)",
+    "kind": "Gato",
+    "height": 22.4,
+    "weight": 3.7,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Peterbald",
+    "kind": "Gato",
+    "height": 21.3,
+    "weight": 3.5,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Pixie-bob",
+    "kind": "Gato",
+    "height": 23.4,
+    "weight": 3.9,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Raas",
+    "kind": "Gato",
+    "height": 20.1,
+    "weight": 3.3,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Ragamuffin",
+    "kind": "Gato",
+    "height": 22.9,
+    "weight": 4.0,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Ragdoll",
+    "kind": "Gato",
+    "height": 25.7,
+    "weight": 3.8,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Russian Blue",
+    "kind": "Gato",
+    "height": 24.3,
+    "weight": 4.4,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Russian White, Black and Tabby",
+    "kind": "Gato",
+    "height": 23.6,
+    "weight": 4.2,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Sam Sawet",
+    "kind": "Gato",
+    "height": 27.1,
+    "weight": 4.7,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Savannah",
+    "kind": "Gato",
+    "height": 26.5,
+    "weight": 4.6,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Scottish Fold",
+    "kind": "Gato",
+    "height": 20.8,
+    "weight": 3.5,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Selkirk Rex",
+    "kind": "Gato",
+    "height": 22.2,
+    "weight": 3.8,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Serengeti",
+    "kind": "Gato",
+    "height": 23.9,
+    "weight": 4.1,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Serrade Petit",
+    "kind": "Gato",
+    "height": 21.4,
+    "weight": 3.6,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Turkish Angora",
+    "kind": "Gato",
+    "height": 24.6,
+    "weight": 4.3,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Turkish Van",
+    "kind": "Gato",
+    "height": 22.3,
+    "weight": 3.7,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Ukrainian Levkoy",
+    "kind": "Gato",
+    "height": 22.7,
+    "weight": 3.8,
+    "image": "images/image5.jpg"
+  }
+]

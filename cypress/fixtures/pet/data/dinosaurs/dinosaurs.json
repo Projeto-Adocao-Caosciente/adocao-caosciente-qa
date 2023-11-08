@@ -1,0 +1,703 @@
+[
+  {
+    "breed": "Morosaurus",
+    "kind": "Dinossauro",
+    "height": 5.5,
+    "weight": 1000,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Mapusaurus",
+    "kind": "Dinossauro",
+    "height": 9.5,
+    "weight": 3500,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Buitreraptor",
+    "kind": "Dinossauro",
+    "height": 1.5,
+    "weight": 5,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Gravitholus",
+    "kind": "Dinossauro",
+    "height": 1.2,
+    "weight": 2,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Vitakrisaurus",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 50,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Nurosaurus",
+    "kind": "Dinossauro",
+    "height": 4.2,
+    "weight": 300,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Cetiosauriscus",
+    "kind": "Dinossauro",
+    "height": 10.5,
+    "weight": 8000,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Kukufeldia",
+    "kind": "Dinossauro",
+    "height": 2.8,
+    "weight": 150,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Propanoplosaurus",
+    "kind": "Dinossauro",
+    "height": 4.5,
+    "weight": 700,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Suchoprion",
+    "kind": "Dinossauro",
+    "height": 2.0,
+    "weight": 20,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Umarsaurus",
+    "kind": "Dinossauro",
+    "height": 3.7,
+    "weight": 150,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Likhoelesaurus",
+    "kind": "Dinossauro",
+    "height": 1.8,
+    "weight": 30,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Dasygnathoides",
+    "kind": "Dinossauro",
+    "height": 2.1,
+    "weight": 15,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Dubreuillosaurus",
+    "kind": "Dinossauro",
+    "height": 4.0,
+    "weight": 300,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Shenzhouraptor",
+    "kind": "Dinossauro",
+    "height": 1.5,
+    "weight": 3,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Atrociraptor",
+    "kind": "Dinossauro",
+    "height": 2.0,
+    "weight": 15,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Amurosaurus",
+    "kind": "Dinossauro",
+    "height": 8.0,
+    "weight": 1500,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Latirhinus",
+    "kind": "Dinossauro",
+    "height": 4.5,
+    "weight": 1000,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Albisaurus",
+    "kind": "Dinossauro",
+    "height": 6.0,
+    "weight": 2000,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Zupaysaurus",
+    "kind": "Dinossauro",
+    "height": 3.0,
+    "weight": 100,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Venenosaurus",
+    "kind": "Dinossauro",
+    "height": 6.5,
+    "weight": 500,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Syrmosaurus",
+    "kind": "Dinossauro",
+    "height": 4.0,
+    "weight": 100,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Arkharavia",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 50,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Yueosaurus",
+    "kind": "Dinossauro",
+    "height": 5.0,
+    "weight": 500,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Tianchungosaurus",
+    "kind": "Dinossauro",
+    "height": 4.2,
+    "weight": 350,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Dyslocosaurus",
+    "kind": "Dinossauro",
+    "height": 2.0,
+    "weight": 30,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Sinraptor",
+    "kind": "Dinossauro",
+    "height": 6.0,
+    "weight": 500,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Owenodon",
+    "kind": "Dinossauro",
+    "height": 1.5,
+    "weight": 10,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Pelycosaur",
+    "kind": "Dinossauro",
+    "height": 3.0,
+    "weight": 70,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Duriavenator",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 25,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Haplocheirus",
+    "kind": "Dinossauro",
+    "height": 2.0,
+    "weight": 20,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Epidendrosaurus",
+    "kind": "Dinossauro",
+    "height": 0.6,
+    "weight": 0.5,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Nyasasaurus",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 30,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Tawasaurus",
+    "kind": "Dinossauro",
+    "height": 2.0,
+    "weight": 20,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Lisboasaurus",
+    "kind": "Dinossauro",
+    "height": 1.8,
+    "weight": 15,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Ahshislepelta",
+    "kind": "Dinossauro",
+    "height": 3.0,
+    "weight": 70,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Magnirostris",
+    "kind": "Dinossauro",
+    "height": 1.8,
+    "weight": 15,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Psittacosaurus",
+    "kind": "Dinossauro",
+    "height": 1.5,
+    "weight": 5,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Orodromeus",
+    "kind": "Dinossauro",
+    "height": 2.0,
+    "weight": 10,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Ostafrikasaurus",
+    "kind": "Dinossauro",
+    "height": 3.0,
+    "weight": 100,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Nemegtomaia",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 40,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Dracorex",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 70,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Kangnasaurus",
+    "kind": "Dinossauro",
+    "height": 4.5,
+    "weight": 200,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Lophostropheus",
+    "kind": "Dinossauro",
+    "height": 5.2,
+    "weight": 250,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Spinophorosaurus",
+    "kind": "Dinossauro",
+    "height": 15,
+    "weight": 4000,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Epachthosaurus",
+    "kind": "Dinossauro",
+    "height": 12,
+    "weight": 1500,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Coelurosauria",
+    "kind": "Dinossauro",
+    "height": 3.5,
+    "weight": 30,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Lycorhinus",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 15,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Adasaurus",
+    "kind": "Dinossauro",
+    "height": 2.2,
+    "weight": 20,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Draconyx",
+    "kind": "Dinossauro",
+    "height": 3,
+    "weight": 25,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Ceratops",
+    "kind": "Dinossauro",
+    "height": 5.5,
+    "weight": 700,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Lagerpeton",
+    "kind": "Dinossauro",
+    "height": 1.2,
+    "weight": 2,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Qiaowanlong",
+    "kind": "Dinossauro",
+    "height": 8.5,
+    "weight": 1000,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Rhynchosaur",
+    "kind": "Dinossauro",
+    "height": 0.6,
+    "weight": 2,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Ningyuansaurus",
+    "kind": "Dinossauro",
+    "height": 3.5,
+    "weight": 25,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Palaeolimnornis",
+    "kind": "Dinossauro",
+    "height": 0.5,
+    "weight": 1,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Anabisetia",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 20,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Talarurus",
+    "kind": "Dinossauro",
+    "height": 5,
+    "weight": 1000,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Sphenodontia",
+    "kind": "Dinossauro",
+    "height": 0.6,
+    "weight": 2,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Tianyulong",
+    "kind": "Dinossauro",
+    "height": 1,
+    "weight": 0.5,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Aepisaurus",
+    "kind": "Dinossauro",
+    "height": 6,
+    "weight": 500,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Neuquenraptor",
+    "kind": "Dinossauro",
+    "height": 3.5,
+    "weight": 30,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Galesaurus",
+    "kind": "Dinossauro",
+    "height": 1.5,
+    "weight": 5,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Pachysuchus",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 50,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Auroraceratops",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 50,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Hecatasaurus",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 20,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Barapasaurus",
+    "kind": "Dinossauro",
+    "height": 18,
+    "weight": 15000,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Asiatosaurus",
+    "kind": "Dinossauro",
+    "height": 2,
+    "weight": 5,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Daanosaurus",
+    "kind": "Dinossauro",
+    "height": 1,
+    "weight": 2,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Luoyanggia",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 25,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Eobrontosaurus",
+    "kind": "Dinossauro",
+    "height": 6.5,
+    "weight": 400,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Wellnhoferia",
+    "kind": "Dinossauro",
+    "height": 0.7,
+    "weight": 2,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Zuolong",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 20,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Tenchisaurus",
+    "kind": "Dinossauro",
+    "height": 1.5,
+    "weight": 10,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Centrosaurus",
+    "kind": "Dinossauro",
+    "height": 6,
+    "weight": 2000,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Falcarius",
+    "kind": "Dinossauro",
+    "height": 3.5,
+    "weight": 100,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Ojoraptorsaurus",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 30,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Lufengocephalus",
+    "kind": "Dinossauro",
+    "height": 3,
+    "weight": 50,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Vulcanodon",
+    "kind": "Dinossauro",
+    "height": 6,
+    "weight": 1500,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Ovoraptor",
+    "kind": "Dinossauro",
+    "height": 2,
+    "weight": 30,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Mollusc",
+    "kind": "Dinossauro",
+    "height": 0.5,
+    "weight": 1,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Shunosaurus",
+    "kind": "Dinossauro",
+    "height": 9,
+    "weight": 4000,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Empaterias",
+    "kind": "Dinossauro",
+    "height": 2.5,
+    "weight": 20,
+    "image": "images/image1.jpg"
+  },
+
+  {
+    "breed": "Issasaurus",
+    "kind": "Dinossauro",
+    "height": 3.5,
+    "weight": 1000,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Jiangxisaurus",
+    "kind": "Dinossauro",
+    "height": 4.2,
+    "weight": 1200,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Laplatasaurus",
+    "kind": "Dinossauro",
+    "height": 3.8,
+    "weight": 1100,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Aublysodon",
+    "kind": "Dinossauro",
+    "height": 3.2,
+    "weight": 900,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Embasaurus",
+    "kind": "Dinossauro",
+    "height": 3.9,
+    "weight": 950,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Blikanasaurus",
+    "kind": "Dinossauro",
+    "height": 3.6,
+    "weight": 980,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Bonapartenykus",
+    "kind": "Dinossauro",
+    "height": 3.4,
+    "weight": 930,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Asiamericana",
+    "kind": "Dinossauro",
+    "height": 3.7,
+    "weight": 1050,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Arizonasaurus",
+    "kind": "Dinossauro",
+    "height": 3.3,
+    "weight": 880,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Cryptoraptor",
+    "kind": "Dinossauro",
+    "height": 3.1,
+    "weight": 920,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Amazonsaurus",
+    "kind": "Dinossauro",
+    "height": 3.0,
+    "weight": 870,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Leyesaurus",
+    "kind": "Dinossauro",
+    "height": 3.5,
+    "weight": 980,
+    "image": "images/image2.jpg"
+  },
+  {
+    "breed": "Dollodon",
+    "kind": "Dinossauro",
+    "height": 3.2,
+    "weight": 940,
+    "image": "images/image3.jpg"
+  },
+  {
+    "breed": "Cryptosaurus",
+    "kind": "Dinossauro",
+    "height": 3.8,
+    "weight": 1000,
+    "image": "images/image4.jpg"
+  },
+  {
+    "breed": "Coahuilaceratops",
+    "kind": "Dinossauro",
+    "height": 3.6,
+    "weight": 960,
+    "image": "images/image5.jpg"
+  },
+  {
+    "breed": "Variraptor",
+    "kind": "Dinossauro",
+    "height": 3.3,
+    "weight": 900,
+    "image": "images/image1.jpg"
+  },
+  {
+    "breed": "Panamericansaurus",
+    "kind": "Dinossauro",
+    "height": 3.7,
+    "weight": 1100,
+    "image": "images/image2.jpg"
+  }
+]

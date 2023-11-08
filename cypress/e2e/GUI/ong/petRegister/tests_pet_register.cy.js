@@ -1,17 +1,22 @@
 // Locators and Routes
-import { Routes } from "../../../src/routes/routes";
+import { Routes } from "../../../../src/routes/routes";
 import { locatorsPetRegister } from "../../../../src/locators/pages/pet/locatorsPetRegister";
 
 // Page Objects
-import petRegister from "../../../src/pageObjects/pet/petRegister";
+import petRegister from "../../../../src/pageObjects/pet/petRegister";
 
 // Asserts to Suite Test 05: Análise do Funcionamento da Página de Cadastro de PET
 import Asserts_ST05 from "./asserts_pet_register";
 
 describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => {
   beforeEach(() => {
-    cy.visit(Routes.register);
+    //cy.login();
+    //cy.visit(Routes.pet.register);
   });
+
+  it.only("teste", () => {
+    petRegister.teste();
+  })
 
   context("Context 01: Testes Funcionais nos Campos na Página de Cadastro de PET", () => {
     it("CT01: Validar obrigatoriedade dos Campos.", () => {
