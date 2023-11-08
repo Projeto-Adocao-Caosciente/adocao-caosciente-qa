@@ -14,10 +14,6 @@ describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => 
     cy.visit(Routes.pet.register);
   });
 
-  it.only("teste", () => {
-    petRegister.clickOnCancel()
-  })
-
   context("Context 01: Testes Funcionais nos Campos na Página de Cadastro de PET", () => {
     it("CT01: Validar obrigatoriedade dos Campos.", () => {
       petRegister.clickOnRegisterButton();
@@ -31,16 +27,17 @@ describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => 
   });
 
   context("Context 02: Cenários de Sucesso de Criação de PET.", () => {
-    it("CT09: Preenchimento de Todos os Campos.", () => {
+    it.only("CT09: Preenchimento de Todos os Campos.", () => {
       const petData = petRegister.fillAllFields(true);
+      petRegister.registerPet();
 
-      Asserts_ST05.CT11();
+      Asserts_ST05.CT09();
     });
 
     it("CT10: Preenchimento de Apenas os Campos Obrigatórios.", () => {
       const petData = petRegister.fillAllRequiredFields();
 
-      Asserts_ST05.CT12();
+      Asserts_ST05.CT10();
     });
   });
 
@@ -56,10 +53,10 @@ describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => 
     it("CT13: Validar Redirecionamento para a Página de Listagem de Pet's Cadastrados da ONG.", () => {
       const routeExpected = Routes.home;
   
-      petRegister.clickOnAlreadyHaveAnAccount();
+      petRegister.clickOnCancel();
   
       cy.url().then((routeObtained) => {
-          Asserts_ST05.CT31(routeObtained, routeExpected);
+        Asserts_ST05.CT13(routeObtained, routeExpected);
       });
     });
   });
