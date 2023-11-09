@@ -5,7 +5,6 @@ import { locatorsToast } from "../../../../src/locators/components/locatorsToast
 
 // Utils
 import { expected } from "../../../../src/util/util";
-import { el } from "@faker-js/faker";
 
 class Asserts_ST05 {
   constructor() {}

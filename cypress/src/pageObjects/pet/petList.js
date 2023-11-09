@@ -6,6 +6,7 @@ import { locatorsPetList } from "../../locators/pages/pet/locatorsPetList";
 import { petDto } from "../../dto/pet/petDto";
 
 // Components Objects
+import { pagination } from "../../componentsObjects/pagination";
 import { cards } from "../../componentsObjects/cards";
 
 // Utils
@@ -19,6 +20,7 @@ import promisify from "cypress-promise";
 
 class petList {
   constructor() {
+    this.pagination = new pagination();
     this.cards = new cards(locatorsPetList.list);
   }
 
@@ -27,7 +29,11 @@ class petList {
   }
 
   searchPet(name) {
-    cy.get(locatorsPetList.actions.findPet).type(name);
+    cy.get(locatorsPetList.actions.findPet).clear().type(name);
+  }
+
+  async getListSizeOfPets() {
+    return await this.cards.getListSize();
   }
 
   async getAllPets() {
@@ -39,18 +45,43 @@ class petList {
   }
 
   viewPetDetails(cardIndex) {
-    this._checkExistenceElementInList(cardIndex);
+    this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewDetails).click();
   }
 
   viewFormsAssociatedWithPet(cardIndex) {
-    this._checkExistenceElementInList(cardIndex);
+    this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewForms).click();
   }
 
   editPet(cardIndex) {
-    this._checkExistenceElementInList(cardIndex);
+    this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
     cy.get(locatorsPetList.list.child(cardIndex).actions.edit).click();
+  }
+
+  async getPetDetails() {
+    return null;
+  }
+
+  /**
+   * This method is responsible for navigating through the pages of the table. It is necessary to inform the desired page (through the mockObject) and the command to be executed (click or reload).
+   * Briefly, this method visit a first page, then click on the next page, then click on the next page, then click on the previous page and finally click on the previous page. In each step, it is checked whether the accessed page is the desired one.
+   *
+   * @param {object} mockObject - Mock Object with the desired page and the command to be executed.
+   */
+  viewAllMockPages(mockObject) {
+    const execute = [
+      {
+        pageRequired: 1,
+        name: "reload",
+        command: "",
+      },
+    ];
+
+    // View all mock pages (successor and predecessor)
+    execute.forEach((element, index) => {
+      this.pagination.goToMockPage(mockObject[index], element);
+    });
   }
 
   /**
