@@ -1,6 +1,5 @@
 // Locators and Routes
 import { Routes } from "../../../../src/routes/routes";
-import { locatorsallPets } from "../../../../src/locators/pages/pet/locatorsPetList";
 
 // Page Objects
 import petList from "../../../../src/pageObjects/pet/petList";

@@ -20,8 +20,8 @@ class petDto {
     this._name = `[${randomElement.kind}] ${randomElement.breed}`;
     this._breed = randomElement.breed;
     this._kind = randomElement.kind;
-    this._height = randomElement.height;
-    this._weight = randomElement.weight;
+    this._height = String(randomElement.height).replace(".", ",");
+    this._weight = String(randomElement.weight).replace(".", ",");
     this._specialNeeds = this._getRandomSpecialNeeds();
     this._additionalInformation = faker.lorem.paragraph(1);
   }
