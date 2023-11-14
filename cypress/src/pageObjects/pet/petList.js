@@ -51,15 +51,21 @@ class petList {
 
   viewFormsAssociatedWithPet(cardIndex) {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
+    this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
+
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewForms).click();
   }
 
   editPet(cardIndex) {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
+    this._checkIfRouteWasAcessedSuccessfully(Routes.pet.edit);
+
     cy.get(locatorsPetList.list.child(cardIndex).actions.edit).click();
   }
 
   async getPetDetails() {
+    // TODO: Fix this method
+    this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
     return null;
   }
 
@@ -103,6 +109,26 @@ class petList {
       customSuccessMessage,
       customFailureMessage
     );
+  }
+
+  /**
+   * Checks if the route accessed is the expected one, after clicking on a button.
+   * 
+   * @param {string} routeExpected - Expected route.
+   */
+  _checkIfRouteWasAcessedSuccessfully(routeExpected) {
+    const customSuccessMessage = `[Detalhes de PET] A rota '${routeExpected}' foi acessada com sucesso.`;
+    const customFailureMessage = `[Detalhes de PET] Houve um problema ao acessar a rota '${routeExpected}'.`;
+
+    cy.url().then((routeObtained) => {
+      cy.expected(
+        routeObtained,
+        "contains",
+        routeExpected,
+        customSuccessMessage,
+        customFailureMessage
+      );
+    });
   }
 }
 

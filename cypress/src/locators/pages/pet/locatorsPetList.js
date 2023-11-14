@@ -15,9 +15,9 @@ const locatorsPetList = {
             name: `${child} > div:last > p`,
         },
         actions: {
-            viewDetails: `${child} > div:nth-child(3) > button:first`,
-            viewForms: `${child} > div:nth-child(3) > button:last`,
-            edit: `${child} > div:nth-child(3) > button:first`,
+            viewDetails: `${child} > div:nth-child(2) button:first`,
+            viewForms: `${child} > div:nth-child(2) button:last`,
+            edit: `${child} > div:nth-child(2) button:first`,
         }
       };
     },

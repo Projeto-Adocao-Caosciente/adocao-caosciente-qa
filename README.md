@@ -6,15 +6,15 @@ ___
 
 ## Módulos do Sistema Automatizado
 
-- [ ] Módulo 1: Login
-- [ ] Módulo 2: Cadastrar-se
+- [X] Módulo 1: Login
+- [X] Módulo 2: Cadastrar-se
 - [ ] Módulo 3: Esqueci a Senha
 - [ ] Módulo 4: ONG
   - [ ] Módulo 4.1: Visualizar Detalhes
   - [ ] Módulo 4.2: Editar Detalhes
   - [ ] Módulo 4.3: Animais
-    - [ ] Módulo 4.3.1: Listar Animais Existentes
-    - [ ] Módulo 4.3.2: Criar Animal
+    - [X] Módulo 4.3.1: Listar Animais Existentes
+    - [X] Módulo 4.3.2: Criar Animal
     - [ ] Módulo 4.3.3: Editar Animal
     - [ ] Módulo 4.3.4: Criar Formulário de Adoção
     - [ ] Módulo 4.3.5: Editar Formulário de Adoção
