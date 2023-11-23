@@ -1,6 +1,7 @@
 // Locators & Routes
 import { Routes } from "../../routes/routes";
 import { locatorsPetList } from "../../locators/pages/pet/locatorsPetList";
+import { locatorsPetDetails } from "../../locators/pages/pet/locatorsPetDetails";
 
 // Data Transfer Objects
 import { petDto } from "../../dto/pet/petDto";
@@ -63,10 +64,29 @@ class petList {
     cy.get(locatorsPetList.list.child(cardIndex).actions.edit).click();
   }
 
-  async getPetDetails() {
-    // TODO: Fix this method
+  async getPetDetails(cardIndex) {
+    cy.intercept("GET", `ong/animal/**`).as("getPetDetails");
+
+    this.viewPetDetails(cardIndex);
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
-    return null;
+
+    await promisify(cy.wait("@getPetDetails"));
+
+    const name = await promisify(cy.getValue(locatorsPetDetails.name));
+    const breed = await promisify(cy.getValue(locatorsPetDetails.breed));
+    const kind = await promisify(cy.getValue(locatorsPetDetails.kind));
+    const height = await promisify(cy.getValue(locatorsPetDetails.height));
+    const weight = await promisify(cy.getValue(locatorsPetDetails.weight));
+    const additionalInformation = await promisify(cy.getValue(locatorsPetDetails.additionalInformation));
+
+    return {
+      name: name,
+      breed: breed,
+      kind: kind,
+      height: height,
+      weight: weight,
+      additionalInformation: additionalInformation,
+    };
   }
 
   /**

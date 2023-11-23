@@ -45,6 +45,30 @@ Cypress.Commands.add("getValue", (element, timeout = 5000) => {
 });
 
 /**
+ * Custom Cypress command to retrieve and return the value content of an input element. To get the value, you need to use await promisify().
+ * This command is useful when the input element has the readonly attribute.
+ * 
+ * @param {string} element - The CSS selector or Cypress chain of the element.
+ * @param {number} [timeout=5000] - Optional timeout for the command.
+ * @returns {Cypress.Chainable} - A chainable object representing the Cypress command.
+ * 
+ * @example
+ * // Retrieve the value of an input element with a default timeout of 5 seconds.
+ * cy.getInputValue(".my-input").should("eq", "Expected Value");
+ * 
+ * // Retrieve the value of an input element with a custom timeout.
+ * cy.getInputValue(".my-input", 10000).should("eq", "Expected Value");
+ */
+Cypress.Commands.add("getInputValue", (element, timeout = 5000) => {
+    cy.get(element).invoke("removeAttr", "readonly").invoke("val").then((text) => {
+        const textValue = text.trim();
+        cy.wrap(textValue).as("textValue");
+    });
+
+    return cy.get("@textValue", { timeout: timeout });
+})
+
+/**
  * Custom Cypress command to retrieve and return the size (length) of a list of elements. To get the text value, you need to use await promisify().
  *
  * @param {string} element - The CSS selector or Cypress chain of the list of elements.

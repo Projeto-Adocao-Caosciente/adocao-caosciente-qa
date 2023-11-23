@@ -63,8 +63,7 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
         const cardIndex = 1;
 
         const petCard = await petList.getPet(cardIndex);
-        petList.viewPetDetails(cardIndex);
-        const petDetails = await petList.getPetDetails();
+        const petDetails = await petList.getPetDetails(cardIndex);
 
         Asserts_ST06.CT03(petCard, petDetails);
       });
