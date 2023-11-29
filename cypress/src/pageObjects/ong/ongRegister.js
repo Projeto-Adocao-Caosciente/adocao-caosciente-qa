@@ -4,7 +4,7 @@ import { locatorsRegister } from "../../locators/pages/register/locatorsRegister
 import { locatorsToast } from "../../locators/components/locatorsToast";
 
 // Data Transfer Objects
-import { ongDto } from "../../dto/register/ongDto";
+import { ongDto } from "../../dto/ong/ongDto";
 
 // Components Objects
 

@@ -3,7 +3,7 @@ import { Routes } from "../../../src/routes/routes";
 import { locatorsRegister } from "../../../src/locators/pages/register/locatorsRegister";
 
 // Page Objects
-import ongRegister from "../../../src/pageObjects/register/ongRegister";
+import ongRegister from "../../../src/pageObjects/ong/ongRegister";
 import login from "../../../src/pageObjects/login/login";
 
 // Asserts to Suite Test 03: Análise do Funcionamento da Página de Cadastro de ONG
