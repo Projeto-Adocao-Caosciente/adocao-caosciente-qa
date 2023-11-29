@@ -4,7 +4,10 @@ let Routes = {
   // Commom Pages
   home: "/",
   login: "/login",
-  register: "/register",
+  register: {
+    ong: "/ong-register",
+    adopter: "/adopter-register",
+  },
   recoverPassword: "/recover-password",
 
   // Logged Pages

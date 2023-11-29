@@ -11,7 +11,7 @@ import Asserts_ST03 from "./asserts_ong_register";
 
 describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => {
   beforeEach(() => {
-    cy.visit(Routes.register);
+    cy.visit(Routes.register.ong);
   });
 
   context("Context 01: Testes Funcionais nos Campos na Página de Cadastro de ONG", () => {

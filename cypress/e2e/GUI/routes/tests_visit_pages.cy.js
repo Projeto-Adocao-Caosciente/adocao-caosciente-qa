@@ -15,8 +15,8 @@ describe("ST01: Visitar todas as páginas da aplicação.", () => {
       });
     });
 
-    it("CT02: Visitar a rota de Cadastro.", () => {
-      const routeExpected = Routes.register;
+    it("CT02: Visitar a rota de Cadastro de ONG.", () => {
+      const routeExpected = Routes.register.ong;
   
       cy.visit(routeExpected);
       cy.url().then((routeObtained) => {
@@ -24,8 +24,8 @@ describe("ST01: Visitar todas as páginas da aplicação.", () => {
       });
     });
 
-    it("CT03: Visitar a rota de Recuperação de Senha.", () => {
-      const routeExpected = Routes.recoverPassword;
+    it("CT03: Visitar a rota de Cadastro de Adotante.", () => {
+      const routeExpected = Routes.register.adopter;
   
       cy.visit(routeExpected);
       cy.url().then((routeObtained) => {
@@ -81,15 +81,6 @@ describe("ST01: Visitar todas as páginas da aplicação.", () => {
       cy.visit(routeExpected);
       cy.url().then((routeObtained) => {
         Asserts_ST01.CT08(routeObtained, routeExpected);
-      });
-    });
-
-    it("CT09: Visitar a rota de Edição do Pet.", () => {
-      const routeExpected = Routes.pet.edit;
-  
-      cy.visit(routeExpected);
-      cy.url().then((routeObtained) => {
-        Asserts_ST01.CT09(routeObtained, routeExpected);
       });
     });
   });

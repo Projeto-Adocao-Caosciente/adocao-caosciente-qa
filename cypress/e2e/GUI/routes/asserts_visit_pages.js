@@ -18,8 +18,8 @@ class Asserts_ST01 {
   }
 
   CT02(routeValue, routeExpected) {
-    const customSuccessMessage = "[Rotas] A página de Cadastro foi visitada com sucesso.";
-    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Cadastro.";
+    const customSuccessMessage = "[Rotas] A página de Cadastro de ONG foi visitada com sucesso.";
+    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Cadastro de ONG.";
 
     expected(
       routeValue,
@@ -31,8 +31,8 @@ class Asserts_ST01 {
   }
 
   CT03(routeValue, routeExpected) {
-    const customSuccessMessage = "[Rotas] A página de Recuperação de Senha foi visitada com sucesso.";
-    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Recuperação de Senha.";
+    const customSuccessMessage = "[Rotas] A página de Cadastro de Adotante foi visitada com sucesso.";
+    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Cadastro de Adotante.";
 
     expected(
       routeValue,
