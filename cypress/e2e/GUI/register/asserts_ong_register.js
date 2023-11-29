@@ -91,7 +91,7 @@ class Asserts_ST03 {
     cy.validateAttribute(
       locatorsRegister.ong.foundationDate,
       "aria-invalid",
-      false,
+      true,
       customSuccessMessage("Data de Fundação"),
       customErrorMessage("Data de Fundação")
     );

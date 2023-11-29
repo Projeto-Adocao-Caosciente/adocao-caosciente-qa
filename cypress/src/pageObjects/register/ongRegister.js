@@ -55,6 +55,7 @@ class ongRegister {
     this.fillStateField(ongData.getState());
     this.fillCityField(ongData.getCity());
     this.fillPhoneNumberField(ongData.getPhoneNumber());
+    this.fillFoundationDateField(ongData.getFoundationDate());
     this.fillPasswordField(ongData.getPassword());
     this.fillConfirmPasswordField(ongData.getPassword());
 

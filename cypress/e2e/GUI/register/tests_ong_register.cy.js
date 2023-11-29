@@ -65,7 +65,7 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => 
     });
 
     it("CT12: Preenchimento de Apenas os Campos Obrigatórios.", () => {
-      const ongData = ongRegister.fillAllRequiredFields();
+      const ongData = ongRegister.fillAllRequiredFields(true);
 
       ongRegister.registerOng();
       login.loginWithoutValidation(ongData.getCnpj(), ongData.getPassword());
@@ -82,9 +82,6 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => 
     });
 
     it("CT23: Tentativa de Criação de uma ONG com campos fora da Formatação Esperada.", () => {
-    });
-
-    it("CT24: Tentativa de Criação de uma ONG não preenchendo Campos Obrigatórios.", () => {
     });
   });
 
