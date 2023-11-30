@@ -1,6 +1,15 @@
 const locatorsNavbar = {
-    userInfo: 'app-navbar ul > li:nth-child(1) > a',
-    logoutButton: 'app-navbar ul > li:nth-child(3) > button',
+    userInfo: {
+        name: 'nav > header > div:last > div > span:nth-child(1)',
+        type: 'nav > header > div:last > div > span:nth-child(2)'
+    },
+
+    avatarButton: 'nav > header > div:last > button',
+
+    avatar: {
+        editProfile: 'div > ul[aria-label="Profile Actions"] > li[data-key="edit"]',
+        logout: 'div > ul[aria-label="Profile Actions"] > li[data-key="logout"]'
+    }
 };
 
 export default { locatorsNavbar };
