@@ -6,17 +6,17 @@ const faker_br = require("faker-br");
 
 class adopterDto {
   constructor() {
-    this._profilePhoto = this._getRandomImage();
     this._name = faker.person.fullName();
     this._shortName = this._name.split(" ")[0].toLowerCase().replace(".", "");
     this._cpf = faker_br.br.cpf();
     this._birthDate = faker.date.past({refDate: "2005-01-01"}).toISOString().split("T")[0];
-    this._gender = faker.random.arrayElement(["Masculino", "Feminino"]);
+    this._gender = faker.helpers.arrayElements(["Masculino", "Feminino", "Prefiro não dizer"], { min: 1, max: 1 });
     this._email = `ac_adopter_${this._shortName}@mailinator.com`;
     this._phoneNumber = faker_br.phone.phoneNumber("(##) #####-####");
     this._address = faker_br.address.streetAddress();
-    this._zipCode = faker_br.address.zipCode();
+    this._zipCode = faker_br.address.zipCodeValid();
     this._city = faker_br.address.city();
+    this._state = faker_br.address.stateAbbr();
     this._password = generateRandomPassword();
 
     this._saveDataInFile();
@@ -30,17 +30,6 @@ class adopterDto {
     const fileType = "JSON";
 
     cy.saveDataInFile(filePath, fileName, fileType, adopterData)
-  }
-
-  _getRandomImage() {
-    const pathImage = "adopter/profilePhoto/image";
-    const randomNumber = Math.floor(Math.random() * 5) + 1;
-
-    return `${pathImage}${randomNumber}.jpg`;
-  }
-
-  getProfilePhoto() {
-    return this._profilePhoto;
   }
 
   getName() {
@@ -85,6 +74,58 @@ class adopterDto {
 
   getState() {
     return this._state;
+  }
+
+  getPassword() {
+    return this._password;
+  }
+
+  getConfirmPassword() {
+    return this._confirmPassword;
+  }
+
+  setName(name) {
+    this._name = name;
+  }
+
+  setShortName(shortName) {
+    this._shortName = shortName;
+  }
+
+  setCpf(cpf) {
+    this._cpf = cpf;
+  }
+
+  setBirthDate(birthDate) {
+    this._birthDate = birthDate;
+  }
+
+  setGender(gender) {
+    this._gender = gender;
+  }
+
+  setEmail(email) {
+    this._email = email;
+  }
+
+  setPhoneNumber(phoneNumber) {
+    this._phoneNumber = phoneNumber;
+  }
+
+  setAddress(address) {
+    this._address = address;
+  }
+
+  setZipCode(zipCode) {
+    this._zipCode = zipCode;
+  }
+
+  setCity(city) {
+    this._city = city;
+  }
+
+  setState(state) {
+    this._state = state;
   }
 
   setPassword(password) {

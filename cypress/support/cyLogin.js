@@ -36,6 +36,8 @@ Cypress.Commands.add(
 
       // These checks must be evaluated according to the application and may be optional for specific applications.
       cy.checkLoggedRoute(userType);
+      // TODO: FIX THIS CODE
+      //cy.checkUserProfile(userType);
     };
 
     const validate = () => {
@@ -79,6 +81,7 @@ Cypress.Commands.add(
     customFailureMessage = null,
     timeout = 5000
   ) => {
+    // TODO: Fix this assertion for the assert a specific attribute
     const routeExpected = Routes.home;
 
     const customSuccessMessageDefault = customSuccessMessage

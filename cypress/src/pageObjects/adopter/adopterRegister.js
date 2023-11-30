@@ -1,6 +1,6 @@
 // Locators & Routes
 import { Routes } from "../../routes/routes";
-import { locatorsRegister } from "../../locators/pages/register/locatorsOngRegister";
+import { locatorsAdopterRegister } from "../../locators/pages/register/locatorsAdopterRegister";
 import { locatorsToast } from "../../locators/components/locatorsToast";
 
 // Data Transfer Objects
@@ -20,12 +20,29 @@ import promisify from "cypress-promise";
 class adopterRegister {
   constructor() {}
 
-  fillAllFields(uploadImage = false) {
+  fillAllFields() {
     const adopterData = new adopterDto();
 
-    if (uploadImage) {
-      this.setProfilePhoto(adopterData.getProfilePhoto());
-    }
+    this.fillNameField(adopterData.getName());
+    this.fillCpfField(adopterData.getCpf());
+    this.fillBirthDateField(adopterData.getBirthDate());
+    this.selectGender(adopterData.getGender());
+    this.fillEmailField(adopterData.getEmail());
+    this.fillPhoneNumberField(adopterData.getPhoneNumber());
+    this.fillAddressField(adopterData.getAddress());
+    this.fillZipCodeField(adopterData.getZipCode());
+    this.fillCityField(adopterData.getCity());
+    this.fillStateField(adopterData.getState());
+    this.fillPasswordField(adopterData.getPassword());
+    this.fillConfirmPasswordField(adopterData.getPassword());
+
+    console.log(adopterData)
+
+    return adopterData;
+  }
+
+  fillAllRequiredFields() {
+    const adopterData = new adopterDto();
 
     this.fillNameField(adopterData.getName());
     this.fillCpfField(adopterData.getCpf());
@@ -41,33 +58,6 @@ class adopterRegister {
     this.fillConfirmPasswordField(adopterData.getPassword());
 
     return adopterData;
-  }
-
-  fillAllRequiredFields(uploadImage = false) {
-    const adopterData = new adopterDto();
-
-    if (uploadImage) {
-      this.setProfilePhoto(adopterData.getProfilePhoto());
-    }
-
-    this.fillNameField(adopterData.getName());
-    this.fillCpfField(adopterData.getCpf());
-    this.fillBirthDateField(adopterData.getBirthDate());
-    this.selectGender(adopterData.getGender());
-    this.fillEmailField(adopterData.getEmail());
-    this.fillPhoneNumberField(adopterData.getPhoneNumber());
-    this.fillAddressField(adopterData.getAddress());
-    this.fillZipCodeField(adopterData.getZipCode());
-    this.fillCityField(adopterData.getCity());
-    this.fillStateField(adopterData.getState());
-    this.fillPasswordField(adopterData.getPassword());
-    this.fillConfirmPasswordField(adopterData.getPassword());
-
-    return adopterData;
-  }
-
-  setProfilePhoto(profilePhoto) {
-    cy.get(locatorsAdopterRegister.profilePhoto).attachFile(profilePhoto);
   }
 
   fillNameField(name) {
@@ -83,7 +73,8 @@ class adopterRegister {
   }
 
   selectGender(gender) {
-    cy.get(locatorsAdopterRegister.gender).type(gender);
+    cy.get(locatorsAdopterRegister.gender.select).click();
+    cy.get(locatorsAdopterRegister.gender.option(gender)).click();
   }
 
   fillEmailField(email) {
@@ -119,17 +110,17 @@ class adopterRegister {
   }
 
   clickOnRegisterButton() {
-    cy.get(locatorsRegister.navigation.registerButton).click();
+    cy.get(locatorsAdopterRegister.navigation.registerButton).click();
   }
 
   registeradopter() {
-    cy.get(locatorsRegister.navigation.registerButton).click();
+    cy.get(locatorsAdopterRegister.navigation.registerButton).click();
 
     this._checksIfRegisterIsConfirmed();
   }
 
   clickOnAlreadyHaveAnAccount() {
-    cy.get(locatorsRegister.navigation.alreadyHaveAnAccount).click();
+    cy.get(locatorsAdopterRegister.navigation.alreadyHaveAnAccount).click();
   }
 
   _checksIfRegisterIsConfirmed() {

@@ -193,8 +193,6 @@ class mailinatorService {
   async getEmailContent(formatContent = "html") {
     this._viewEmailInFormat(formatContent);
 
-    // TODO: A maioria dos conteudos são IFRAME, verificar como pegar o conteudo em iframe com o cypress
-
     if (formatContent === "links") {
         cy.fail("[Mailinator] Para obter o conteúdo do E-mail no formato de Link, utilize outro método.");
         throw new Error("[Mailinator] Para obter o conteúdo do E-mail no formato de Link, utilize outro método.");

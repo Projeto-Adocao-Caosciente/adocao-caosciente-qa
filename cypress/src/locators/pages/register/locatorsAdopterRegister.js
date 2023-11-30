@@ -3,7 +3,7 @@ const locatorsAdopterRegister = {
   profilePhoto: 'input[type="file"]',
   name: 'input[name="name"]:last',
   cpf: 'input[name="itr"]',
-  birthDate: 'input[name="birthDate"]',
+  birthDate: 'input[name="birthdate"]',
   gender: {
     select: 'button[aria-haspopup="listbox"]',
     option: (child) => `ul[role="listbox"] li[value=${child}]`,

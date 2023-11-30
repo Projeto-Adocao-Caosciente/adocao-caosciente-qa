@@ -1,8 +1,8 @@
 // Locators and Routes
-import { Routes } from "../../../src/routes/routes";
-import { expected } from "../../../src/util/util";
-import { locatorsOngRegister } from "../../../src/locators/pages/register/locatorsOngRegister";
-import { locatorsToast } from "../../../src/locators/components/locatorsToast";
+import { Routes } from "../../../../../src/routes/routes";
+import { expected } from "../../../../../src/util/util";
+import { locatorsOngRegister } from "../../../../../src/locators/pages/register/locatorsOngRegister";
+import { locatorsToast } from "../../../../../src/locators/components/locatorsToast";
 
 class Asserts_ST03 {
   constructor() {
