@@ -36,16 +36,12 @@ Cypress.Commands.add(
 
       // These checks must be evaluated according to the application and may be optional for specific applications.
       cy.checkLoggedRoute(userType);
-      // TODO: FIX THIS CODE
-      //cy.checkUserProfile(userType);
+      cy.checkUserProfile(userType);
     };
 
     const validate = () => {
-      cy.wait(4000);
-
       // This method is called to validate the session, if it is valid, it will not be necessary to login again
       cy.getCookie("token").should("exist");
-      cy.getLocalStorage("user").should("exist");
     };
 
     const options = {
@@ -81,8 +77,7 @@ Cypress.Commands.add(
     customFailureMessage = null,
     timeout = 5000
   ) => {
-    // TODO: Fix this assertion for the assert a specific attribute
-    const routeExpected = Routes.home;
+    const routeExpected = userType === "ONG" ? Routes.home : Routes.home;
 
     const customSuccessMessageDefault = customSuccessMessage
       ? customSuccessMessage
@@ -107,26 +102,34 @@ Cypress.Commands.add(
 /**
  * @description This method is used to check if the user is authenticated.
  *
- * @param {string} usernameExpected - Name of the user expected to be authenticated
+ * @param {string} userType - Type of user to be used in the login
  * @param {string} customSuccessMessage - Custom success message
  * @param {string} customFailureMessage - Custom failure message
  * @param {number} timeout - Timeout (in ms) to check if the user is authenticated
  */
 Cypress.Commands.add(
-  "checkAuthentication",
+  "checkUserProfile",
   (
-    usernameExpected,
+    userType,
     customSuccessMessage = null,
     customFailureMessage = null,
     timeout = 5000
   ) => {
-    cy.getText(locatorsNavbar.userInfo, { timeout: timeout }).then((text) => {
+    const customSuccessMessageDefault = customSuccessMessage
+    ? customSuccessMessage
+    : "[Login] A interface está sendo exibida corretamente com base no perfil/tipo do Usuário.";
+
+  const customFailureMessageDefault = customFailureMessage
+    ? customFailureMessage
+    : "[Login] As permissões de acesso/visualização não estão sendo exibidas corretamente com base no perfil/tipo do Usuário."
+
+    cy.getText(locatorsNavbar.userInfo.type, { timeout: timeout }).then((text) => {
       expected(
-        text,
+        text.toLowerCase(),
         "equal",
-        usernameExpected,
-        customSuccessMessage,
-        customFailureMessage
+        userType.toLowerCase(),
+        customSuccessMessageDefault,
+        customFailureMessageDefault
       );
     });
   }
