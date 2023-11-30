@@ -1,7 +1,7 @@
 // Locators and Routes
 import { Routes } from "../../../src/routes/routes";
 import { expected } from "../../../src/util/util";
-import { locatorsRegister } from "../../../src/locators/pages/register/locatorsRegister";
+import { locatorsOngRegister } from "../../../src/locators/pages/register/locatorsOngRegister";
 import { locatorsToast } from "../../../src/locators/components/locatorsToast";
 
 class Asserts_ST03 {
@@ -17,7 +17,7 @@ class Asserts_ST03 {
     };
 
     cy.validateAttribute(
-      locatorsRegister.ong.profilePhotoInput,
+      locatorsOngRegister.profilePhotoInput,
       "aria-invalid",
       true,
       customSuccessMessage("Imagem de Perfil"),
@@ -25,7 +25,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.name,
+      locatorsOngRegister.name,
       "aria-invalid",
       true,
       customSuccessMessage("Nome da ONG"),
@@ -33,7 +33,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.cnpj,
+      locatorsOngRegister.cnpj,
       "aria-invalid",
       true,
       customSuccessMessage("CNPJ"),
@@ -41,7 +41,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.email,
+      locatorsOngRegister.email,
       "aria-invalid",
       true,
       customSuccessMessage("E-mail"),
@@ -49,7 +49,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.state,
+      locatorsOngRegister.state,
       "aria-invalid",
       true,
       customSuccessMessage("Estado"),
@@ -57,7 +57,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.city,
+      locatorsOngRegister.city,
       "aria-invalid",
       true,
       customSuccessMessage("Cidade"),
@@ -65,7 +65,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.phoneNumber,
+      locatorsOngRegister.phoneNumber,
       "aria-invalid",
       true,
       customSuccessMessage("Telefone"),
@@ -73,7 +73,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.programsAndActivities,
+      locatorsOngRegister.programsAndActivities,
       "aria-invalid",
       false,
       customSuccessMessage("Programas e Atividades"),
@@ -81,7 +81,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.mission,
+      locatorsOngRegister.mission,
       "aria-invalid",
       false,
       customSuccessMessage("Missão"),
@@ -89,7 +89,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.foundationDate,
+      locatorsOngRegister.foundationDate,
       "aria-invalid",
       true,
       customSuccessMessage("Data de Fundação"),
@@ -97,7 +97,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.password,
+      locatorsOngRegister.password,
       "aria-invalid",
       true,
       customSuccessMessage("Senha"),
@@ -105,7 +105,7 @@ class Asserts_ST03 {
     );
 
     cy.validateAttribute(
-      locatorsRegister.ong.confirmPassword,
+      locatorsOngRegister.confirmPassword,
       "aria-invalid",
       true,
       customSuccessMessage("Confirmação de Senha"),
@@ -118,7 +118,7 @@ class Asserts_ST03 {
     const customErrorMessage = "[Cadastro - ONG] Houve um problema ao validar a formatação do campo CNPJ."
 
     cy.validateAttribute(
-      locatorsRegister.ong.cnpj,
+      locatorsOngRegister.cnpj,
       "aria-invalid",
       true,
       customSuccessMessage,
@@ -131,7 +131,7 @@ class Asserts_ST03 {
     const customErrorMessage = "[Cadastro - ONG] Houve um problema ao validar a formatação do campo E-mail."
 
     cy.validateAttribute(
-      locatorsRegister.ong.email,
+      locatorsOngRegister.email,
       "aria-invalid",
       true,
       customSuccessMessage,
@@ -144,7 +144,7 @@ class Asserts_ST03 {
     const customErrorMessage = "[Cadastro - ONG] Houve um problema ao validar a formatação do campo Telefone."
 
     cy.validateAttribute(
-      locatorsRegister.ong.phoneNumber,
+      locatorsOngRegister.phoneNumber,
       "aria-invalid",
       true,
       customSuccessMessage,

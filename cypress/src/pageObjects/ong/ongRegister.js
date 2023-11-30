@@ -1,6 +1,6 @@
 // Locators & Routes
 import { Routes } from "../../routes/routes";
-import { locatorsRegister } from "../../locators/pages/register/locatorsRegister";
+import { locatorsRegister } from "../../locators/pages/register/locatorsOngRegister";
 import { locatorsToast } from "../../locators/components/locatorsToast";
 
 // Data Transfer Objects
@@ -63,53 +63,53 @@ class ongRegister {
   }
 
   setProfilePhoto(profilePhoto) {
-    cy.get(locatorsRegister.ong.profilePhoto).attachFile(profilePhoto);
+    cy.get(locatorsOngRegister.profilePhoto).attachFile(profilePhoto);
   }
 
   fillNameField(name) {
-    cy.get(locatorsRegister.ong.name).type(name);
+    cy.get(locatorsOngRegister.name).type(name);
   }
 
   fillCnpjField(cnpj) {
-    cy.get(locatorsRegister.ong.cnpj).type(cnpj);
+    cy.get(locatorsOngRegister.cnpj).type(cnpj);
   }
 
   fillEmailField(email) {
-    cy.get(locatorsRegister.ong.email).type(email);
+    cy.get(locatorsOngRegister.email).type(email);
   }
 
   fillStateField(state) {
-    cy.get(locatorsRegister.ong.state).type(state);
+    cy.get(locatorsOngRegister.state).type(state);
   }
 
   fillCityField(city) {
-    cy.get(locatorsRegister.ong.city).type(city);
+    cy.get(locatorsOngRegister.city).type(city);
   }
 
   fillPhoneNumberField(phoneNumber) {
-    cy.get(locatorsRegister.ong.phoneNumber).type(phoneNumber);
+    cy.get(locatorsOngRegister.phoneNumber).type(phoneNumber);
   }
 
   fillProgramsAndActivitiesField(programsAndActivities) {
-    cy.get(locatorsRegister.ong.programsAndActivities).type(
+    cy.get(locatorsOngRegister.programsAndActivities).type(
       programsAndActivities
     );
   }
 
   fillMissionField(mission) {
-    cy.get(locatorsRegister.ong.mission).type(mission);
+    cy.get(locatorsOngRegister.mission).type(mission);
   }
 
   fillFoundationDateField(foundationDate) {
-    cy.get(locatorsRegister.ong.foundationDate).type(foundationDate);
+    cy.get(locatorsOngRegister.foundationDate).type(foundationDate);
   }
 
   fillPasswordField(password) {
-    cy.get(locatorsRegister.ong.password).type(password);
+    cy.get(locatorsOngRegister.password).type(password);
   }
 
   fillConfirmPasswordField(confirmPassword) {
-    cy.get(locatorsRegister.ong.confirmPassword).type(confirmPassword);
+    cy.get(locatorsOngRegister.confirmPassword).type(confirmPassword);
   }
 
   clickOnRegisterButton() {
