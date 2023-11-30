@@ -115,7 +115,9 @@ Cypress.Commands.add(
     customFailureMessage = null,
     timeout = 5000
   ) => {
-    const customSuccessMessageDefault = customSuccessMessage
+    userType === "ADOPTER" ? userType = "Adotante" : userType = userType;
+
+  const customSuccessMessageDefault = customSuccessMessage
     ? customSuccessMessage
     : "[Login] A interface está sendo exibida corretamente com base no perfil/tipo do Usuário.";
 

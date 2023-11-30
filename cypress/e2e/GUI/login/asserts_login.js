@@ -63,7 +63,7 @@ class Asserts_ST00 {
     );
   }
 
-  CT04() {
+  CT04(credentials) {
     const customSuccessMessage = "[Login] O Login de uma ONG com Credenciais Válidas foi realizado com sucesso.";
     const customErrorMessage = "[Login] Não foi possível realizar o Login de uma ONG com Credenciais Válidas.";
 
@@ -84,9 +84,11 @@ class Asserts_ST00 {
       customSuccessMessage,
       customErrorMessage
     );
+
+    cy.checkUserProfile(credentials.userType);
   }
 
-  CT05() {
+  CT05(credentials) {
     const customSuccessMessage = "[Login] O Login de um Adotante com Credenciais Válidas foi realizado com sucesso.";
     const customErrorMessage = "[Login] Não foi possível realizar o Login de um Adotante com Credenciais Válidas.";
 
@@ -107,29 +109,8 @@ class Asserts_ST00 {
       customSuccessMessage,
       customErrorMessage
     );
-  }
 
-  CT06() {
-    const customSuccessMessage = "[Login] O Login de um Voluntário com Credenciais Válidas foi realizado com sucesso.";
-    const customErrorMessage = "[Login] Não foi possível realizar o Login de um Voluntário com Credenciais Válidas.";
-
-    cy.url().should(($routeValue) => {
-      expected(
-        $routeValue,
-        "equal",
-        Routes.baseUrl + Routes.home,
-        customSuccessMessage,
-        customErrorMessage
-      );
-    });
-
-    cy.elementExpected(
-      locatorsToast.success,
-      "should",
-      "exist",
-      customSuccessMessage,
-      customErrorMessage
-    );
+    cy.checkUserProfile(credentials.userType);
   }
 
   CT07() {
@@ -178,32 +159,9 @@ class Asserts_ST00 {
     });
   }
 
-  CT09() {
-    const customSuccessMessage = "[Login] As Credenciais Inválidas de um Voluntário não permitiram o Login.";
-    const customErrorMessage = "[Login] Houve um erro ao tentar realizar Login de um Voluntário com Credenciais Inválidas.";
-
-    cy.elementExpected(
-      locatorsToast.error,
-      "should",
-      "exist",
-      customSuccessMessage,
-      customErrorMessage
-    );
-    
-    cy.url().should(($routeValue) => {
-      expected(
-        $routeValue,
-        "equal",
-        Routes.baseUrl + Routes.login,
-        customSuccessMessage,
-        customErrorMessage
-      );
-    });
-  }
-
   CT10(routeValue, routeExpected) {
-    const customSuccessMessage = "[Rotas] A página de Cadastro foi visitada com sucesso.";
-    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Cadastro.";
+    const customSuccessMessage = "[Rotas] A página de Cadastro de Adotante foi visitada com sucesso.";
+    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Cadastro de Adotante.";
 
     expected(
       routeValue,
@@ -215,8 +173,8 @@ class Asserts_ST00 {
   }
 
   CT11(routeValue, routeExpected) {
-    const customSuccessMessage = "[Rotas] A página de Recuperar Senha foi visitada com sucesso.";
-    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Recuperar Senha.";
+    const customSuccessMessage = "[Rotas] A página de Cadastro de ONG foi visitada com sucesso.";
+    const customErrorMessage = "[Rotas] Não foi possível visitar a página de Cadastro de ONG.";
 
     expected(
       routeValue,

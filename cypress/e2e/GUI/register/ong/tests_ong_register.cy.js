@@ -22,7 +22,6 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => 
     });
 
     it("CT02: Validar formato específico do campo CNPJ/CPF.", () => {
-      // TODO: Change for the correct validation (11111111111111) and nothing happens 1234
       const invalidCnpj = "1234";
 
       ongRegister.fillCnpjField(invalidCnpj);

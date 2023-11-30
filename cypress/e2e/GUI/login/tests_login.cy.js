@@ -39,45 +39,33 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
     });
   });
 
-  context.skip("Context 02: Validar Cenários de Login com Credenciais Válidas", () => {
+  context("Context 02: Validar Cenários de Login com Credenciais Válidas", () => {
     it("CT04: Validar Login de uma ONG com Credenciais Válidas.", () => {
       const ongCredentials = {
-        username: "12345678901234",
-        password: "senha123",
+        username: "27352107000155",
+        password: "Teste123*",
         userType: "ONG",
       }
 
       login.loginWithoutValidation(ongCredentials.username, ongCredentials.password);
       
-      Asserts_ST00.CT04();
+      Asserts_ST00.CT04(ongCredentials);
     });
 
     it("CT05: Validar Login de um Adotante com Credenciais Válidas.", () => {
       const adopterCredentials = {
-        username: "",
-        password: "",
+        username: "37139142815",
+        password: "Teste123*",
         userType: "ADOPTER",
       }
 
       login.loginWithoutValidation(adopterCredentials.username, adopterCredentials.password);
 
-      Asserts_ST00.CT05();
-    });
-
-    it("CT06: Validar Login de um Voluntário com Credenciais Válidas.", () => {
-      const voluntaryCredentials = {
-        username: "",
-        password: "",
-        userType: "VOLUNTARY",
-      }
-
-      login.loginWithoutValidation(voluntaryCredentials.username, voluntaryCredentials.password);
-      
-      Asserts_ST00.CT06();
+      Asserts_ST00.CT05(adopterCredentials);
     });
   });
 
-  context.skip("Context 03: Validar Cenários de Login com Credenciais Incorretas", () => {
+  context("Context 03: Validar Cenários de Login com Credenciais Incorretas", () => {
     it("CT07: Validar Login de uma ONG com Credenciais Incorretas.", () => {
       const ongCredentials = {
         username: "99999999999999",
@@ -92,8 +80,8 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
 
     it("CT08: Validar Login de um Adotante com Credenciais Incorretas.", () => {
       const adopterCredentials = {
-        username: "",
-        password: "",
+        username: "11111111111",
+        password: "!DETG%BJO0",
         userType: "ADOPTER",
       }
 
@@ -101,35 +89,23 @@ describe("ST00: Análise do Funcionamento da Página de Login.", () => {
 
       Asserts_ST00.CT08();
     });
-
-    it("CT09: Validar Login de um Voluntário com Credenciais Incorretas.", () => {
-      const voluntaryCredentials = {
-        username: "",
-        password: "",
-        userType: "VOLUNTARY",
-      }
-
-      login.loginWithoutValidation(voluntaryCredentials.username, voluntaryCredentials.password);
-      
-      Asserts_ST00.CT09();
-    });
   });
 
   context("Context 04: Validar Redirecionamento de Links na Página de Login.", () => {
-    it("CT10: Validar a funcionalidade do botão 'Cadastre-se'.", () => {
-      const routeExpected = Routes.register;
+    it("CT10: Validar a funcionalidade do botão 'Cadastre-se como Adotante'.", () => {
+      const routeExpected = Routes.register.adopter;
   
-      login.clickOnRegister();
+      login.clickOnRegisterAdopter();
   
       cy.url().then((routeObtained) => {
           Asserts_ST00.CT10(routeObtained, routeExpected);
       });
     });
 
-    it.skip("CT11: Validar a funcionalidade do botão 'Recuperar Senha'.", () => {
-      const routeExpected = Routes.recoverPassword;
+    it("CT11: Validar a funcionalidade do botão 'Cadastre-se como ONG'.", () => {
+      const routeExpected = Routes.register.ong;
   
-      login.clickOnRecoverPassword();
+      login.clickOnRegisterOng();
   
       cy.url().then((routeObtained) => {
           Asserts_ST00.CT11(routeObtained, routeExpected);

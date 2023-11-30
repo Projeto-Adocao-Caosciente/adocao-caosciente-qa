@@ -14,7 +14,7 @@ class login {
   constructor() {
   }
 
-  loginWithoutValidation(username, password, userType = "ONG") {    
+  loginWithoutValidation(username, password) {    
     cy.get(locatorsLogin.user).type(username);
     cy.get(locatorsLogin.password).type(password, { log: false });
     cy.get(locatorsLogin.loginButton).click();
@@ -28,12 +28,12 @@ class login {
     cy.get(locatorsLogin.loginButton).click();
   }
 
-  clickOnRecoverPassword() {
-    cy.get(locatorsLogin.RecoverPassword).click();
+  clickOnRegisterOng() {
+    cy.get(locatorsLogin.register.ong).click();
   }
 
-  clickOnRegister() {
-    cy.get(locatorsLogin.register).click();
+  clickOnRegisterAdopter() {
+    cy.get(locatorsLogin.register.adopter).click();
   }
 }
 

@@ -22,7 +22,6 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de Adotante", (
     });
 
     it("CT02: Validar formato específico do campo CPF.", () => {
-      // TODO: Change for the correct validation (11111111111111) and nothing happens 1234
       const invalidCpf = "1234";
 
       adopterRegister.fillCpfField(invalidCpf);
@@ -41,7 +40,7 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de Adotante", (
     });
   });
 
-  context.only("Context 02: Cenários de Sucesso de Criação de Adotante.", () => {
+  context("Context 02: Cenários de Sucesso de Criação de Adotante.", () => {
     it("CT11: Preenchimento de Todos os Campos.", () => {
       const adopterData = adopterRegister.fillAllFields(true);
 

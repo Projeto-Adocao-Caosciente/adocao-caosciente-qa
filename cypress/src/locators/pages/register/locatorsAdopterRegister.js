@@ -6,7 +6,7 @@ const locatorsAdopterRegister = {
   birthDate: 'input[name="birthdate"]',
   gender: {
     select: 'button[aria-haspopup="listbox"]',
-    option: (child) => `ul[role="listbox"] li[value=${child}]`,
+    option: (child) => `ul[role="listbox"] li[value="${child}"]`,
   },
   email: 'input[name="email"]',
   phoneNumber: 'input[name="phone"]',
