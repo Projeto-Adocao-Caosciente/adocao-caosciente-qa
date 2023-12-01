@@ -21,10 +21,6 @@ describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => 
 
       Asserts_ST05.CT01();
     });
-
-    it("CT04: Validar formato específico do campo Imagem da PET", () => {
-      //TODO: Waiting for Add validation for profile photo
-    });
   });
 
   context("Context 02: Cenários de Sucesso de Criação de PET.", () => {

@@ -5,19 +5,32 @@ import { faker } from "@faker-js/faker";
 const faker_br = require("faker-br");
 
 class ongDto {
-  constructor() {
-    this._profilePhoto = this._getRandomImage();
-    this._name = faker.person.fullName();
-    this._shortName = this._name.split(" ")[0].toLowerCase().replace(".", "");
-    this._cnpj = faker_br.br.cnpj();
-    this._email = `ac_ong_${this._shortName}@mailinator.com`;
-    this._state = faker_br.address.state();
-    this._city = faker_br.address.city();
-    this._phoneNumber = faker_br.phone.phoneNumber("(##) #####-####");
-    this._programsAndActivities = faker.lorem.paragraph();
-    this._mission = faker.lorem.paragraph();
-    this._foundationDate = faker.date.past({refDate: "2020-01-01"}).toISOString().split("T")[0];
-    this._password = generateRandomPassword();
+  constructor({
+    profilePhoto,
+    name,
+    shortName,
+    cnpj,
+    email,
+    state,
+    city,
+    phoneNumber,
+    programsAndActivities,
+    mission,
+    foundationDate,
+    password,
+  } = {}) {
+    this._profilePhoto = profilePhoto || this._getRandomImage();
+    this._name = name || faker.person.fullName();
+    this._shortName = shortName || this._name.split(' ')[0].toLowerCase().replace('.', '');
+    this._cnpj = cnpj || faker_br.br.cnpj();
+    this._email = email || `ac_ong_${this._shortName}@mailinator.com`;
+    this._state = state || faker_br.address.state();
+    this._city = city || faker_br.address.city();
+    this._phoneNumber = phoneNumber || faker_br.phone.phoneNumber('(##) #####-####');
+    this._programsAndActivities = programsAndActivities || faker.lorem.paragraph({ sentences: 1});
+    this._mission = mission || faker.lorem.paragraph({ sentences: 1});
+    this._foundationDate = foundationDate || faker.date.past({ refDate: '2020-01-01' }).toISOString().split('T')[0];
+    this._password = password || generateRandomPassword();
 
     this._saveDataInFile();
   }
@@ -29,7 +42,7 @@ class ongDto {
     const fileName = `[ONG]${this._shortName}Credentials.json`;
     const fileType = "JSON";
 
-    cy.saveDataInFile(filePath, fileName, fileType, ongData)
+    cy.saveDataInFile(filePath, fileName, fileType, ongData);
   }
 
   _getRandomImage() {

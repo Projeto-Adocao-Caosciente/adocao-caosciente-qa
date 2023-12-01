@@ -1,12 +1,7 @@
 // Locators & Routes
 import { Routes } from "../../routes/routes";
-import { locatorsRegister } from "../../locators/pages/register/locatorsOngRegister";
+import { locatorsOngRegister } from "../../locators/pages/register/locatorsOngRegister";
 import { locatorsToast } from "../../locators/components/locatorsToast";
-
-// Data Transfer Objects
-import { ongDto } from "../../dto/ong/ongDto";
-
-// Components Objects
 
 // Utils
 import {
@@ -20,9 +15,7 @@ import promisify from "cypress-promise";
 class ongRegister {
   constructor() {}
 
-  fillAllFields(uploadImage = false) {
-    const ongData = new ongDto();
-
+  fillAllFields(ongData, uploadImage = false) {
     if (uploadImage) {
       this.setProfilePhoto(ongData.getProfilePhoto());
     }
@@ -42,9 +35,7 @@ class ongRegister {
     return ongData;
   }
 
-  fillAllRequiredFields(uploadImage = false) {
-    const ongData = new ongDto();
-
+  fillAllRequiredFields(ongData, uploadImage = false) {
     if (uploadImage) {
       this.setProfilePhoto(ongData.getProfilePhoto());
     }
@@ -113,17 +104,17 @@ class ongRegister {
   }
 
   clickOnRegisterButton() {
-    cy.get(locatorsRegister.navigation.registerButton).click();
+    cy.get(locatorsOngRegister.navigation.registerButton).click();
   }
 
-  registerOng() {
-    cy.get(locatorsRegister.navigation.registerButton).click();
+  registerOng(checksIfRegisterIsConfirmed = true) {
+    cy.get(locatorsOngRegister.navigation.registerButton).click();
 
-    this._checksIfRegisterIsConfirmed();
+    checksIfRegisterIsConfirmed ? this._checksIfRegisterIsConfirmed() : null;
   }
 
   clickOnAlreadyHaveAnAccount() {
-    cy.get(locatorsRegister.navigation.alreadyHaveAnAccount).click();
+    cy.get(locatorsOngRegister.navigation.alreadyHaveAnAccount).click();
   }
 
   _checksIfRegisterIsConfirmed() {

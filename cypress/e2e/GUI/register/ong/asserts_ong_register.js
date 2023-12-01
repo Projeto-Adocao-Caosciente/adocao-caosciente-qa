@@ -1,8 +1,8 @@
 // Locators and Routes
-import { Routes } from "../../../../../src/routes/routes";
-import { expected } from "../../../../../src/util/util";
-import { locatorsOngRegister } from "../../../../../src/locators/pages/register/locatorsOngRegister";
-import { locatorsToast } from "../../../../../src/locators/components/locatorsToast";
+import { Routes } from "../../../../src/routes/routes";
+import { expected } from "../../../../src/util/util";
+import { locatorsOngRegister } from "../../../../src/locators/pages/register/locatorsOngRegister";
+import { locatorsToast } from "../../../../src/locators/components/locatorsToast";
 
 class Asserts_ST03 {
   constructor() {
@@ -191,6 +191,32 @@ class Asserts_ST03 {
 
     cy.elementExpected(
       locatorsToast.success,
+      "should",
+      "exist",
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT21() {
+    const customSuccessMessage = "[Cadastro - ONG] Não foi possível cadastrar a ONG, pois o CNPJ já está vinculado à outra ONG.";
+    const customErrorMessage = "[Cadastro - ONG] Houve uma violação de chave duplicada de CNPJ ao tentar cadastrar a ONG.";
+
+    cy.elementExpected(
+      locatorsToast.error,
+      "should",
+      "exist",
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT22() {
+    const customSuccessMessage = "[Cadastro - ONG] Não foi possível cadastrar a ONG, pois o E-mail já está vinculado à outra ONG.";
+    const customErrorMessage = "[Cadastro - ONG] Houve uma violação de chave duplicada de E-mail ao tentar cadastrar a ONG.";
+
+    cy.elementExpected(
+      locatorsToast.error,
       "should",
       "exist",
       customSuccessMessage,
