@@ -4,6 +4,73 @@ import { expected } from "../../../../src/util/util";
 import { locatorsOngRegister } from "../../../../src/locators/pages/register/locatorsOngRegister";
 import { locatorsToast } from "../../../../src/locators/components/locatorsToast";
 
+const RULES_REQUIRED_FIELDS = [
+  {
+    fieldLocator: locatorsOngRegister.profilePhotoInput,
+    label: "Imagem de Perfil",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.name,
+    label: "Nome da ONG",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.cnpj,
+    label: "CNPJ",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.email,
+    label: "E-mail",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.state,
+    label: "Estado",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.city,
+    label: "Cidade",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.phoneNumber,
+    label: "Telefone",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.programsAndActivities,
+    label: "Programas e Atividades",
+    isRequired: false,
+  },
+  {
+    fieldLocator: locatorsOngRegister.mission,
+    label: "Missão",
+    isRequired: false,
+  },
+  {
+    fieldLocator: locatorsOngRegister.foundationDate,
+    label: "Data de Fundação",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.password,
+    label: "Senha",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsOngRegister.confirmPassword,
+    label: "Confirmação de Senha",
+    isRequired: true,
+  },
+]
+
+const RULES_FIELD_VALIDATION = [
+
+]
+
 class Asserts_ST03 {
   constructor() {
   }
@@ -12,74 +79,11 @@ class Asserts_ST03 {
     const customSuccessMessage = (field) => `[Cadastro - ONG] O campo ${field} está com obrigatoriedade correta.`;
     const customErrorMessage = (field) => `[Cadastro - ONG] Houve um problema ao validar a obrigatoriedade do campo ${field}.`
 
-    const rulesValidationOfFields = [
-      {
-        fieldLocator: locatorsOngRegister.profilePhotoInput,
-        label: "Imagem de Perfil",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.name,
-        label: "Nome da ONG",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.cnpj,
-        label: "CNPJ",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.email,
-        label: "E-mail",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.state,
-        label: "Estado",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.city,
-        label: "Cidade",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.phoneNumber,
-        label: "Telefone",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.programsAndActivities,
-        label: "Programas e Atividades",
-        isInvalid: false,
-      },
-      {
-        fieldLocator: locatorsOngRegister.mission,
-        label: "Missão",
-        isInvalid: false,
-      },
-      {
-        fieldLocator: locatorsOngRegister.foundationDate,
-        label: "Data de Fundação",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.password,
-        label: "Senha",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.confirmPassword,
-        label: "Confirmação de Senha",
-        isInvalid: true,
-      },
-    ]
-
-    rulesValidationOfFields.forEach((rule) => {
+    RULES_REQUIRED_FIELDS.forEach((rule) => {
       cy.validateAttribute(
         rule.fieldLocator,
         "aria-invalid",
-        rule.isInvalid,
+        rule.isRequired,
         customSuccessMessage(rule.label),
         customErrorMessage(rule.label)
       );
@@ -185,7 +189,7 @@ class Asserts_ST03 {
   }
 
   CT22() {
-    const customSuccessMessage = "[Cadastro - ONG] ";
+    const customSuccessMessage = "[Cadastro - ONG] Não foi possível cadastrar a ONG, pois o E-mail já está vinculado à outra ONG.";
     const customErrorMessage = "[Cadastro - ONG] Houve uma violação de chave duplicada de E-mail ao tentar cadastrar a ONG.";
 
     cy.elementExpected(
@@ -201,70 +205,7 @@ class Asserts_ST03 {
     const customSuccessMessage = (field) => `[Cadastro - ONG] O campo ${field} está com a validação correta de mínimo de caracteres permitidos/máscara esperada.`;
     const customErrorMessage = (field) => `[Cadastro - ONG] Houve um problema ao validar o mínimo de caracteres permitidos/máscara esperada do campo ${field}.`
 
-    const rulesValidationOfFields = [
-      {
-        fieldLocator: locatorsOngRegister.profilePhotoInput,
-        label: "Imagem de Perfil",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.name,
-        label: "Nome da ONG",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.cnpj,
-        label: "CNPJ",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.email,
-        label: "E-mail",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.state,
-        label: "Estado",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.city,
-        label: "Cidade",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.phoneNumber,
-        label: "Telefone",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.programsAndActivities,
-        label: "Programas e Atividades",
-        isInvalid: false,
-      },
-      {
-        fieldLocator: locatorsOngRegister.mission,
-        label: "Missão",
-        isInvalid: false,
-      },
-      {
-        fieldLocator: locatorsOngRegister.foundationDate,
-        label: "Data de Fundação",
-        isInvalid: false,
-      },
-      {
-        fieldLocator: locatorsOngRegister.password,
-        label: "Senha",
-        isInvalid: true,
-      },
-      {
-        fieldLocator: locatorsOngRegister.confirmPassword,
-        label: "Confirmação de Senha",
-        isInvalid: true,
-      },
-    ]
-
-    rulesValidationOfFields.forEach((rule) => {
+    RULES_FIELD_VALIDATION.forEach((rule) => {
       cy.validateAttribute(
         rule.fieldLocator,
         "aria-invalid",

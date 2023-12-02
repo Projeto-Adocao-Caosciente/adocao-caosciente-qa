@@ -88,7 +88,32 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de Adotante", (
     });
 
     it("CT23: Tentativa de Criação de uma adopter com campos fora da Formatação Esperada.", () => {
-      //TODO: FIX THIS
+      const invalidName = "A";
+      const invalidCpf = "1234";
+      const invalidEmail = "invalidEmail@"
+      const invalidPhoneNumber = "1234";
+      const invalidAddress = "A";
+      const invalidCep = "1234";
+      const invalidCity = "A";
+      const invalidState = "A";
+      const invalidPassword = "12";
+
+      const adopterData = new adopterDto({
+        name: invalidName,
+        cpf: invalidCpf,
+        email: invalidEmail,
+        phoneNumber: invalidPhoneNumber,
+        address: invalidAddress,
+        cep: invalidCep,
+        city: invalidCity,
+        state: invalidState,
+        password: invalidPassword,
+      });
+
+      adopterRegister.fillAllFields(adopterData);
+      adopterRegister.registerAdopter(false);
+
+      Asserts_ST07.CT23();
     });
   });
 

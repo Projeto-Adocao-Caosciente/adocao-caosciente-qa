@@ -4,6 +4,122 @@ import { expected } from "../../../../src/util/util";
 import { locatorsAdopterRegister } from "../../../../src/locators/pages/register/locatorsAdopterRegister";
 import { locatorsToast } from "../../../../src/locators/components/locatorsToast";
 
+const RULES_REQUIRED_FIELDS = [
+  {
+    fieldLocator: locatorsAdopterRegister.name,
+    label: "Nome do Adotante",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.cpf,
+    label: "CPF",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.birthDate,
+    label: "Data de Nascimento",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.email,
+    label: "E-mail",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.phoneNumber,
+    label: "Telefone",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.address,
+    label: "Endereço",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.zipCode,
+    label: "CEP",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.city,
+    label: "Cidade",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.state,
+    label: "Estado",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.password,
+    label: "Senha",
+    isRequired: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.confirmPassword,
+    label: "Confirmação de Senha",
+    isRequired: true,
+  },
+]
+
+const RULES_FIELD_VALIDATION = [
+  {
+    fieldLocator: locatorsAdopterRegister.name,
+    label: "Nome do Adotante",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.cpf,
+    label: "CPF",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.birthDate,
+    label: "Data de Nascimento",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.email,
+    label: "E-mail",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.phoneNumber,
+    label: "Telefone",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.address,
+    label: "Endereço",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.zipCode,
+    label: "CEP",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.city,
+    label: "Cidade",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.state,
+    label: "Estado",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.password,
+    label: "Senha",
+    isInvalid: true,
+  },
+  {
+    fieldLocator: locatorsAdopterRegister.confirmPassword,
+    label: "Confirmação de Senha",
+    isInvalid: true,
+  },
+]
+
 class Asserts_ST07 {
   constructor() {
   }
@@ -16,93 +132,15 @@ class Asserts_ST07 {
       return `[Cadastro - Adotante] Houve um problema ao validar a obrigatoriedade do campo ${field}.`
     };
 
-    cy.validateAttribute(
-      locatorsAdopterRegister.name,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Nome do Adotante"),
-      customErrorMessage("Nome do Adotante")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.cpf,
-      "aria-invalid",
-      true,
-      customSuccessMessage("CPF"),
-      customErrorMessage("CPF")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.birthDate,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Data de Nascimento"),
-      customErrorMessage("Data de Nascimento")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.email,
-      "aria-invalid",
-      true,
-      customSuccessMessage("E-mail"),
-      customErrorMessage("E-mail")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.phoneNumber,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Telefone"),
-      customErrorMessage("Telefone")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.address,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Endereço"),
-      customErrorMessage("Endereço")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.zipCode,
-      "aria-invalid",
-      true,
-      customSuccessMessage("CEP"),
-      customErrorMessage("CEP")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.city,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Cidade"),
-      customErrorMessage("Cidade")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.state,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Estado"),
-      customErrorMessage("Estado")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.password,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Senha"),
-      customErrorMessage("Senha")
-    );
-
-    cy.validateAttribute(
-      locatorsAdopterRegister.confirmPassword,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Confirmação de Senha"),
-      customErrorMessage("Confirmação de Senha")
-    );
+    RULES_REQUIRED_FIELDS.forEach((rule) => {
+      cy.validateAttribute(
+        rule.fieldLocator,
+        "aria-required",
+        rule.isRequired,
+        customSuccessMessage(rule.label),
+        customErrorMessage(rule.label)
+      );
+    });
   }
 
   CT02() {
@@ -201,6 +239,21 @@ class Asserts_ST07 {
       customSuccessMessage,
       customErrorMessage
     );
+  }
+
+  CT23() {
+    const customSuccessMessage = (field) => `[Cadastro - Adotante] O campo ${field} está com a validação correta de mínimo de caracteres permitidos/máscara esperada.`;
+    const customErrorMessage = (field) => `[Cadastro - Adotante] Houve um problema ao validar o mínimo de caracteres permitidos/máscara esperada do campo ${field}.`
+
+    RULES_FIELD_VALIDATION.forEach((rule) => {
+      cy.validateAttribute(
+        rule.fieldLocator,
+        "aria-invalid",
+        rule.isInvalid,
+        customSuccessMessage(rule.label),
+        customErrorMessage(rule.label)
+      );
+    });
   }
 
   CT31(routeValue, routeExpected) {

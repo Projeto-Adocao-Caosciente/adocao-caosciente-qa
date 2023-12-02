@@ -98,9 +98,9 @@ class petRegister {
     cy.get(locatorsPetRegister.navigation.cancel).click();
   }
 
-  registerPet() {
+  registerPet(checksIfRegisterIsConfirmed = true) {
     this.clickOnRegisterButton();
-    this._checksIfRegisterIsConfirmed();
+    checksIfRegisterIsConfirmed ? this._checksIfRegisterIsConfirmed() : null;
   }
 
   _checksIfRegisterIsConfirmed() {
@@ -111,11 +111,10 @@ class petRegister {
 
     cy.elementExpected(
       locatorsToast.success,
-      "should",
-      "exist",
+      "contains",
+      "Cadastro efetuado com sucesso!",
       customSuccessMessage,
-      customFailureMessage,
-      20000
+      customFailureMessage
     );
   }
 }

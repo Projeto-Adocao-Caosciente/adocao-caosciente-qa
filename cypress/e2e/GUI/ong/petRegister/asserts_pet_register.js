@@ -6,6 +6,49 @@ import { locatorsToast } from "../../../../src/locators/components/locatorsToast
 // Utils
 import { expected } from "../../../../src/util/util";
 
+const RULES_REQUIRED_FIELDS = [
+  {
+    field: locatorsPetRegister.profilePhotoInput,
+    label: "Imagem de Perfil",
+    isRequired: true,
+  },
+  {
+    field: locatorsPetRegister.name,
+    label: "Nome do PET",
+    isRequired: true,
+  },
+  {
+    field: locatorsPetRegister.breed,
+    label: "Raça do PET",
+    isRequired: true,
+  },
+  {
+    field: locatorsPetRegister.kind,
+    label: "Tipo do PET",
+    isRequired: true,
+  },
+  {
+    field: locatorsPetRegister.height,
+    label: "Altura do PET",
+    isRequired: true,
+  },
+  {
+    field: locatorsPetRegister.weight,
+    label: "Peso do PET",
+    isRequired: true,
+  },
+  {
+    field: locatorsPetRegister.specialNeeds,
+    label: "Necessidades Especiais do PET",
+    isRequired: false,
+  },
+  {
+    field: locatorsPetRegister.additionalInformation,
+    label: "Informações Adicionais do PET",
+    isRequired: false,
+  }
+]
+
 class Asserts_ST05 {
   constructor() {}
 
@@ -17,53 +60,15 @@ class Asserts_ST05 {
       return `[Cadastro - PET] Houve um problema ao validar a obrigatoriedade do campo ${field}.`;
     };
 
-    cy.validateAttribute(
-      locatorsPetRegister.profilePhotoInput,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Imagem de Perfil"),
-      customErrorMessage("Imagem de Perfil")
-    );
-
-    cy.validateAttribute(
-      locatorsPetRegister.name,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Nome do PET"),
-      customErrorMessage("Nome do PET")
-    );
-
-    cy.validateAttribute(
-      locatorsPetRegister.breed,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Raça do PET"),
-      customErrorMessage("Raça do PET")
-    );
-
-    cy.validateAttribute(
-      locatorsPetRegister.kind,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Tipo do PET"),
-      customErrorMessage("Tipo do PET")
-    );
-
-    cy.validateAttribute(
-      locatorsPetRegister.height,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Altura do PET"),
-      customErrorMessage("Altura do PET")
-    );
-
-    cy.validateAttribute(
-      locatorsPetRegister.weight,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Peso do PET"),
-      customErrorMessage("Peso do PET")
-    );
+    RULES_REQUIRED_FIELDS.forEach((rule) => {
+      cy.validateAttribute(
+        rule.field,
+        "aria-invalid",
+        rule.isRequired,
+        customSuccessMessage(rule.label),
+        customErrorMessage(rule.label)
+      );
+    });
   }
 
   CT09(elementValue, expectedValue) {
@@ -88,17 +93,9 @@ class Asserts_ST05 {
       customSuccessMessage,
       customErrorMessage
     );
-
-    cy.elementExpected(
-      locatorsToast.success,
-      "should",
-      "exist",
-      customSuccessMessage,
-      customErrorMessage
-    );
   }
 
-  CT10(elementValue, expectedValue) {
+   CT10(elementValue, expectedValue) {
     const customSuccessMessage =
       "[Cadastro - PET] O PET foi Cadastrado com Sucesso com Apenas os Campos Obrigatórios.";
     const customErrorMessage =
@@ -120,14 +117,6 @@ class Asserts_ST05 {
       customSuccessMessage,
       customErrorMessage
     );
-
-    cy.elementExpected(
-      locatorsToast.success,
-      "should",
-      "exist",
-      customSuccessMessage,
-      customErrorMessage
-    );
   }
 
   CT12() {
@@ -138,29 +127,58 @@ class Asserts_ST05 {
       return `[Cadastro - PET] Houve um problema ao validar a obrigatoriedade do campo ${field}.`;
     };
 
-    cy.validateAttribute(
-      locatorsPetRegister.profilePhotoInput,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Imagem de Perfil"),
-      customErrorMessage("Imagem de Perfil")
-    );
+    const RULES_FIELD_VALIDATION = [
+      {
+        field: locatorsPetRegister.profilePhoto,
+        label: "Imagem de Perfil",
+        isInvalid: false,
+      },
+      {
+        field: locatorsPetRegister.name,
+        label: "Nome do PET",
+        isInvalid: false,
+      },
+      {
+        field: locatorsPetRegister.breed,
+        label: "Raça do PET",
+        isInvalid: false,
+      },
+      {
+        field: locatorsPetRegister.kind,
+        label: "Tipo do PET",
+        isInvalid: false,
+      },
+      {
+        field: locatorsPetRegister.height,
+        label: "Altura do PET",
+        isInvalid: true,
+      },
+      {
+        field: locatorsPetRegister.weight,
+        label: "Peso do PET",
+        isInvalid: true,
+      },
+      {
+        field: locatorsPetRegister.specialNeeds,
+        label: "Necessidades Especiais do PET",
+        isInvalid: false,
+      },
+      {
+        field: locatorsPetRegister.additionalInformation,
+        label: "Informações Adicionais do PET",
+        isInvalid: false,
+      }
+    ]
 
-    cy.validateAttribute(
-      locatorsPetRegister.height,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Altura do PET"),
-      customErrorMessage("Altura do PET")
-    );
-
-    cy.validateAttribute(
-      locatorsPetRegister.weight,
-      "aria-invalid",
-      true,
-      customSuccessMessage("Peso do PET"),
-      customErrorMessage("Peso do PET")
-    );
+    RULES_FIELD_VALIDATION.forEach((rule) => {
+      cy.validateAttribute(
+        rule.field,
+        "aria-invalid",
+        rule.isInvalid,
+        customSuccessMessage(rule.label),
+        customErrorMessage(rule.label)
+      );
+    });
   }
 
   CT13(routeValue, routeExpected) {

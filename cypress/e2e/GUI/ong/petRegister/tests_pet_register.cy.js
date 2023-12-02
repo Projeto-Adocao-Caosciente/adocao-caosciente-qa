@@ -44,15 +44,13 @@ describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => 
   });
 
   context("Context 03: Cenários Alternativos de Criação de PET.", () => {
-    it("CT11: Tentativa de Criação de um PET com campos fora da Formatação Esperada.", () => {
-      //TODO: Waiting for Add validation for profile photo
-    });
+    it("CT11: Tentativa de Criação de um PET com campos fora da Formatação Esperada.", () => {});
 
     it("CT12: Tentativa de Criação de um PET não preenchendo Campos Obrigatórios.", () => {
       petRegister.fillNameField("PET01");
       petRegister.fillBreedField("Raça do PET01");
       petRegister.fillKindField("Tipo do PET01");
-      petRegister.registerPet();
+      petRegister.registerPet(false);
 
       Asserts_ST05.CT12();
     });

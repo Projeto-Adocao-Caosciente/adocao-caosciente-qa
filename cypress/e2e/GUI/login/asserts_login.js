@@ -79,8 +79,8 @@ class Asserts_ST00 {
 
     cy.elementExpected(
       locatorsToast.success,
-      "should",
-      "exist",
+      "contains",
+      "Login efetuado com sucesso!",
       customSuccessMessage,
       customErrorMessage
     );
@@ -104,8 +104,8 @@ class Asserts_ST00 {
 
     cy.elementExpected(
       locatorsToast.success,
-      "should",
-      "exist",
+      "contains",
+      "Login efetuado com sucesso!",
       customSuccessMessage,
       customErrorMessage
     );
@@ -119,8 +119,8 @@ class Asserts_ST00 {
 
     cy.elementExpected(
       locatorsToast.error,
-      "should",
-      "exist",
+      "contains",
+      "Usuário ou senha invalidos!",
       customSuccessMessage,
       customErrorMessage
     );
@@ -142,8 +142,8 @@ class Asserts_ST00 {
 
     cy.elementExpected(
       locatorsToast.error,
-      "should",
-      "exist",
+      "contains",
+      "Usuário ou senha invalidos!",
       customSuccessMessage,
       customErrorMessage
     );
