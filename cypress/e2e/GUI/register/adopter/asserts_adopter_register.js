@@ -177,6 +177,32 @@ class Asserts_ST07 {
     );
   }
 
+  CT21() {
+    const customSuccessMessage = "[Cadastro - Adotante] Não foi possível cadastrar a Adotante, pois o CPF já está vinculado à outra Adotante.";
+    const customErrorMessage = "[Cadastro - Adotante] Houve uma violação de chave duplicada de CPF ao tentar cadastrar a Adotante.";
+
+    cy.elementExpected(
+      locatorsToast.error,
+      "contains",
+      "Não foi possível realizar a operação desejada. O CPF informado já está cadastrado.",
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT22() {
+    const customSuccessMessage = "[Cadastro - Adotante] Não foi possível cadastrar a Adotante, pois o E-mail já está vinculado à outra Adotante.";
+    const customErrorMessage = "[Cadastro - Adotante] Houve uma violação de chave duplicada de E-mail ao tentar cadastrar a Adotante.";
+
+    cy.elementExpected(
+      locatorsToast.error,
+      "contains",
+      "Não foi possível realizar a operação desejada. O E-mail informado já está cadastrado.",
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
   CT31(routeValue, routeExpected) {
     const customSuccessMessage = "[Cadastro - Adotante] O redirecionamento para a página de Login ocorreu com sucesso.";
     const customErrorMessage = "[Cadastro - Adotante] Houve um problema ao redirecionar o usuário para a página de Login.";

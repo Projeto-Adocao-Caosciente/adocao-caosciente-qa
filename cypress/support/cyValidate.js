@@ -74,6 +74,14 @@ Cypress.Commands.add(
           });
           break;
       }
+    } else if (assert === "contains") {
+      cy.get(element, { timeout: timeout }).should(($element) => {
+        const isElementContains = $element.text().includes(expected);
+        const customMessage = isElementContains
+          ? customSuccessMessage
+          : customFailureMessage;
+        expect(isElementContains, customMessage).to.be.true;
+      });
     }
   }
 );

@@ -3,9 +3,6 @@ import { Routes } from "../../routes/routes";
 import { locatorsAdopterRegister } from "../../locators/pages/register/locatorsAdopterRegister";
 import { locatorsToast } from "../../locators/components/locatorsToast";
 
-// Data Transfer Objects
-import { adopterDto } from "../../dto/adopter/adopterDto";
-
 // Components Objects
 
 // Utils
@@ -20,9 +17,7 @@ import promisify from "cypress-promise";
 class adopterRegister {
   constructor() {}
 
-  fillAllFields() {
-    const adopterData = new adopterDto();
-
+  fillAllFields(adopterData) {
     this.fillNameField(adopterData.getName());
     this.fillCpfField(adopterData.getCpf());
     this.fillBirthDateField(adopterData.getBirthDate());
@@ -36,14 +31,10 @@ class adopterRegister {
     this.fillPasswordField(adopterData.getPassword());
     this.fillConfirmPasswordField(adopterData.getPassword());
 
-    console.log(adopterData)
-
     return adopterData;
   }
 
-  fillAllRequiredFields() {
-    const adopterData = new adopterDto();
-
+  fillAllRequiredFields(adopterData) {
     this.fillNameField(adopterData.getName());
     this.fillCpfField(adopterData.getCpf());
     this.fillBirthDateField(adopterData.getBirthDate());
@@ -113,10 +104,10 @@ class adopterRegister {
     cy.get(locatorsAdopterRegister.navigation.registerButton).click();
   }
 
-  registeradopter() {
+  registerAdopter(checksIfRegisterIsConfirmed = true) {
     cy.get(locatorsAdopterRegister.navigation.registerButton).click();
 
-    this._checksIfRegisterIsConfirmed();
+    checksIfRegisterIsConfirmed ? this._checksIfRegisterIsConfirmed() : null;
   }
 
   clickOnAlreadyHaveAnAccount() {

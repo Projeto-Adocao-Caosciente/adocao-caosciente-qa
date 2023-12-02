@@ -5,19 +5,32 @@ import { faker } from "@faker-js/faker";
 const faker_br = require("faker-br");
 
 class adopterDto {
-  constructor() {
-    this._name = faker.person.fullName();
-    this._shortName = this._name.split(" ")[0].toLowerCase().replace(".", "");
-    this._cpf = faker_br.br.cpf();
-    this._birthDate = faker.date.past({refDate: "2005-01-01"}).toISOString().split("T")[0];
-    this._gender = faker.helpers.arrayElements(["Masculino", "Feminino", "Prefiro não dizer"], { min: 1, max: 1 });
-    this._email = `ac_adopter_${this._shortName}@mailinator.com`;
-    this._phoneNumber = faker_br.phone.phoneNumber("(##) #####-####");
-    this._address = faker_br.address.streetAddress();
-    this._zipCode = faker_br.address.zipCodeValid();
-    this._city = faker_br.address.city();
-    this._state = faker_br.address.stateAbbr();
-    this._password = generateRandomPassword();
+  constructor({
+    name,
+    shortName,
+    cpf,
+    birthDate,
+    gender,
+    email,
+    phoneNumber,
+    address,
+    zipCode,
+    city,
+    state,
+    password,
+} = {}) {
+    this._name = name || faker.person.fullName();
+    this._shortName = shortName || this._name.split(' ')[0].toLowerCase().replace('.', '');
+    this._cpf = cpf || faker_br.br.cpf();
+    this._birthDate = birthDate || faker.date.past({ refDate: '2005-01-01' }).toISOString().split('T')[0];
+    this._gender = gender || faker.helpers.arrayElements(['Masculino', 'Feminino', 'Prefiro não dizer'], {min: 1, max: 1});
+    this._email = email || `ac_adopter_${this._shortName}@mailinator.com`;
+    this._phoneNumber = phoneNumber || faker_br.phone.phoneNumber('(##) #####-####');
+    this._address = address || faker_br.address.streetAddress();
+    this._zipCode = zipCode || faker_br.address.zipCodeValid();
+    this._city = city || faker_br.address.city();
+    this._state = state || faker_br.address.stateAbbr();
+    this._password = password || generateRandomPassword();
 
     this._saveDataInFile();
   }

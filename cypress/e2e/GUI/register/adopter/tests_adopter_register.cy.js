@@ -6,6 +6,9 @@ import { locatorsAdopterRegister } from "../../../../src/locators/pages/register
 import adopterRegister from "../../../../src/pageObjects/adopter/adopterRegister";
 import login from "../../../../src/pageObjects/login/login";
 
+// Data Transfer Objects
+import { adopterDto } from "../../../../src/dto/adopter/adopterDto";
+
 // Asserts to Suite Test 03: Análise do Funcionamento da Página de Cadastro de Adotante
 import Asserts_ST07 from "./asserts_adopter_register";
 
@@ -42,18 +45,21 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de Adotante", (
 
   context("Context 02: Cenários de Sucesso de Criação de Adotante.", () => {
     it("CT11: Preenchimento de Todos os Campos.", () => {
-      const adopterData = adopterRegister.fillAllFields(true);
+      const adopterData = new adopterDto();
 
-      adopterRegister.registeradopter();
+      adopterRegister.fillAllFields(adopterData);
+      adopterRegister.registerAdopter();
+
       login.loginWithoutValidation(adopterData.getCpf(), adopterData.getPassword());
 
       Asserts_ST07.CT11();
     });
 
     it("CT12: Preenchimento de Apenas os Campos Obrigatórios.", () => {
-      const adopterData = adopterRegister.fillAllRequiredFields(true);
+      const adopterData = new adopterDto();
 
-      adopterRegister.registeradopter();
+      adopterRegister.fillAllRequiredFields(adopterData);
+      adopterRegister.registerAdopter();
       login.loginWithoutValidation(adopterData.getCpf(), adopterData.getPassword());
 
       Asserts_ST07.CT12();
@@ -62,12 +68,27 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de Adotante", (
 
   context("Context 03: Cenários Alternativos de Criação de Adotante.", () => {
     it("CT21: Tentativa de Criação de uma adopter cujo CPF já está vinculado à outra adopter.", () => {
+      const cpfAlreadyRegistered = "37139142815";
+      const adopterData = new adopterDto({cpf: cpfAlreadyRegistered});
+
+      adopterRegister.fillAllFields(adopterData);
+      adopterRegister.registerAdopter(false);
+
+      Asserts_ST07.CT21();
     });
 
     it("CT22: Tentativa de Criação de uma adopter cujo E-mail já está cadastrado.", () => {
+      const emailAlreadyRegistered = "ac_adopter_test0@mailinator.com";
+      const adopterData = new adopterDto({email: emailAlreadyRegistered});
+
+      adopterRegister.fillAllFields(adopterData);
+      adopterRegister.registerAdopter(false);
+
+      Asserts_ST07.CT22();
     });
 
     it("CT23: Tentativa de Criação de uma adopter com campos fora da Formatação Esperada.", () => {
+      //TODO: FIX THIS
     });
   });
 

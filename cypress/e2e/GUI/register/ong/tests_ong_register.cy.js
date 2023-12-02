@@ -96,6 +96,28 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de ONG", () => 
     });
 
     it("CT23: Tentativa de Criação de uma ONG com campos fora da Formatação Esperada.", () => {
+      const invalidName = "A";
+      const invalidCnpj = "123456";
+      const invalidEmail = "invalidEmail@";
+      const invalidState = "A";
+      const invalidCity = "A";
+      const invalidPhoneNumber = "1234";
+      const invalidPassword = "12";
+
+      const ongData = new ongDto({
+        name: invalidName,
+        cnpj: invalidCnpj,
+        email: invalidEmail,
+        state: invalidState,
+        city: invalidCity,
+        phoneNumber: invalidPhoneNumber,
+        password: invalidPassword,
+      });
+
+      ongRegister.fillAllFields(ongData, true);
+      ongRegister.registerOng(false);
+
+      Asserts_ST03.CT23();
     });
   });
 

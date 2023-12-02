@@ -27,8 +27,8 @@ class ongDto {
     this._state = state || faker_br.address.state();
     this._city = city || faker_br.address.city();
     this._phoneNumber = phoneNumber || faker_br.phone.phoneNumber('(##) #####-####');
-    this._programsAndActivities = programsAndActivities || faker.lorem.paragraph({ sentences: 1});
-    this._mission = mission || faker.lorem.paragraph({ sentences: 1});
+    this._programsAndActivities = programsAndActivities || faker.lorem.sentences(1);
+    this._mission = mission || faker.lorem.sentences(1);
     this._foundationDate = foundationDate || faker.date.past({ refDate: '2020-01-01' }).toISOString().split('T')[0];
     this._password = password || generateRandomPassword();
 
