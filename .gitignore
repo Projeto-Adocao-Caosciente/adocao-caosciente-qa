@@ -1,6 +1,7 @@
 # Cypress Files
 cypress/downloads/
 cypress/screenshots/
+cypress/fixtures/massOfData/*.json
 cypress/videos/
 cypress.env.json
 reports/
