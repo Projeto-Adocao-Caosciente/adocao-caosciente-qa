@@ -30,7 +30,9 @@ class petList {
   }
 
   searchPet(name) {
+    cy.intercept("GET", `ong/animals?name=**`).as("searchPet");
     cy.get(locatorsPetList.actions.findPet).clear().type(name);
+    cy.wait("@searchPet");
   }
 
   async getListSizeOfPets() {
@@ -47,25 +49,32 @@ class petList {
 
   viewPetDetails(cardIndex) {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
+
+    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewDetails).click();
+    cy.wait("@getPetDetails");
   }
 
   viewFormsAssociatedWithPet(cardIndex) {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
 
+    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewForms).click();
+    cy.wait("@getPetDetails");
   }
 
   editPet(cardIndex) {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.edit);
-
+    
+    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
     cy.get(locatorsPetList.list.child(cardIndex).actions.edit).click();
+    cy.wait("@getPetDetails");
   }
 
   async getPetDetails(cardIndex) {
-    cy.intercept("GET", `ong/animal/**`).as("getPetDetails");
+    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
 
     this.viewPetDetails(cardIndex);
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);

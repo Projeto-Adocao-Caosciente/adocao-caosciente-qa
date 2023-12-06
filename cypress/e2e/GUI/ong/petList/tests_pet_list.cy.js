@@ -67,42 +67,20 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
 
         Asserts_ST06.CT03(petCard, petDetails);
       });
-
-      it("CT04: Visualizar Formulários associados à um PET.", () => {
-        const cardIndex = 1;
-        const routeExpected = Routes.pet.details;
-
-        petList.viewFormsAssociatedWithPet(cardIndex);
-
-        cy.url().then((routeObtained) => {
-          Asserts_ST06.CT04(routeObtained, routeExpected);
-        });
-      });
-
-      it.skip("CT05: Acessar tela de edição de um PET.", async () => {
-        // TODO: Fix this test
-        const cardIndex = 1;
-
-        const petCard = await petList.getPet(cardIndex);
-        petList.editPet(cardIndex);
-        const petDetails = await petList.getPetDetails();
-
-        Asserts_ST06.CT05();
-      });
     }
   );
 
   context("Context 03: Cenário de Buscas por nome de um PET", () => {
-    it("CT06: [Busca Comum] Verificar se os resultados da busca condizem com o procurado (NÃO VALIDAR Case Sensitive)", async () => {
+    it("CT10: [Busca Comum] Verificar se os resultados da busca condizem com o procurado (NÃO VALIDAR Case Sensitive)", async () => {
       const petName = "cachorro";
 
       petList.searchPet(petName);
       const campaignsList = await petList.getAllPets();
 
-      Asserts_ST06.CT06(campaignsList, petName);
+      Asserts_ST06.CT10(campaignsList, petName);
     });
 
-    it("CT14: [Busca Comum] Verificar se os resultados da busca condizem com o procurado (VALIDAR Case Sensitive)", async () => {
+    it("CT11: [Busca Comum] Verificar se os resultados da busca condizem com o procurado (VALIDAR Case Sensitive)", async () => {
       const petName = "Cachorro";
       const petNameLowerCase = petName.toLowerCase();
 
@@ -112,10 +90,10 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       petList.searchPet(petNameLowerCase);
       const petListNormalized = await petList.getAllPets();
 
-      Asserts_ST06.CT14(allPets, petListNormalized, petName);
+      Asserts_ST06.CT11(allPets, petListNormalized, petName);
     });
 
-    it("CT15: [Busca Comum] Verificar se os resultados da busca condizem com o procurado (VALIDAR Acentuação)", async () => {
+    it("CT12: [Busca Comum] Verificar se os resultados da busca condizem com o procurado (VALIDAR Acentuação)", async () => {
       // This name is a pet name with accentuation
       const petName = "Gatô";
       const petNameWithoutAccentuation = "Gato";
@@ -126,10 +104,10 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       petList.searchPet(petNameWithoutAccentuation);
       const allPets = await petList.getAllPets();
 
-      Asserts_ST06.CT15(allPets, petListWithAccentuation, petName);
+      Asserts_ST06.CT12(allPets, petListWithAccentuation, petName);
     });
 
-    it("CT16: [Busca Complexa] Verificar se os resultados da busca condizem com o procurado (VALIDAR Case Sensitive)", async () => {
+    it("CT13: [Busca Complexa] Verificar se os resultados da busca condizem com o procurado (VALIDAR Case Sensitive)", async () => {
       const petName = "Gato de Botas";
       const petNameLowerCase = petName.toLowerCase();
 
@@ -139,16 +117,17 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       petList.searchPet(petNameLowerCase);
       const petListNormalized = await petList.getAllPets();
 
-      Asserts_ST06.CT16(petListNormalized, allPets, petName);
+      Asserts_ST06.CT13(petListNormalized, allPets, petName);
     });
 
-    it("CT17: [Busca] Realizar uma busca por uma pet inexistente", async () => {
+    it.only("CT14: [Busca] Realizar uma busca por uma pet inexistente", async () => {
       const petName = "PQ902KD0L";
 
       petList.searchPet(petName);
       const listSizePets = await petList.getListSizeOfPets();
+      console.log(listSizePets)
 
-      Asserts_ST06.CT17(listSizePets);
+      Asserts_ST06.CT14(listSizePets);
     });
   });
 

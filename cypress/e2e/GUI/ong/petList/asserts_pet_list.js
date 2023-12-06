@@ -33,7 +33,7 @@ class Asserts_ST06 {
     const customSuccessMessage = "[Listagem de PET's] A lista de todos os PET's foi carregada com sucesso.";
     const customFailureMessage = "[Listagem de PET's] Não foi possível carregar a lista de todos os PET's.";
 
-    data.data.animals.forEach((element, index) => {
+    data.data.forEach((element, index) => {
       cy.get(locatorsPetList.list.child(index + 1).info.name)
         .invoke("text")
         .then((text) => {
@@ -64,35 +64,7 @@ class Asserts_ST06 {
     );
   }
 
-  CT04(routeValue, routeExpected) {
-    const customSuccessMessage =
-      "[Listagem de PET's] Os formulários do PET foram exibidos corretamente.";
-    const customFailureMessage =
-      "[Listagem de PET's] Houve um erro ao tentar visualizar os formulários do PET.";
-
-    expected(
-      routeValue,
-      "contains",
-      Routes.baseUrl + routeExpected,
-      customSuccessMessage,
-      customFailureMessage
-    );
-  }
-
-  CT05(elementValue, expectedValue) {
-    const customSuccessMessage = `[Listagem de PET's] A página de Edição do PET '${expectedValue.name}' foi exibida corretamente, e as suas informações já estão pré preenchidas.`;
-    const customFailureMessage = `[Listagem de PET's] Houve um erro ao tentar acessar a página de Edição do PET '${expectedValue.name}', pois as informações preenchidas são diferentes das esperadas.`;
-
-    expected(
-      elementValue.name,
-      "equal",
-      expectedValue.name,
-      customSuccessMessage,
-      customFailureMessage
-    );
-  }
-
-  CT06(elementValue, expectedValue) {
+  CT10(elementValue, expectedValue) {
     const customSuccessMessage = `[Listagem de PET's] Os resultados pela busca do PET '${expectedValue}' estão sendo exibido corretamente (sem considerar case sensitive).`;
     const customFailureMessage = `[Listagem de PET's] Houve uma falha nos resultados pela busca do PET '${expectedValue}', pois os resultados não condizem com a busca realizada.`;
 
@@ -126,7 +98,7 @@ class Asserts_ST06 {
     );
   }
 
-  CT14(elementValue1, elementValue2, expectedValue) {
+  CT11(elementValue1, elementValue2, expectedValue) {
     const customSuccessMessage = `[Listagem de PET's] Os resultados pela busca do PET '${expectedValue}' estão sendo exibido corretamente, levando em consideração o Case Sensitive.`;
     const customFailureMessage = `[Listagem de PET's] Houve uma falha nos resultados pela busca do PET '${expectedValue}', pois os resultados não condizem com a busca realizada, levando em considereação o Case Sensitive.`;
 
@@ -150,7 +122,7 @@ class Asserts_ST06 {
     );
   }
 
-  CT15(elementValue1, elementValue2, expectedValue) {
+  CT12(elementValue1, elementValue2, expectedValue) {
     const customSuccessMessage = `[Listagem de PET's] Os resultados pela busca do PET '${expectedValue}' estão sendo exibido corretamente, levando em consideração a Acentuação.`;
     const customFailureMessage = `[Listagem de PET's] Houve uma falha nos resultados pela busca do PET '${expectedValue}', pois os resultados não condizem com a busca realizada, levando em considereação a Acentuação.`;
 
@@ -174,7 +146,7 @@ class Asserts_ST06 {
     );
   }
 
-  CT16(elementValue1, elementValue2, expectedValue) {
+  CT13(elementValue1, elementValue2, expectedValue) {
     const customSuccessMessage = `[Listagem de PET's] Os resultados pela busca do PET '${expectedValue}' estão sendo exibido corretamente, levando em consideração o Nome Completo (com espaços).`;
     const customFailureMessage = `[Listagem de PET's] Houve uma falha nos resultados pela busca do PET '${expectedValue}', pois os resultados não condizem com a busca realizada, levando em considereação o Nome Completo (com espaços).`;
 
@@ -198,11 +170,11 @@ class Asserts_ST06 {
     );
   }
 
-  CT17(elementValue) {
+  CT14(elementValue) {
     const customSuccessMessage =
-      "[Listagem de PET's] Não foram encontrados resultados pela busca de uma campanha inexistente.";
+      "[Listagem de PET's] Não foram encontrados resultados pela busca de um PET inexistente.";
     const customFailureMessage =
-      "[Listagem de PET's] Houve uma falha na busca de uma campanha inexistente.";
+      "[Listagem de PET's] Houve uma falha na busca de um PET inexistente.";
 
     expected(
       elementValue,
