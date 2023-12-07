@@ -44,8 +44,8 @@ class cards {
     for (let i = 0; i < this.size; i++) {
       let cardObject = {};
       
-      for (const key of Object.keys(this.locatorsCard.child(i+1).info)) {
-        cardObject[key] = await promisify(cy.getText(this.locatorsCard.child(i+1).info[key]));
+      for (const key of Object.keys(this.locatorsCard.child(i).info)) {
+        cardObject[key] = await promisify(cy.getText(this.locatorsCard.child(i).info[key]));
       }
 
       cards.push(cardObject);

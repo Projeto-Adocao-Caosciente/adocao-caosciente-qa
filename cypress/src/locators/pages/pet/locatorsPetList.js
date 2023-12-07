@@ -1,26 +1,28 @@
 const locatorsPetList = {
   actions: {
-    registerPet: "section:first button",
-    findPet: 'section:nth-child(3) input[aria-label="Pesquisar por nome"]',
+    registerPet: "[data-selector='pet-register-button']",
+    findPet: '[data-selector="home-filter-input"]',
   },
 
   list: {
-    cards: "section:last > div",
-    card: (arg) => `section:last > div:nth-child(${arg})`,
+    cards: '[data-selector="pet-card"]',
+    card: (arg) => `[data-selector='pet-card']:nth(${arg})`,
 
     child: (arg) => {
-      const child = `section:last > div:nth-child(${arg})`;
+      const child = `[data-selector='pet-card']:nth(${arg})`;
       return {
         info: {
-          name: `${child} > div:last > p`,
+          name: `${child} [data-selector="pet-card-name"]`,
         },
         actions: {
-          viewDetails: `${child} > div:nth-child(2) button:first`,
-          viewForms: `${child} > div:nth-child(2) button:last`,
-          edit: `${child} > div:nth-child(2) button:first`,
+          viewDetails: `${child} [data-selector="pet-card-view-details-button"]`,
+          viewForms: `${child} [data-selector="pet-card-view-forms-button"]`,
         },
       };
     },
+
+    emptyList: '[data-selector="pet-empty-list"]',
+    errorList: '[data-selector="pet-error-list"]',
   },
 };
 
