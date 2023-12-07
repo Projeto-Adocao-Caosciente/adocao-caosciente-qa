@@ -1,5 +1,6 @@
 // Locators & Routes
 import { Routes } from "@routes/routes";
+import { ApiRoutes } from "@routes/apiRoutes";
 import { locatorsPetList } from "@locators/pages/pet/locatorsPetList";
 import { locatorsPetDetails } from "@locators/pages/pet/locatorsPetDetails";
 
@@ -30,7 +31,7 @@ class petList {
   }
 
   searchPet(name) {
-    cy.intercept("GET", `ong/animals?name=**`).as("searchPet");
+    cy.intercept("GET", ApiRoutes.ong.pet.search).as("searchPet");
     cy.get(locatorsPetList.actions.findPet).clear().type(name);
     cy.wait("@searchPet");
   }
@@ -50,7 +51,7 @@ class petList {
   viewPetDetails(cardIndex) {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
 
-    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
+    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewDetails).click();
     cy.wait("@getPetDetails");
   }
@@ -59,7 +60,7 @@ class petList {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
 
-    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
+    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewForms).click();
     cy.wait("@getPetDetails");
   }
@@ -68,13 +69,13 @@ class petList {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.edit);
     
-    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
+    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
     cy.get(locatorsPetList.list.child(cardIndex).actions.edit).click();
     cy.wait("@getPetDetails");
   }
 
   async getPetDetails(cardIndex) {
-    cy.intercept("GET", `ong/animals/**`).as("getPetDetails");
+    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
 
     this.viewPetDetails(cardIndex);
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
