@@ -9,8 +9,10 @@ class Asserts_ST06 {
   constructor() {}
 
   CT01(elementValue) {
-    const customSuccessMessage = "[Listagem de PET's] A listagem de PET's está sendo exibida corretamente.";
-    const customFailureMessage = "[Listagem de PET's] Houve um erro ao exibir a listagem de PET's.";
+    const customSuccessMessage =
+      "[Listagem de PET's] A listagem de PET's está sendo exibida corretamente.";
+    const customFailureMessage =
+      "[Listagem de PET's] Houve um erro ao exibir a listagem de PET's.";
 
     let hasElementNull = false;
 
@@ -30,11 +32,13 @@ class Asserts_ST06 {
   }
 
   CT02(data) {
-    const customSuccessMessage = "[Listagem de PET's] A lista de todos os PET's foi carregada com sucesso.";
-    const customFailureMessage = "[Listagem de PET's] Não foi possível carregar a lista de todos os PET's.";
+    const customSuccessMessage =
+      "[Listagem de PET's] A lista de todos os PET's foi carregada com sucesso.";
+    const customFailureMessage =
+      "[Listagem de PET's] Não foi possível carregar a lista de todos os PET's.";
 
     data.data.forEach((element, index) => {
-      cy.get(locatorsPetList.list.child(index + 1).info.name)
+      cy.get(locatorsPetList.list.child(index).info.name)
         .invoke("text")
         .then((text) => {
           const nameValue = text.trim();
@@ -51,7 +55,37 @@ class Asserts_ST06 {
     });
   }
 
-  CT03(elementValue, expectedValue) {
+  CT03() {
+    const customSuccessMessage =
+      "[Listagem de PET's] O Empty State da Listagem de PET's foi exibido corretamente.";
+    const customFailureMessage =
+      "[Listagem de PET's] Houve um erro ao exibir o Empty State na listagem de PET's.";
+
+    cy.elementExpected(
+      locatorsPetList.list.emptyList,
+      "should",
+      "exist",
+      customSuccessMessage,
+      customFailureMessage
+    );
+  }
+
+  CT04() {
+    const customSuccessMessage =
+      "[Listagem de PET's] O tratamento de erro na listagem de PET's foi exibido corretamente.";
+    const customFailureMessage =
+      "[Listagem de PET's] Houve um erro ao exibir o tratamento de erro na listagem de PET's.";
+
+    cy.elementExpected(
+      locatorsPetList.list.errorList,
+      "should",
+      "exist",
+      customSuccessMessage,
+      customFailureMessage
+    );
+  }
+
+  CT05(elementValue, expectedValue) {
     const customSuccessMessage = `[Listagem de PET's] O resumo do PET '${expectedValue.name}' e os seus detalhes foram exibidos corretamente.`;
     const customFailureMessage = `[Listagem de PET's] Houve um erro ao exibir o resumo do PET '${expectedValue.name}' e os seus detalhes, pois as informações são distintas.`;
 
@@ -176,10 +210,10 @@ class Asserts_ST06 {
     const customFailureMessage =
       "[Listagem de PET's] Houve uma falha na busca de um PET inexistente.";
 
-    expected(
-      elementValue,
-      "equal",
-      0,
+    cy.elementExpected(
+      locatorsPetList.list.emptyList,
+      "should",
+      "exist",
       customSuccessMessage,
       customFailureMessage
     );

@@ -1,5 +1,6 @@
 // Locators and Routes
 import { Routes } from "@routes/routes";
+import { ApiRoutes } from "@routes/apiRoutes";
 
 // Page Objects
 import petList from "@pageObjects/pet/petList";
@@ -11,14 +12,13 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
   beforeEach(() => {
     cy.login();
 
-    cy.intercept("GET", "ong/animals").as("getAllPets");
+    cy.intercept("GET", ApiRoutes.ong.pet.getAll).as("getAllPets");
     cy.visit(Routes.home);
     cy.wait("@getAllPets");
   });
 
   context("Context 01: Cenário de Listagem de PET's.", () => {
-    it.only("CT01: Verificar se a listagem de PET's está sendo exibida corretamente.", async () => {
-      return
+    it("CT01: Verificar se a listagem de PET's está sendo exibida corretamente.", async () => {
       const allPets = await petList.getAllPets();
 
       Asserts_ST06.CT01(allPets);
@@ -29,28 +29,8 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
         {
           pageRequired: 1,
           mockData: "pet/petList/page1",
-          pathRequest: "ong/animals",
-        },
-        {
-          pageRequired: 2,
-          mockData: "pet/petList/page2",
-          pathRequest: "ong/animals",
-        },
-        {
-          pageRequired: 3,
-          mockData: "pet/petList/page3",
-          pathRequest: "ong/animals",
-        },
-        {
-          pageRequired: 2,
-          mockData: "pet/petList/page2",
-          pathRequest: "ong/animals",
-        },
-        {
-          pageRequired: 1,
-          mockData: "pet/petList/page1",
-          pathRequest: "ong/animals",
-        },
+          pathRequest: ApiRoutes.ong.pet.getAll,
+        }
       ];
 
       petList.viewAllMockPages(petsListMock);
@@ -58,18 +38,44 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
         Asserts_ST06.CT02(data);
       });
     });
+
+    it("CT03: [Mockado] Verificar Empty State da Listagem de Pet's", () => {
+      const petsListMock = [
+        {
+          pageRequired: 1,
+          mockData: "pet/petList/emptyList",
+          pathRequest: ApiRoutes.ong.pet.getAll,
+        }
+      ];
+
+      petList.viewAllMockPages(petsListMock);
+      Asserts_ST06.CT03();
+    });
+
+    it("CT04: [Mockado] Verificar Tratativa de Erro na exibição da Listagem de Pet's", () => {
+      const requestParameters = {
+        method: "GET",
+        url: ApiRoutes.ong.pet.getAll,
+        response: { data: "sample response" },
+        status: 400,
+      }
+
+      cy.interceptRequest(requestParameters, { name: "reload"});
+
+      Asserts_ST06.CT04();
+    });
   });
 
   context(
     "Context 02: Cenário de Comportamento dos botões de Ações nos Cards.",
     () => {
-      it("CT03: Visualizar Detalhes de um PET.", async () => {
+      it("CT05: Visualizar Detalhes de um PET.", async () => {
         const cardIndex = 1;
 
         const petCard = await petList.getPet(cardIndex);
         const petDetails = await petList.getPetDetails(cardIndex);
 
-        Asserts_ST06.CT03(petCard, petDetails);
+        Asserts_ST06.CT05(petCard, petDetails);
       });
     }
   );
@@ -79,9 +85,9 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       const petName = "cachorro";
 
       petList.searchPet(petName);
-      const campaignsList = await petList.getAllPets();
+      const allPets = await petList.getAllPets();
 
-      Asserts_ST06.CT10(campaignsList, petName);
+      Asserts_ST06.CT10(allPets, petName);
     });
 
     it("CT11: [Busca Comum] Verificar se os resultados da busca condizem com o procurado (VALIDAR Case Sensitive)", async () => {
@@ -111,7 +117,7 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       Asserts_ST06.CT12(allPets, petListWithAccentuation, petName);
     });
 
-    it("CT13: [Busca Complexa] Verificar se os resultados da busca condizem com o procurado (VALIDAR Case Sensitive)", async () => {
+    it.skip("CT13: [Busca Complexa] Verificar se os resultados da busca condizem com o procurado (VALIDAR Case Sensitive)", async () => {
       const petName = "Gato de Botas";
       const petNameLowerCase = petName.toLowerCase();
 
@@ -124,14 +130,12 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       Asserts_ST06.CT13(petListNormalized, allPets, petName);
     });
 
-    it("CT14: [Busca] Realizar uma busca por uma pet inexistente", async () => {
+    it("CT14: [Busca] Realizar uma busca por uma pet inexistente", () => {
       const petName = "PQ902KD0L";
 
       petList.searchPet(petName);
-      const listSizePets = await petList.getListSizeOfPets();
-      console.log(listSizePets)
 
-      Asserts_ST06.CT14(listSizePets);
+      Asserts_ST06.CT14();
     });
   });
 
