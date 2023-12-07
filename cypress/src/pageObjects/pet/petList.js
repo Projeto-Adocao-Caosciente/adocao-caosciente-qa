@@ -89,14 +89,14 @@ class petList {
     const weight = await promisify(cy.getValue(locatorsPetDetails.weight));
     const additionalInformation = await promisify(cy.getValue(locatorsPetDetails.additionalInformation));
 
-    return {
+    return new petDto({
       name: name,
       breed: breed,
       kind: kind,
       height: height,
       weight: weight,
       additionalInformation: additionalInformation,
-    };
+    });
   }
 
   /**

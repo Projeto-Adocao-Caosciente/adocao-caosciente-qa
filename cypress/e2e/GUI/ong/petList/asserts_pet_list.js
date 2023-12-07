@@ -88,11 +88,11 @@ class Asserts_ST06 {
   CT05(elementValue, expectedValue) {
     const customSuccessMessage = `[Listagem de PET's] O resumo do PET '${expectedValue.name}' e os seus detalhes foram exibidos corretamente.`;
     const customFailureMessage = `[Listagem de PET's] Houve um erro ao exibir o resumo do PET '${expectedValue.name}' e os seus detalhes, pois as informações são distintas.`;
-
+    console.log(expectedValue)
     expected(
       elementValue.name,
       "equal",
-      expectedValue.name,
+      expectedValue.getName(),
       customSuccessMessage,
       customFailureMessage
     );

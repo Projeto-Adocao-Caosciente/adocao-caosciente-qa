@@ -2,33 +2,58 @@
 import { faker } from "@faker-js/faker";
 
 class petDto {
-  constructor() {
-    this.setType();
-    this.setAttributes();
+  constructor({
+    type,
+    image,
+    name,
+    breed,
+    kind,
+    height,
+    weight,
+    specialNeeds,
+    additionalInformation,
+  } = {}) {
+    this.setType(type);
+    this.setAttributes(
+      image,
+      name,
+      breed,
+      kind,
+      height,
+      weight,
+      specialNeeds,
+      additionalInformation
+    );
   }
 
-  setType() {
+  setType(type = "random") {
     const typesOfPets = ["dogs", "cats", "dinosaurs", "ponies", "rabbits"];
-    this.type = faker.helpers.arrayElement(typesOfPets);
+
+    type === "random"
+      ? (this.type = faker.helpers.arrayElement(typesOfPets))
+      : (this.type = "default");
   }
 
-  setAttributes() {
+  setAttributes(image, name, breed, kind, height, weight, specialNeeds, additionalInformation) {
     const file = require(`../../../fixtures/pet/data/${this.type}/${this.type}.json`);
     const randomElement = faker.helpers.arrayElement(file);
 
-    this._image = randomElement.image;
-    this._name = `[${randomElement.kind}] ${randomElement.breed}`;
-    this._breed = randomElement.breed;
-    this._kind = randomElement.kind;
-    this._height = String(randomElement.height).replace(".", ",");
-    this._weight = String(randomElement.weight).replace(".", ",");
-    this._specialNeeds = this._getRandomSpecialNeeds();
-    this._additionalInformation = faker.lorem.paragraph(1);
+    this._image = image || randomElement.image;
+    this._name = name || randomElement.name;
+    this._breed = breed || randomElement.breed;
+    this._kind = kind || randomElement.kind;
+    this._height = height || String(randomElement.height).replace(".", ",");
+    this._weight = weight || String(randomElement.weight).replace(".", ",");
+    this._specialNeeds = specialNeeds || this._getRandomSpecialNeeds();
+    this._additionalInformation = additionalInformation || faker.lorem.paragraph(1);
   }
 
   _getRandomSpecialNeeds() {
     const options = ["cegueira", "surdez"];
-    const specialNeeds = faker.helpers.arrayElements(options, { min: 1, max: options.length - 1 });
+    const specialNeeds = faker.helpers.arrayElements(options, {
+      min: 1,
+      max: options.length - 1,
+    });
 
     return specialNeeds;
   }

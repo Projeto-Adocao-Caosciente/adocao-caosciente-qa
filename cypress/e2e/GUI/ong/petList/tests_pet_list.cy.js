@@ -69,7 +69,7 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
   context(
     "Context 02: Cenário de Comportamento dos botões de Ações nos Cards.",
     () => {
-      it("CT05: Visualizar Detalhes de um PET.", async () => {
+      it.only("CT05: Visualizar Detalhes de um PET.", async () => {
         const cardIndex = 1;
 
         const petCard = await petList.getPet(cardIndex);
