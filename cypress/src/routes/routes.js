@@ -23,4 +23,4 @@ let Routes = {
   },
 };
 
-export default { Routes };
+export { Routes };

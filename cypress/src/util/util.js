@@ -181,7 +181,6 @@ function expected(
       cy.expect(value).to.not.contain(expected, customMessage);
       break;
 
-    default:
       break;
   }
 }
@@ -263,9 +262,4 @@ function elementExpected(
   }
 }
 
-export default {
-  getValue,
-  getSize,
-  expected,
-  elementExpected,
-};
+export { getValue, getSize, expected, elementExpected };
