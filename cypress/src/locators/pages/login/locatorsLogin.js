@@ -14,4 +14,4 @@ const locatorsLogin = {
   },
 };
 
-export default { locatorsLogin };
+export { locatorsLogin };

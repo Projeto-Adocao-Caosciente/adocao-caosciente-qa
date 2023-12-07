@@ -19,4 +19,4 @@ const locatorsOngRegister = {
   },
 };
 
-export default { locatorsOngRegister };
+export { locatorsOngRegister };

@@ -18,4 +18,4 @@ const locatorsPetRegister = {
   },
 };
 
-export default { locatorsPetRegister };
+export { locatorsPetRegister };

@@ -1,10 +1,10 @@
 // Locators and Routes
-import { Routes } from "../../../../src/routes/routes";
-import { locatorsPetRegister } from "../../../../src/locators/pages/pet/locatorsPetRegister";
-import { locatorsToast } from "../../../../src/locators/components/locatorsToast";
+import { Routes } from "@routes/routes";
+import { locatorsPetRegister } from "@locators/pages/pet/locatorsPetRegister";
+import { locatorsToast } from "@locators/components/locatorsToast";
 
 // Utils
-import { expected } from "../../../../src/util/util";
+import { expected } from "@util/util";
 
 const RULES_REQUIRED_FIELDS = [
   {

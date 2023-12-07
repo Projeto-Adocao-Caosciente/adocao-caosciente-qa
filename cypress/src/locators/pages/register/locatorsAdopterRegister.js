@@ -23,4 +23,4 @@ const locatorsAdopterRegister = {
   },
 };
 
-export default { locatorsAdopterRegister };
+export { locatorsAdopterRegister };

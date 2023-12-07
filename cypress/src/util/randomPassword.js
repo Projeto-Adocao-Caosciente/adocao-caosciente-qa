@@ -25,4 +25,4 @@ function generateRandomPassword() {
   return password;
 }
 
-export default { generateRandomPassword };
+export { generateRandomPassword };

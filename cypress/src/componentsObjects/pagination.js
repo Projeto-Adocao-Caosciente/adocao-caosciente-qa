@@ -1,8 +1,8 @@
 // Locators
-import { locatorsPagination } from "../locators/components/locatorsPagination";
+import { locatorsPagination } from "@locators/components/locatorsPagination";
 
 // Utils
-import { getValue, expected } from "../util/util";
+import { getValue, expected } from "@util/util";
 
 class pagination {
   constructor() {
@@ -136,4 +136,4 @@ class pagination {
   }
 }
 
-export default { pagination };
+export { pagination };

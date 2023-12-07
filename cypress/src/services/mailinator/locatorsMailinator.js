@@ -78,4 +78,4 @@ const locatorsEmailPaneMailinator = {
   },
 };
 
-export default { locatorsInboxPaneMailinator, locatorsEmailPaneMailinator };
+export { locatorsInboxPaneMailinator, locatorsEmailPaneMailinator };

@@ -1,5 +1,5 @@
 // Util
-import { getValue, expected } from "../util/util";
+import { getValue, expected } from "@util/util";
 import promisify from "cypress-promise";
 
 class cards {
@@ -124,4 +124,4 @@ class cards {
   }
 }
 
-export default { cards };
+export { cards };

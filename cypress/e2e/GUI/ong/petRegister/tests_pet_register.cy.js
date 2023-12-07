@@ -1,10 +1,10 @@
 // Locators and Routes
-import { Routes } from "../../../../src/routes/routes";
-import { locatorsPetRegister } from "../../../../src/locators/pages/pet/locatorsPetRegister";
+import { Routes } from "@routes/routes";
+import { locatorsPetRegister } from "@locators/pages/pet/locatorsPetRegister";
 
 // Page Objects
-import petRegister from "../../../../src/pageObjects/pet/petRegister";
-import petList from "../../../../src/pageObjects/pet/petList";
+import petRegister from "@pageObjects/pet/petRegister";
+import petList from "@pageObjects/pet/petList";
 
 // Asserts to Suite Test 05: Análise do Funcionamento da Página de Cadastro de PET
 import Asserts_ST05 from "./asserts_pet_register";

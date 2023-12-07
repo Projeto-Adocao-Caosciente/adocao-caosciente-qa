@@ -1,14 +1,14 @@
 // Locators & Routes
-import { Routes } from "../../routes/routes";
-import { locatorsPetList } from "../../locators/pages/pet/locatorsPetList";
-import { locatorsPetDetails } from "../../locators/pages/pet/locatorsPetDetails";
+import { Routes } from "@routes/routes";
+import { locatorsPetList } from "@locators/pages/pet/locatorsPetList";
+import { locatorsPetDetails } from "@locators/pages/pet/locatorsPetDetails";
 
 // Data Transfer Objects
-import { petDto } from "../../dto/pet/petDto";
+import { petDto } from "@dto/pet/petDto";
 
 // Components Objects
-import { pagination } from "../../componentsObjects/pagination";
-import { cards } from "../../componentsObjects/cards";
+import { pagination } from "@componentsObjects/pagination";
+import { cards } from "@componentsObjects/cards";
 
 // Utils
 import {
@@ -16,7 +16,7 @@ import {
   expected,
   elementExpected,
   convertToDate,
-} from "../../util/util";
+} from "@util/util";
 import promisify from "cypress-promise";
 
 class petList {

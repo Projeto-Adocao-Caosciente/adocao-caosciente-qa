@@ -1,13 +1,13 @@
 // Locators and Routes
-import { Routes } from "../../../../src/routes/routes";
-import { locatorsAdopterRegister } from "../../../../src/locators/pages/register/locatorsAdopterRegister";
+import { Routes } from "@routes/routes";
+import { locatorsAdopterRegister } from "@locators/pages/register/locatorsAdopterRegister";
 
 // Page Objects
-import adopterRegister from "../../../../src/pageObjects/adopter/adopterRegister";
-import login from "../../../../src/pageObjects/login/login";
+import adopterRegister from "@pageObjects/adopter/adopterRegister";
+import login from "@pageObjects/login/login";
 
 // Data Transfer Objects
-import { adopterDto } from "../../../../src/dto/adopter/adopterDto";
+import { adopterDto } from "@dto/adopter/adopterDto";
 
 // Asserts to Suite Test 03: Análise do Funcionamento da Página de Cadastro de Adotante
 import Asserts_ST07 from "./asserts_adopter_register";

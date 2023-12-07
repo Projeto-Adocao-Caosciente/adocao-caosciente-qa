@@ -5,4 +5,4 @@ const locatorsToast = {
     info: 'div.Toastify__toast--info',
 };
 
-export default { locatorsToast };
+export { locatorsToast };

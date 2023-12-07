@@ -11,4 +11,4 @@ const locatorsPetDetails = {
   },
 };
 
-export default { locatorsPetDetails };
+export { locatorsPetDetails };

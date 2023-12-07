@@ -165,7 +165,7 @@ function elementExpected(
   }
 }
 
-export default {
+export {
   expected,
   elementExpected,
 };

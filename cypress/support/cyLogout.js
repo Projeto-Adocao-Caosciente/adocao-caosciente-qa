@@ -1,11 +1,11 @@
 // Routes
-import { Routes } from "../src/routes/routes";
+import { Routes } from "@routes/routes";
 
 // Locators
-import { locatorsNavbar } from "../src/locators/components/locatorsNavbar";
+import { locatorsNavbar } from "@locators/components/locatorsNavbar";
 
 // Utils
-import { expected } from "../src/util/util";
+import { expected } from "@util/util";
 
 /**
  * @description This method is used to logout to the application.

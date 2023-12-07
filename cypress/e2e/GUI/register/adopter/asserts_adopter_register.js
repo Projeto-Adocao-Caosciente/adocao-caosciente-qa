@@ -1,8 +1,8 @@
 // Locators and Routes
-import { Routes } from "../../../../src/routes/routes";
-import { expected } from "../../../../src/util/util";
-import { locatorsAdopterRegister } from "../../../../src/locators/pages/register/locatorsAdopterRegister";
-import { locatorsToast } from "../../../../src/locators/components/locatorsToast";
+import { Routes } from "@routes/routes";
+import { expected } from "@util/util";
+import { locatorsAdopterRegister } from "@locators/pages/register/locatorsAdopterRegister";
+import { locatorsToast } from "@locators/components/locatorsToast";
 
 const RULES_REQUIRED_FIELDS = [
   {

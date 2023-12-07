@@ -1,5 +1,5 @@
 // Locators and Routes
-import { Routes } from "../../../src/routes/routes";
+import { Routes } from "@routes/routes";
 
 // Asserts to Suite Test 01: Visit all Routes of Application
 import Asserts_ST01 from "./asserts_visit_pages";

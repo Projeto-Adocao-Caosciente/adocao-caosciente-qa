@@ -46,7 +46,7 @@ function getListSize(element, timeout = 5000) {
   return cy.get("@listSize", { timeout: timeout });
 }
 
-export default {
+export {
   getValue,
   getListSize,
 };

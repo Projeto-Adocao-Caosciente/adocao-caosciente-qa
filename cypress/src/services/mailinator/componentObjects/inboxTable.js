@@ -133,4 +133,4 @@ class inboxTable {
   }
 }
 
-export default { inboxTable };
+export { inboxTable };

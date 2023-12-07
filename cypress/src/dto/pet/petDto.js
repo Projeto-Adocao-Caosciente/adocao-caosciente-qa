@@ -94,4 +94,4 @@ class petDto {
   }
 }
 
-export default { petDto };
+export { petDto };

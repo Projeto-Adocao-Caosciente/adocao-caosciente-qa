@@ -1,7 +1,7 @@
 // Locators & Routes
-import { Routes } from "../../routes/routes";
-import { locatorsAdopterRegister } from "../../locators/pages/register/locatorsAdopterRegister";
-import { locatorsToast } from "../../locators/components/locatorsToast";
+import { Routes } from "@routes/routes";
+import { locatorsAdopterRegister } from "@locators/pages/register/locatorsAdopterRegister";
+import { locatorsToast } from "@locators/components/locatorsToast";
 
 // Components Objects
 
@@ -11,7 +11,7 @@ import {
   expected,
   elementExpected,
   convertToDate,
-} from "../../util/util";
+} from "@util/util";
 import promisify from "cypress-promise";
 
 class adopterRegister {

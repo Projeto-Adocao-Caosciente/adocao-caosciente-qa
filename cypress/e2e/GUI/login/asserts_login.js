@@ -1,8 +1,8 @@
 // Locators and Routes
-import { expected } from "../../../src/util/util";
-import { Routes } from "../../../src/routes/routes";
-import { locatorsLogin } from "../../../src/locators/pages/login/locatorsLogin";
-import { locatorsToast } from "../../../src/locators/components/locatorsToast";
+import { expected } from "@util/util";
+import { Routes } from "@routes/routes";
+import { locatorsLogin } from "@locators/pages/login/locatorsLogin";
+import { locatorsToast } from "@locators/components/locatorsToast";
 
 class Asserts_ST00 {
   constructor() {

@@ -12,4 +12,4 @@ const locatorsNavbar = {
   },
 };
 
-export default { locatorsNavbar };
+export { locatorsNavbar };

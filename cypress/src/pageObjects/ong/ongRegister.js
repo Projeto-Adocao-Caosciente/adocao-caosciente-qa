@@ -1,7 +1,7 @@
 // Locators & Routes
-import { Routes } from "../../routes/routes";
-import { locatorsOngRegister } from "../../locators/pages/register/locatorsOngRegister";
-import { locatorsToast } from "../../locators/components/locatorsToast";
+import { Routes } from "@routes/routes";
+import { locatorsOngRegister } from "@locators/pages/register/locatorsOngRegister";
+import { locatorsToast } from "@locators/components/locatorsToast";
 
 // Utils
 import {
@@ -9,7 +9,7 @@ import {
   expected,
   elementExpected,
   convertToDate,
-} from "../../util/util";
+} from "@util/util";
 import promisify from "cypress-promise";
 
 class ongRegister {

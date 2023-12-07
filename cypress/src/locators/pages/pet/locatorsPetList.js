@@ -24,4 +24,4 @@ const locatorsPetList = {
   },
 };
 
-export default { locatorsPetList };
+export { locatorsPetList };

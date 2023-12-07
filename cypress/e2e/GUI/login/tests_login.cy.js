@@ -1,10 +1,9 @@
 // Locators and Routes
 import { Routes } from '@routes/routes';
-import { expected } from '@util/util';
-import { locatorsLogin } from "../../../src/locators/pages/login/locatorsLogin";
+import { locatorsLogin } from "@locators/pages/login/locatorsLogin";
 
 // Page Objects
-import login from "../../../src/pageObjects/login/login";
+import login from "@pageObjects/login/login";
 
 // Asserts to Suite Test 00: Login
 import Asserts_ST00 from "./asserts_login";
@@ -12,7 +11,6 @@ import Asserts_ST00 from "./asserts_login";
 describe("ST00: Análise do Funcionamento da Página de Login.", () => {
   beforeEach(() => {
     cy.visit(Routes.login);
-    expected(10, "equal", 10, "Expected value is equal.", "Expected value is not equal.")
   });
 
   context("Context 01: Testes Funcionais nos Campos na Página de Login.", () => {

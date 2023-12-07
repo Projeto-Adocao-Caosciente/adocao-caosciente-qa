@@ -1,5 +1,5 @@
 // Utils
-import { generateRandomPassword } from "../../util/randomPassword";
+import { generateRandomPassword } from "@util/randomPassword";
 import { faker } from "@faker-js/faker";
 
 const faker_br = require("faker-br");
@@ -150,4 +150,4 @@ class adopterDto {
   }
 }
 
-export default { adopterDto };
+export { adopterDto };

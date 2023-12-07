@@ -1,8 +1,8 @@
 // Locators and Routes
-import { Routes } from "../../../../src/routes/routes";
+import { Routes } from "@routes/routes";
 
 // Page Objects
-import petList from "../../../../src/pageObjects/pet/petList";
+import petList from "@pageObjects/pet/petList";
 
 // Asserts to Suite Test 05: Análise do Funcionamento da Página de Listagem de PET's
 import Asserts_ST06 from "./asserts_pet_list";

@@ -1,4 +1,4 @@
-import { expected } from "../../../src/util/util";
+import { expected } from "@util/util";
 class Asserts_ST01 {
   constructor() {
     this.baseUrl = "https://adocao-caosciente-frontend.vercel.app";

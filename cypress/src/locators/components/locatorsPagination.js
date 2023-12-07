@@ -2,4 +2,4 @@ const locatorsPagination = {
 
 };
 
-export default { locatorsPagination };
+export { locatorsPagination };

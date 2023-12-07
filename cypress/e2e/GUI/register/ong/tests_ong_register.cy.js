@@ -1,13 +1,13 @@
 // Locators and Routes
-import { Routes } from "../../../../src/routes/routes";
-import { locatorsOngRegister } from "../../../../src/locators/pages/register/locatorsOngRegister";
+import { Routes } from "@routes/routes";
+import { locatorsOngRegister } from "@locators/pages/register/locatorsOngRegister";
 
 // Page Objects
-import ongRegister from "../../../../src/pageObjects/ong/ongRegister";
-import login from "../../../../src/pageObjects/login/login";
+import ongRegister from "@pageObjects/ong/ongRegister";
+import login from "@pageObjects/login/login";
 
 // Data Transfer Objects
-import { ongDto } from "../../../../src/dto/ong/ongDto";
+import { ongDto } from "@dto/ong/ongDto";
 
 // Asserts to Suite Test 03: Análise do Funcionamento da Página de Cadastro de ONG
 import Asserts_ST03 from "./asserts_ong_register";

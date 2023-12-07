@@ -1,12 +1,12 @@
 // Routes
-import { Routes } from "../src/routes/routes";
+import { Routes } from "@routes/routes";
 
 // Locators
-import { locatorsNavbar } from "../src/locators/components/locatorsNavbar";
-import { locatorsLogin } from "../src/locators/pages/login/locatorsLogin";
+import { locatorsNavbar } from "@locators/components/locatorsNavbar";
+import { locatorsLogin } from "@locators/pages/login/locatorsLogin";
 
 // Utils
-import { expected } from "../src/util/util";
+import { expected } from "@util/util";
 
 /**
  * @description This method is used to login to the application. The session is validate using the local storage of the browser
