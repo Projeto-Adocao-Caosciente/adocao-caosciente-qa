@@ -1,7 +1,7 @@
-const { defineConfig } = require("cypress");
-const path = require("path");
-const webpack = require("@cypress/webpack-preprocessor");
 require("dotenv").config();
+const { defineConfig } = require("cypress");
+const webpack = require("@cypress/webpack-preprocessor");
+const options = require("./aliases.config");
 
 module.exports = defineConfig({
   projectId: '4nu1ow',
@@ -17,26 +17,6 @@ module.exports = defineConfig({
     },
 
     setupNodeEvents(on, config) {
-      const options = {
-        webpackOptions: {
-          resolve: {
-            alias: {
-              "@dto": path.resolve(__dirname, "cypress/src/dto/"),
-              "@locators": path.resolve(__dirname, "cypress/src/locators/"),
-              "@componentObjects": path.resolve(__dirname, "cypress/src/componentObjects/"),
-              "@componentsObjects": path.resolve(
-                __dirname,
-                "cypress/src/componentsObjects"
-              ),
-              "@pageObjects": path.resolve(__dirname, "cypress/src/pageObjects/"),
-              "@routes": path.resolve(__dirname, "cypress/src/routes/"),
-              "@services": path.resolve(__dirname, "cypress/src/services/"),
-              "@util": path.resolve(__dirname, "cypress/src/util/"),
-            },
-          },
-        },
-      };
-
       on("file:preprocessor", webpack(options));
       require("cypress-mochawesome-reporter/plugin")(on);
     },
