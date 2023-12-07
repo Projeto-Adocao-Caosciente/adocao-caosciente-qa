@@ -6,8 +6,20 @@ const locatorsPetDetails = {
   weight: 'input[name="weight"]',
   additionalInformation: 'textarea[name="additionalInformation"]',
 
+  forms: {
+    container: '[data-selector="form-container"]',
+
+    form: (index) => `[data-selector="form-pet-${index}"]`,
+    addForm: '[data-selector="form-add-pet"]',
+
+    emptyList: {
+      message: '[data-selector="form-empty-list"]',
+      button: '[data-selector="form-empty-list"] a',
+    },
+  },
+
   navigation: {
-    backButton: 'section:last button:last',
+    backButton: "section:last button:last",
   },
 };
 
