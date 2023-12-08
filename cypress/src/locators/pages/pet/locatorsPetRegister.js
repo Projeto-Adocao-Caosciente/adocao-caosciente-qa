@@ -1,6 +1,6 @@
 const locatorsPetRegister = {
-  profilePhotoInput: '[data-selector="pet-photo-input"]',
-  profilePhoto: '[data-selector="pet-name-input"]',
+  profilePhotoInput: '[data-selector="pet-name-input"]',
+  profilePhoto: '[data-selector="photo-input"]',
   name: '[data-selector="pet-name-input"]',
   name: '[data-selector="pet-name-input"]',
   breed: '[data-selector="pet-breed-input"]',

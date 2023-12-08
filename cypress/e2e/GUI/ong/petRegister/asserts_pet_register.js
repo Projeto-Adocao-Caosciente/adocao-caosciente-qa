@@ -129,7 +129,7 @@ class Asserts_ST05 {
 
     const RULES_FIELD_VALIDATION = [
       {
-        field: locatorsPetRegister.profilePhoto,
+        field: locatorsPetRegister.profilePhotoInput,
         label: "Imagem de Perfil",
         isInvalid: false,
       },
