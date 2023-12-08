@@ -1,23 +1,23 @@
 const locatorsAdopterRegister = {
-  name: 'input[name="name"]:last',
-  cpf: 'input[name="itr"]',
-  birthDate: 'input[name="birthdate"]',
+  name: '[data-selector="adopter-name-input"]',
+  cpf: '[data-selector="adopter-cpf-input"]',
+  birthDate: '[data-selector="adopter-birth-date-input"]',
   gender: {
-    select: 'button[aria-haspopup="listbox"]',
-    option: (child) => `ul[role="listbox"] li[value="${child}"]`,
+    select: '[data-selector="adopter-gender-input"]',
+    option: (child) => `[data-selector="adopter-gender-input"] li[value="${child}"]`,
   },
-  email: 'input[name="email"]',
-  phoneNumber: 'input[name="phone"]',
-  address: 'input[name="address"]',
-  zipCode: 'input[name="zipCode"]',
-  city: 'input[name="city"]',
-  state: 'input[name="state"]',
-  password: 'input[name="password"]',
-  confirmPassword: 'input[name="passwordConfirmation"]',
+  email: '[data-selector="adopter-email-input"]',
+  phoneNumber: '[data-selector="adopter-phone-input"]',
+  address: '[data-selector="adopter-address-input"]',
+  zipCode: '[data-selector="adopter-zipcode-input"]',
+  city: '[data-selector="adopter-city-input"]',
+  state: '[data-selector="adopter-state-input"]',
+  password: '[data-selector="adopter-password-input"]',
+  confirmPassword: '[data-selector="adopter-password-confirmation-input"]',
 
   navigation: {
-    registerButton: 'button[type="submit"]',
-    alreadyHaveAnAccount: "a.relative",
+    registerButton: '[data-selector="adopter-register-button"]',
+    alreadyHaveAnAccount: '[data-selector="adopter-register-login-link"]',
   },
 };
 
