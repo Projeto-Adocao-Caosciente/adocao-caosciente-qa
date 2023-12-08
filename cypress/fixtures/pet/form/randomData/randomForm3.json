@@ -1,0 +1,130 @@
+{
+  "title": "Formulário de Adoção de Animais",
+  "questions": [
+    {
+      "question": "Você tem experiência anterior com animais resgatados?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, já adotei animais resgatados antes",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, é a minha primeira vez considerando um animal resgatado",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Como você descreveria a sua disponibilidade para brincar e exercitar um animal de estimação?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Tenho bastante tempo livre para brincar e exercitar diariamente",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Posso dedicar algum tempo, mas não muito",
+          "is_correct": true
+        },
+        {
+          "id": 2,
+          "label": "Não tenho muito tempo disponível",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você concorda em fornecer cuidados veterinários regulares, incluindo vacinas e check-ups?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, concordo",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, não estou disposto a fornecer cuidados veterinários regulares",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você tem restrições de alergia a animais?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, sou alérgico a pelos de animais",
+          "is_correct": false
+        },
+        {
+          "id": 1,
+          "label": "Não, não tenho alergias a animais",
+          "is_correct": true
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você tem um espaço seguro e designado para o animal em casa?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho um espaço dedicado para o animal",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, o animal teria acesso a toda a casa",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

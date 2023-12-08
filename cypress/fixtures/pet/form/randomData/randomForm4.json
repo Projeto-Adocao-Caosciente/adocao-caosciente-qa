@@ -1,0 +1,130 @@
+{
+  "title": "Formulário de Adoção de Animais",
+  "questions": [
+    {
+      "question": "Você tem crianças em casa?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho crianças em casa",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, não tenho crianças em casa",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não, mas pretendo ter no futuro",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Como você lidaria com um animal idoso ou com necessidades especiais?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Estou disposto a adotar um animal idoso ou com necessidades especiais",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Prefiro um animal jovem e saudável",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você tem conhecimento sobre as necessidades alimentares específicas da espécie de animal que pretende adotar?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho conhecimento",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, preciso aprender mais sobre isso",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Qual é a sua opinião sobre treinamento e disciplina de animais de estimação?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Acredito em métodos de treinamento positivos e reforço positivo",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Acho que disciplina rigorosa é necessária",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você tem um plano para situações de emergência, como desastres naturais?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho um plano de evacuação para animais de estimação",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, nunca pensei sobre isso",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

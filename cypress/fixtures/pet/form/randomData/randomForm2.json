@@ -1,0 +1,130 @@
+{
+  "title": "Formulário de Adoção de Animais",
+  "questions": [
+    {
+      "question": "Você possui outros animais de estimação em casa?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não, mas consideraria ter um",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Qual é o tamanho do seu espaço ao ar livre?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Pequeno",
+          "is_correct": false
+        },
+        {
+          "id": 1,
+          "label": "Médio",
+          "is_correct": true
+        },
+        {
+          "id": 2,
+          "label": "Grande",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Não tenho espaço ao ar livre",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você está ciente dos custos associados à manutenção de um animal de estimação, como alimentação e cuidados veterinários?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, estou ciente",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, não tinha considerado isso",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Como você reagiria a comportamentos indesejados de um animal, como destruição de objetos ou acidentes dentro de casa?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Ficaria chateado, mas entenderia que é parte do processo",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Ficaria irritado e poderia considerar devolver o animal",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você tem algum plano de contingência para situações em que não possa cuidar do animal temporariamente?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho um plano de cuidado temporário",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, nunca tinha pensado nisso",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

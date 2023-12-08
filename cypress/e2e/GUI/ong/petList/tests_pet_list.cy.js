@@ -28,7 +28,7 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       const petsListMock = [
         {
           pageRequired: 1,
-          mockData: "pet/petList/page1",
+          mockData: "pet/mockPetList/page1",
           pathRequest: ApiRoutes.ong.pet.getAll,
         }
       ];
@@ -43,7 +43,7 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
       const petsListMock = [
         {
           pageRequired: 1,
-          mockData: "pet/petList/emptyList",
+          mockData: "pet/mockPetList/emptyList",
           pathRequest: ApiRoutes.ong.pet.getAll,
         }
       ];

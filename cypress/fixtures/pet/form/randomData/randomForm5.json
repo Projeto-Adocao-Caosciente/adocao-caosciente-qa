@@ -1,0 +1,130 @@
+{
+  "title": "Formulário de Adoção de Animais",
+  "questions": [
+    {
+      "question": "Você possui um quintal ou área externa grande para que o animal possa brincar?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho um quintal grande",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, tenho um espaço limitado",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Qual é a sua opinião sobre a alimentação natural (RAW) para animais de estimação?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Acredito que é benéfica e considero alimentar meus animais dessa forma",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Prefiro alimentação comercial tradicional",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você trabalha longas horas fora de casa?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Não, passo a maior parte do tempo em casa",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Sim, trabalho longas horas fora",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Varia",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Não sei",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você está disposto a levar o animal para aulas de treinamento?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, estou disposto a participar de aulas de treinamento",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, prefiro treinar o animal por conta própria",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você tem um plano de contingência para situações de emergência, como evacuação em caso de desastres?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho um plano detalhado para emergências",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, nunca considerei isso",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Varia",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Não sei",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

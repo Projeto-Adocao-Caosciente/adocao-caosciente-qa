@@ -35,7 +35,7 @@ class petDto {
   }
 
   setAttributes(image, name, breed, kind, height, weight, specialNeeds, additionalInformation) {
-    const file = require(`../../../fixtures/pet/data/${this.type}/${this.type}.json`);
+    const file = require(`../../../fixtures/pet/randomData/${this.type}/${this.type}.json`);
     const randomElement = faker.helpers.arrayElement(file);
 
     this._image = image || randomElement.image;
