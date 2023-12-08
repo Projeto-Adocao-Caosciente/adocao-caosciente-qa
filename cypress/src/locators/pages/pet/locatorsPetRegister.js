@@ -1,20 +1,21 @@
 const locatorsPetRegister = {
-  profilePhotoInput: 'input[name="name"]:first',
-  profilePhoto: 'input[type="file"]',
-  name: 'input[name="name"]:last',
-  breed: 'input[name="breed"]',
-  kind: 'input[name="kind"]',
-  height: 'input[name="height"]',
-  weight: 'input[name="weight"]',
+  profilePhotoInput: '[data-selector="pet-photo-input"]',
+  profilePhoto: '[data-selector="pet-name-input"]',
+  name: '[data-selector="pet-name-input"]',
+  name: '[data-selector="pet-name-input"]',
+  breed: '[data-selector="pet-breed-input"]',
+  kind: '[data-selector="pet-kind-input"]',
+  height: '[data-selector="pet-height-input"]',
+  weight: '[data-selector="pet-weight-input"]',
   specialNeeds: {
-    select: 'button[aria-haspopup="listbox"]',
-    option: (child) => `ul[role="listbox"] li[value=${child}]`,
+    select: '[data-selector="pet-special-needs-select"]',
+    option: (child) => `[data-selector="pet-special-needs-select"] li[value=${child}]`,
   },
-  additionalInformation: 'textarea[name="additionalInformation"]',
+  additionalInformation: '[data-selector="pet-additional-information-input"]',
 
   navigation: {
-    registerButton: "section:last button:first",
-    cancel: "section:last button:last",
+    registerButton: "[data-selector='pet-register-button']",
+    cancel: "[data-selector='pet-cancel-button']",
   },
 };
 

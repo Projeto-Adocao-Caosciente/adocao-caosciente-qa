@@ -1,6 +1,4 @@
 const locatorsAdopterRegister = {
-  profilePhotoInput: 'input[name="name"]:first',
-  profilePhoto: 'input[type="file"]',
   name: 'input[name="name"]:last',
   cpf: 'input[name="itr"]',
   birthDate: 'input[name="birthdate"]',

@@ -1,10 +1,10 @@
 const locatorsPetDetails = {
-  name: 'input[name="name"]:last',
-  breed: 'input[name="breed"]',
-  kind: 'input[name="kind"]',
-  height: 'input[name="height"]',
-  weight: 'input[name="weight"]',
-  additionalInformation: 'textarea[name="additionalInformation"]',
+  name: '[data-selector="pet-name-input"]',
+  breed: '[data-selector="pet-breed-input"]',
+  kind: '[data-selector="pet-kind-input"]',
+  height: '[data-selector="pet-height-input"]',
+  weight: '[data-selector="pet-weight-input"]',
+  additionalInformation: '[data-selector="pet-additional-information-input"]',
 
   forms: {
     container: '[data-selector="form-container"]',
@@ -19,7 +19,7 @@ const locatorsPetDetails = {
   },
 
   navigation: {
-    backButton: "section:last button:last",
+    backButton: '[data-selector="pet-cancel-button"]',
   },
 };
 
