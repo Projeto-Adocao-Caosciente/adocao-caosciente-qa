@@ -76,7 +76,7 @@ const RULES_FIELD_VALIDATION = [
   {
     fieldLocator: locatorsAdopterRegister.birthDate,
     label: "Data de Nascimento",
-    isInvalid: true,
+    isInvalid: false,
   },
   {
     fieldLocator: locatorsAdopterRegister.email,

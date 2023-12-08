@@ -2,18 +2,30 @@
 import { Routes } from "@routes/routes";
 
 // Page Objects
+import formRegister from "@pageObjects/form/formRegister";
 
-// Asserts to Suite Test
+// Data Transfer Objects
 
-describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () => {
+// Asserts to Suite Test: ST09: Análise do Funcionamento da Página de Cadastro de Formulários de Adoção
+import Asserts_ST09 from "./asserts_form_register";
+
+describe("ST09: Análise do Funcionamento da Página de Cadastro de Formulários de Adoção", () => {
+  // TODO: Before init, its necessary register a pet
+
   beforeEach(() => {
     cy.login();
     cy.visit(Routes.home);
   });
 
-  context("Context 01: ", () => {
-    it("CT01:", () => {
-      
-    });
-});
+  context("Context 01: Validar obrigatoriedade dos Campos.", () => {
+    it("CT01:", () => {});
+  });
+
+  context("Context 02: Cenários de Sucesso de Criação de um Formulário", () => {});
+
+  context("Context 03: Cenários Alternativos de Criação de um Formulário", () => {});
+
+  context("Context 04: Validar Redirecionamento de Links na Página de Criação de Formulários", () => {});
+
+  context("Context 05: Simulação de Cenários de Falhas na Requisição", () => {});
 });

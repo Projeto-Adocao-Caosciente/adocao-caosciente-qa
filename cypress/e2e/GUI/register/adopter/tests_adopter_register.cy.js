@@ -104,7 +104,7 @@ describe("ST03: Análise do Funcionamento da Página de Cadastro de Adotante", (
         email: invalidEmail,
         phoneNumber: invalidPhoneNumber,
         address: invalidAddress,
-        cep: invalidCep,
+        zipCode: invalidCep,
         city: invalidCity,
         state: invalidState,
         password: invalidPassword,

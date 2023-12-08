@@ -9,7 +9,7 @@ const locatorsPetRegister = {
   weight: '[data-selector="pet-weight-input"]',
   specialNeeds: {
     select: '[data-selector="pet-special-needs-select"]',
-    option: (child) => `[data-selector="pet-special-needs-select"] li[value=${child}]`,
+    option: (child) => `ul[role="listbox"] li[value=${child}]`,
   },
   additionalInformation: '[data-selector="pet-additional-information-input"]',
 

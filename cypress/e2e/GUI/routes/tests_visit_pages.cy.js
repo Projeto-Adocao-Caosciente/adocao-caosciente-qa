@@ -44,7 +44,7 @@ describe("ST01: Visitar todas as páginas da aplicação.", () => {
   
       cy.visit(routeExpected);
       cy.url().then((routeObtained) => {
-        Asserts_ST01.CT04(routeObtained, routeExpected);
+        Asserts_ST01.CT04(routeObtained, routeExpected); 
       });
     });
 

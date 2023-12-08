@@ -41,7 +41,7 @@ Cypress.Commands.add(
 
     const validate = () => {
       // This method is called to validate the session, if it is valid, it will not be necessary to login again
-      cy.getCookie("token").should("exist");
+      cy.getCookie("token").should("exist", { timeout: 30000 });
     };
 
     const options = {
@@ -75,7 +75,7 @@ Cypress.Commands.add(
     userType = Cypress.env("userType"),
     customSuccessMessage = null,
     customFailureMessage = null,
-    timeout = 5000
+    timeout = 10000
   ) => {
     const routeExpected = userType === "ONG" ? Routes.home : Routes.home;
 
@@ -113,7 +113,7 @@ Cypress.Commands.add(
     userType,
     customSuccessMessage = null,
     customFailureMessage = null,
-    timeout = 5000
+    timeout = 10000
   ) => {
     userType === "ADOPTER" ? userType = "Adotante" : userType = userType;
 

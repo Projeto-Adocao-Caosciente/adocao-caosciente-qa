@@ -1,10 +1,10 @@
 const locatorsAdopterRegister = {
   name: '[data-selector="adopter-name-input"]',
   cpf: '[data-selector="adopter-cpf-input"]',
-  birthDate: '[data-selector="adopter-birth-date-input"]',
+  birthDate: '[data-selector="adopter-birthdate-input"]',
   gender: {
     select: '[data-selector="adopter-gender-input"]',
-    option: (child) => `[data-selector="adopter-gender-input"] li[value="${child}"]`,
+    option: (child) => `ul[role="listbox"] li[value="${child}"]`,
   },
   email: '[data-selector="adopter-email-input"]',
   phoneNumber: '[data-selector="adopter-phone-input"]',

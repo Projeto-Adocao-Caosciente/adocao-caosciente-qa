@@ -1,6 +1,6 @@
 import { locatorsQuestionForm } from "@locators/components/locatorsQuestionForm";
 
-const locatorsForm = {
+const locatorsFormRegister = {
   titleForm: "[data-selector='form-title-input']",
 
   questions: {
@@ -16,4 +16,4 @@ const locatorsForm = {
   },
 };
 
-export { locatorsForm };
+export { locatorsFormRegister as locatorsForm };
