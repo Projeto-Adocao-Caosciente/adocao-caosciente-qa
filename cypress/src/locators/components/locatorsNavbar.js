@@ -1,14 +1,14 @@
 const locatorsNavbar = {
   userInfo: {
-    name: "nav > header > div:last > div > span:nth-child(1)",
-    type: "nav > header > div:last > div > span:nth-child(2)",
+    name: "[data-selector='navbar-user-name']",
+    type: "[data-selector='navbar-user-type']",
   },
 
-  avatarButton: "nav > header > div:last > button",
+  avatarButton: "[data-selector='navbar-toggle']",
 
   avatar: {
-    editProfile: 'div > ul[aria-label="Profile Actions"] > li[data-key="edit"]',
-    logout: 'div > ul[aria-label="Profile Actions"] > li[data-key="logout"]',
+    editProfile: '[data-selector="navbar-edit-profile"]',
+    logout: '[data-selector="navbar-logout"]',
   },
 };
 
