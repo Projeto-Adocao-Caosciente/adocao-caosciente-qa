@@ -1,16 +1,16 @@
 const locatorsLogin = {
   // Input's
-  user: 'input[name="user"]',
-  password: 'input[name="password"]',
+  user: '[data-selector="user-input"]',
+  password: '[data-selector="password-input"]',
 
   // Button's
-  changePasswordHiding: "button:first",
-  loginButton: "#login-button",
+  changePasswordHiding: "[data-selector='toggle-password-visibility']",
+  loginButton: "[data-selector='login-button']",
 
   // Link's
   register: {
-    adopter: 'form > section:last a[role="link"]:first',
-    ong: 'form > section:last a[role="link"]:last',
+    adopter: '[data-selector="register-adopter-linkup"]',
+    ong: '[data-selector="register-ong-linkup"]',
   },
 };
 
