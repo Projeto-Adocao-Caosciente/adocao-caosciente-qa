@@ -1,0 +1,5 @@
+const locatorsFormDetails = {
+
+};
+
+export { locatorsFormDetails };

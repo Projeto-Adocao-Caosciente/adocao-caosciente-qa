@@ -5,6 +5,7 @@ import { Routes } from "@routes/routes";
 import formRegister from "@pageObjects/form/formRegister";
 
 // Data Transfer Objects
+import { formDto } from "@dto/form/formDto";
 
 // Asserts to Suite Test: ST09: Análise do Funcionamento da Página de Cadastro de Formulários de Adoção
 import Asserts_ST09 from "./asserts_form_register";
