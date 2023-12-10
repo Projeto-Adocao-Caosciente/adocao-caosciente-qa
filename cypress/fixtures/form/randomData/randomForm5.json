@@ -1,17 +1,42 @@
 {
-  "title": "Formulário de Adoção de Animais",
+  "title": "Formulário de Adoção de Animais 5",
   "questions": [
     {
-      "question": "Você tem experiência anterior com animais resgatados?",
+      "question": "Você possui um quintal ou área externa grande para que o animal possa brincar?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, já adotei animais resgatados antes",
+          "label": "Sim, tenho um quintal grande",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, é a minha primeira vez considerando um animal resgatado",
+          "label": "Não, tenho um espaço limitado",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "question": "Qual é a sua opinião sobre a alimentação natural (RAW) para animais de estimação?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Acredito que é benéfica e considero alimentar meus animais dessa forma",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Prefiro alimentação comercial tradicional",
           "is_correct": false
         },
         {
@@ -27,41 +52,41 @@
       ]
     },
     {
-      "question": "Como você descreveria a sua disponibilidade para brincar e exercitar um animal de estimação?",
+      "question": "Você trabalha longas horas fora de casa?",
       "choices": [
         {
           "id": 0,
-          "label": "Tenho bastante tempo livre para brincar e exercitar diariamente",
+          "label": "Não, passo a maior parte do tempo em casa",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Posso dedicar algum tempo, mas não muito",
-          "is_correct": true
-        },
-        {
-          "id": 2,
-          "label": "Não tenho muito tempo disponível",
+          "label": "Sim, trabalho longas horas fora",
           "is_correct": false
         },
         {
-          "id": 3,
+          "id": 2,
           "label": "Varia",
+          "is_correct": true
+        },
+        {
+          "id": 3,
+          "label": "Não sei",
           "is_correct": false
         }
       ]
     },
     {
-      "question": "Você concorda em fornecer cuidados veterinários regulares, incluindo vacinas e check-ups?",
+      "question": "Você está disposto a levar o animal para aulas de treinamento?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, concordo",
+          "label": "Sim, estou disposto a participar de aulas de treinamento",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, não estou disposto a fornecer cuidados veterinários regulares",
+          "label": "Não, prefiro treinar o animal por conta própria",
           "is_correct": false
         },
         {
@@ -77,51 +102,26 @@
       ]
     },
     {
-      "question": "Você tem restrições de alergia a animais?",
+      "question": "Você tem um plano de contingência para situações de emergência, como evacuação em caso de desastres?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, sou alérgico a pelos de animais",
-          "is_correct": false
-        },
-        {
-          "id": 1,
-          "label": "Não, não tenho alergias a animais",
-          "is_correct": true
-        },
-        {
-          "id": 2,
-          "label": "Não sei",
-          "is_correct": false
-        },
-        {
-          "id": 3,
-          "label": "Varia",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "question": "Você tem um espaço seguro e designado para o animal em casa?",
-      "choices": [
-        {
-          "id": 0,
-          "label": "Sim, tenho um espaço dedicado para o animal",
+          "label": "Sim, tenho um plano detalhado para emergências",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, o animal teria acesso a toda a casa",
+          "label": "Não, nunca considerei isso",
           "is_correct": false
         },
         {
           "id": 2,
-          "label": "Não sei",
+          "label": "Varia",
           "is_correct": false
         },
         {
           "id": 3,
-          "label": "Varia",
+          "label": "Não sei",
           "is_correct": false
         }
       ]

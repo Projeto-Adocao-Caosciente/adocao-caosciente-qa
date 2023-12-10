@@ -15,11 +15,14 @@ describe("ST09: Análise do Funcionamento da Página de Cadastro de Formulários
 
   beforeEach(() => {
     cy.login();
-    cy.visit(Routes.home);
+    cy.visit("https://adocao-caosciente-frontend.vercel.app/pet/65738894f7b60a71e0bf608c/form");
   });
 
   context("Context 01: Validar obrigatoriedade dos Campos.", () => {
-    it("CT01:", () => {});
+    it("CT01:", () => {
+      const formData = new formDto();
+      formRegister.fillFormData(formData);
+    });
   });
 
   context("Context 02: Cenários de Sucesso de Criação de um Formulário", () => {});

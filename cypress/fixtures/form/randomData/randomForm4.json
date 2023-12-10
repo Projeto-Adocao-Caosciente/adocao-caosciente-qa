@@ -1,17 +1,42 @@
 {
-  "title": "Formulário de Adoção de Animais",
+  "title": "Formulário de Adoção de Animais 4",
   "questions": [
     {
-      "question": "Você possui um quintal ou área externa grande para que o animal possa brincar?",
+      "question": "Você tem crianças em casa?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, tenho um quintal grande",
+          "label": "Sim, tenho crianças em casa",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, tenho um espaço limitado",
+          "label": "Não, não tenho crianças em casa",
+          "is_correct": true
+        },
+        {
+          "id": 2,
+          "label": "Não, mas pretendo ter no futuro",
+          "is_correct": true
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Como você lidaria com um animal idoso ou com necessidades especiais?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Estou disposto a adotar um animal idoso ou com necessidades especiais",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Prefiro um animal jovem e saudável",
           "is_correct": false
         },
         {
@@ -27,16 +52,16 @@
       ]
     },
     {
-      "question": "Qual é a sua opinião sobre a alimentação natural (RAW) para animais de estimação?",
+      "question": "Você tem conhecimento sobre as necessidades alimentares específicas da espécie de animal que pretende adotar?",
       "choices": [
         {
           "id": 0,
-          "label": "Acredito que é benéfica e considero alimentar meus animais dessa forma",
+          "label": "Sim, tenho conhecimento",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Prefiro alimentação comercial tradicional",
+          "label": "Não, preciso aprender mais sobre isso",
           "is_correct": false
         },
         {
@@ -52,41 +77,16 @@
       ]
     },
     {
-      "question": "Você trabalha longas horas fora de casa?",
+      "question": "Qual é a sua opinião sobre treinamento e disciplina de animais de estimação?",
       "choices": [
         {
           "id": 0,
-          "label": "Não, passo a maior parte do tempo em casa",
+          "label": "Acredito em métodos de treinamento positivos e reforço positivo",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Sim, trabalho longas horas fora",
-          "is_correct": false
-        },
-        {
-          "id": 2,
-          "label": "Varia",
-          "is_correct": false
-        },
-        {
-          "id": 3,
-          "label": "Não sei",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "question": "Você está disposto a levar o animal para aulas de treinamento?",
-      "choices": [
-        {
-          "id": 0,
-          "label": "Sim, estou disposto a participar de aulas de treinamento",
-          "is_correct": true
-        },
-        {
-          "id": 1,
-          "label": "Não, prefiro treinar o animal por conta própria",
+          "label": "Acho que disciplina rigorosa é necessária",
           "is_correct": false
         },
         {
@@ -102,26 +102,26 @@
       ]
     },
     {
-      "question": "Você tem um plano de contingência para situações de emergência, como evacuação em caso de desastres?",
+      "question": "Você tem um plano para situações de emergência, como desastres naturais?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, tenho um plano detalhado para emergências",
+          "label": "Sim, tenho um plano de evacuação para animais de estimação",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, nunca considerei isso",
+          "label": "Não, nunca pensei sobre isso",
           "is_correct": false
         },
         {
           "id": 2,
-          "label": "Varia",
+          "label": "Não sei",
           "is_correct": false
         },
         {
           "id": 3,
-          "label": "Não sei",
+          "label": "Varia",
           "is_correct": false
         }
       ]

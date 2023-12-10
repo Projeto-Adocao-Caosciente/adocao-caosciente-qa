@@ -1,8 +1,8 @@
 {
-  "title": "Formulário de Adoção de Animais",
+  "title": "Formulário de Adoção de Animais 1",
   "questions": [
     {
-      "question": "Você possui outros animais de estimação em casa?",
+      "question": "Você possui espaço suficiente em casa para um animal de grande porte?",
       "choices": [
         {
           "id": 0,
@@ -16,52 +16,52 @@
         },
         {
           "id": 2,
-          "label": "Não, mas consideraria ter um",
+          "label": "Não sei",
           "is_correct": false
         },
         {
           "id": 3,
           "label": "Varia",
-          "is_correct": false
+          "is_correct": true
         }
       ]
     },
     {
-      "question": "Qual é o tamanho do seu espaço ao ar livre?",
+      "question": "Qual é a sua experiência prévia com animais de estimação?",
       "choices": [
         {
           "id": 0,
-          "label": "Pequeno",
+          "label": "Nunca tive um animal de estimação",
           "is_correct": false
         },
         {
           "id": 1,
-          "label": "Médio",
+          "label": "Já tive animais de pequeno porte",
           "is_correct": true
         },
         {
           "id": 2,
-          "label": "Grande",
-          "is_correct": false
+          "label": "Já tive animais de grande porte",
+          "is_correct": true
         },
         {
           "id": 3,
-          "label": "Não tenho espaço ao ar livre",
-          "is_correct": false
+          "label": "Trabalho com cuidado de animais",
+          "is_correct": true
         }
       ]
     },
     {
-      "question": "Você está ciente dos custos associados à manutenção de um animal de estimação, como alimentação e cuidados veterinários?",
+      "question": "Você está disposto a levar o animal para consultas veterinárias regulares?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, estou ciente",
+          "label": "Sim",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, não tinha considerado isso",
+          "label": "Não",
           "is_correct": false
         },
         {
@@ -71,22 +71,47 @@
         },
         {
           "id": 3,
-          "label": "Varia",
+          "label": "Depende",
           "is_correct": false
         }
       ]
     },
     {
-      "question": "Como você reagiria a comportamentos indesejados de um animal, como destruição de objetos ou acidentes dentro de casa?",
+      "question": "Como você descreveria sua rotina diária?",
       "choices": [
         {
           "id": 0,
-          "label": "Ficaria chateado, mas entenderia que é parte do processo",
+          "label": "Muito ocupado, pouco tempo em casa",
+          "is_correct": false
+        },
+        {
+          "id": 1,
+          "label": "Moderadamente ocupado, tempo em casa",
+          "is_correct": true
+        },
+        {
+          "id": 2,
+          "label": "Pouco ocupado, muito tempo em casa",
+          "is_correct": true
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "question": "Você concorda em fornecer um ambiente seguro e amoroso para o animal?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Ficaria irritado e poderia considerar devolver o animal",
+          "label": "Não",
           "is_correct": false
         },
         {
@@ -96,32 +121,7 @@
         },
         {
           "id": 3,
-          "label": "Varia",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "question": "Você tem algum plano de contingência para situações em que não possa cuidar do animal temporariamente?",
-      "choices": [
-        {
-          "id": 0,
-          "label": "Sim, tenho um plano de cuidado temporário",
-          "is_correct": true
-        },
-        {
-          "id": 1,
-          "label": "Não, nunca tinha pensado nisso",
-          "is_correct": false
-        },
-        {
-          "id": 2,
-          "label": "Não sei",
-          "is_correct": false
-        },
-        {
-          "id": 3,
-          "label": "Varia",
+          "label": "Depende",
           "is_correct": false
         }
       ]

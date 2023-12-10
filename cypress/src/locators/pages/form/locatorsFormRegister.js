@@ -1,14 +1,13 @@
-import { locatorsQuestionForm } from "@locators/components/locatorsQuestionForm";
+import { locatorsFormQuestion } from "@locators/components/locatorsFormQuestion";
 
 const locatorsFormRegister = {
   titleForm: "[data-selector='form-title-input']",
 
-  questions: {
-    question: (index) => {
-        return locatorsQuestionForm(index);
-    },
-    addQuestionButton: "[data-selector='add-question-button']",
+  questions: (questionNumber) => {
+    return locatorsFormQuestion(questionNumber);
   },
+
+  addQuestionButton: "[data-selector='add-question-button']",
 
   navigation: {
     finishFormButton: "[data-selector='finish-form-button']",
@@ -16,4 +15,4 @@ const locatorsFormRegister = {
   },
 };
 
-export { locatorsFormRegister as locatorsForm };
+export { locatorsFormRegister };

@@ -1,23 +1,23 @@
 {
-  "title": "Formulário de Adoção de Animais",
+  "title": "Formulário de Adoção de Animais 2",
   "questions": [
     {
-      "question": "Você tem crianças em casa?",
+      "question": "Você possui outros animais de estimação em casa?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, tenho crianças em casa",
+          "label": "Sim",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, não tenho crianças em casa",
+          "label": "Não",
           "is_correct": false
         },
         {
           "id": 2,
-          "label": "Não, mas pretendo ter no futuro",
-          "is_correct": false
+          "label": "Não, mas consideraria ter um",
+          "is_correct": true
         },
         {
           "id": 3,
@@ -27,66 +27,41 @@
       ]
     },
     {
-      "question": "Como você lidaria com um animal idoso ou com necessidades especiais?",
+      "question": "Qual é o tamanho do seu espaço ao ar livre?",
       "choices": [
         {
           "id": 0,
-          "label": "Estou disposto a adotar um animal idoso ou com necessidades especiais",
-          "is_correct": true
+          "label": "Pequeno",
+          "is_correct": false
         },
         {
           "id": 1,
-          "label": "Prefiro um animal jovem e saudável",
-          "is_correct": false
+          "label": "Médio",
+          "is_correct": true
         },
         {
           "id": 2,
-          "label": "Não sei",
-          "is_correct": false
+          "label": "Grande",
+          "is_correct": true
         },
         {
           "id": 3,
-          "label": "Varia",
+          "label": "Não tenho espaço ao ar livre",
           "is_correct": false
         }
       ]
     },
     {
-      "question": "Você tem conhecimento sobre as necessidades alimentares específicas da espécie de animal que pretende adotar?",
+      "question": "Você está ciente dos custos associados à manutenção de um animal de estimação, como alimentação e cuidados veterinários?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, tenho conhecimento",
+          "label": "Sim, estou ciente",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, preciso aprender mais sobre isso",
-          "is_correct": false
-        },
-        {
-          "id": 2,
-          "label": "Não sei",
-          "is_correct": false
-        },
-        {
-          "id": 3,
-          "label": "Varia",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "question": "Qual é a sua opinião sobre treinamento e disciplina de animais de estimação?",
-      "choices": [
-        {
-          "id": 0,
-          "label": "Acredito em métodos de treinamento positivos e reforço positivo",
-          "is_correct": true
-        },
-        {
-          "id": 1,
-          "label": "Acho que disciplina rigorosa é necessária",
+          "label": "Não, não tinha considerado isso",
           "is_correct": false
         },
         {
@@ -102,16 +77,41 @@
       ]
     },
     {
-      "question": "Você tem um plano para situações de emergência, como desastres naturais?",
+      "question": "Como você reagiria a comportamentos indesejados de um animal, como destruição de objetos ou acidentes dentro de casa?",
       "choices": [
         {
           "id": 0,
-          "label": "Sim, tenho um plano de evacuação para animais de estimação",
+          "label": "Ficaria chateado, mas entenderia que é parte do processo",
           "is_correct": true
         },
         {
           "id": 1,
-          "label": "Não, nunca pensei sobre isso",
+          "label": "Ficaria irritado e poderia considerar devolver o animal",
+          "is_correct": false
+        },
+        {
+          "id": 2,
+          "label": "Não sei",
+          "is_correct": false
+        },
+        {
+          "id": 3,
+          "label": "Varia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "question": "Você tem algum plano de contingência para situações em que não possa cuidar do animal temporariamente?",
+      "choices": [
+        {
+          "id": 0,
+          "label": "Sim, tenho um plano de cuidado temporário",
+          "is_correct": true
+        },
+        {
+          "id": 1,
+          "label": "Não, nunca tinha pensado nisso",
           "is_correct": false
         },
         {
