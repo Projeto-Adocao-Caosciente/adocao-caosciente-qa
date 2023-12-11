@@ -34,6 +34,10 @@ const ApiRoutes = {
     details: "/auth/profile",
     edit: "/adopter",
   },
+
+  mail: {
+    sendMail: "/email/send",
+  }
 };
 
 export { ApiRoutes };
