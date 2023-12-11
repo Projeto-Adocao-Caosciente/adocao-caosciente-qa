@@ -1,7 +1,10 @@
 // Locators and Routes
 import { Routes } from "@routes/routes";
+import { ApiRoutes } from "@routes/apiRoutes";
 
 // Page Objects
+import petList from "@pageObjects/pet/petList";
+import petRegister from "@pageObjects/pet/petRegister";
 import formRegister from "@pageObjects/form/formRegister";
 
 // Data Transfer Objects
@@ -12,15 +15,30 @@ import Asserts_ST09 from "./asserts_form_register";
 
 describe("ST09: Análise do Funcionamento da Página de Cadastro de Formulários de Adoção", () => {
   // TODO: Before init, its necessary register a pet
+  before(() => {
+    cy.login();
+    cy.visit(Routes.pet.register);
+
+    const petData = petRegister.fillAllFields(true);
+    petRegister.registerPet();
+  });
 
   beforeEach(() => {
+    const petIndex = 0;
+
     cy.login();
-    cy.visit("https://adocao-caosciente-frontend.vercel.app/pet/65738894f7b60a71e0bf608c/form");
+
+    cy.intercept("GET", ApiRoutes.ong.pet.getAll).as("getAllPets");
+    cy.visit(Routes.home);
+    cy.wait("@getAllPets");
+
+    petList.viewPetDetails(petIndex);
   });
 
   context("Context 01: Validar obrigatoriedade dos Campos.", () => {
     it("CT01:", () => {
       const formData = new formDto();
+      return
       formRegister.fillFormData(formData);
     });
   });

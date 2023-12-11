@@ -1,5 +1,5 @@
 const locatorsSendEmail = {
-  card: "[data-selector='dialog-send-email']",
+  dialog: "[data-selector='dialog-send-email']",
   emailInput: "[data-selector='dialog-send-email-input']",
   addEmailButton: "[data-selector='dialog-add-email-button']",
 
