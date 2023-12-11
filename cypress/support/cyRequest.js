@@ -40,12 +40,12 @@ Cypress.Commands.add("interceptRequest", (requestParameters, execute) => {
       break;
 
     case "click":
-      cy.get(execute.command).click();
+      cy.get(execute.command, { timeout: 10000 }).click();
       break;
 
     case "reload.click":
       cy.reload().then(() => {
-        cy.get(execute.click).click();
+        cy.get(execute.click, { timeout: 10000 }).click();
       });
       break;
 
