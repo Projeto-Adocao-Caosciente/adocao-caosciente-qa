@@ -4,6 +4,7 @@ import { ApiRoutes } from "@routes/apiRoutes";
 
 // Page Objects
 import petList from "@pageObjects/pet/petList";
+import petDetails from "@pageObjects/pet/petDetails";
 
 // Asserts to Suite Test 06: Análise do Funcionamento da Página de Listagem de PET's
 import Asserts_ST06 from "./asserts_pet_list";
@@ -73,9 +74,10 @@ describe("ST06: Análise do Funcionamento da Página de Listagem de PET's", () =
         const cardIndex = 1;
 
         const petCard = await petList.getPet(cardIndex);
-        const petDetails = await petList.getPetDetails(cardIndex);
+        petList.viewPetDetails(cardIndex);
+        const petDetailsDto = await petDetails.getPetDetails();
 
-        Asserts_ST06.CT05(petCard, petDetails);
+        Asserts_ST06.CT05(petCard, petDetailsDto);
       });
     }
   );

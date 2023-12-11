@@ -54,49 +54,8 @@ class petList {
     cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewDetails).click();
     cy.wait("@getPetDetails");
-  }
-
-  viewFormsAssociatedWithPet(cardIndex) {
-    this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
-    this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
-
-    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
-    cy.get(locatorsPetList.list.child(cardIndex).actions.viewForms).click();
-    cy.wait("@getPetDetails");
-  }
-
-  editPet(cardIndex) {
-    this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
-    this._checkIfRouteWasAcessedSuccessfully(Routes.pet.edit);
     
-    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
-    cy.get(locatorsPetList.list.child(cardIndex).actions.edit).click();
-    cy.wait("@getPetDetails");
-  }
-
-  async getPetDetails(cardIndex) {
-    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
-
-    this.viewPetDetails(cardIndex);
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
-
-    await promisify(cy.wait("@getPetDetails"));
-
-    const name = await promisify(cy.getValue(locatorsPetDetails.name));
-    const breed = await promisify(cy.getValue(locatorsPetDetails.breed));
-    const kind = await promisify(cy.getValue(locatorsPetDetails.kind));
-    const height = await promisify(cy.getValue(locatorsPetDetails.height));
-    const weight = await promisify(cy.getValue(locatorsPetDetails.weight));
-    const additionalInformation = await promisify(cy.getValue(locatorsPetDetails.additionalInformation));
-
-    return new petDto({
-      name: name,
-      breed: breed,
-      kind: kind,
-      height: height,
-      weight: weight,
-      additionalInformation: additionalInformation,
-    });
   }
 
   /**
