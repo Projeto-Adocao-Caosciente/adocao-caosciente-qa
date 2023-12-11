@@ -21,6 +21,8 @@ let Routes = {
     register: "/pet-register",
     edit: "/pet-edit",
   },
+
+  form: "/form",
 };
 
 export { Routes };

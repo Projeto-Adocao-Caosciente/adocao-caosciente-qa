@@ -39,7 +39,7 @@ class petDto {
     const randomElement = faker.helpers.arrayElement(file);
 
     this._image = image || randomElement.image;
-    this._name = name || `[${randomElement.kind}] ${randomElement.breed}]`
+    this._name = name || `[${randomElement.kind}] ${randomElement.breed}`
     this._breed = breed || randomElement.breed;
     this._kind = kind || randomElement.kind;
     this._height = height || String(randomElement.height).replace(".", ",");

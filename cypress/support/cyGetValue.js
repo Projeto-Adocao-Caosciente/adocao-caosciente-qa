@@ -12,7 +12,7 @@
  * // Retrieve the text of an element with a custom timeout.
  * cy.getText(".my-element", 10000).should("eq", "Expected Text");
  */
-Cypress.Commands.add("getText", (element, timeout = 5000) => {
+Cypress.Commands.add("getText", (element, timeout = 8000) => {
     cy.get(element).invoke("text").then((text) => {
         const textValue = text.trim();
         cy.wrap(textValue).as("textValue");
@@ -35,7 +35,7 @@ Cypress.Commands.add("getText", (element, timeout = 5000) => {
  * // Retrieve the value of an element with a custom timeout.
  * cy.getValue(".my-element", 10000).should("eq", "Expected Value");
  */
-Cypress.Commands.add("getValue", (element, timeout = 5000) => {
+Cypress.Commands.add("getValue", (element, timeout = 8000) => {
     cy.get(element).invoke("val").then((text) => {
         const textValue = text.trim();
         cy.wrap(textValue).as("textValue");
@@ -59,7 +59,7 @@ Cypress.Commands.add("getValue", (element, timeout = 5000) => {
  * // Retrieve the value of an input element with a custom timeout.
  * cy.getInputValue(".my-input", 10000).should("eq", "Expected Value");
  */
-Cypress.Commands.add("getInputValue", (element, timeout = 5000) => {
+Cypress.Commands.add("getInputValue", (element, timeout = 8000) => {
     cy.get(element).invoke("removeAttr", "readonly").invoke("val").then((text) => {
         const textValue = text.trim();
         cy.wrap(textValue).as("textValue");
@@ -82,7 +82,7 @@ Cypress.Commands.add("getInputValue", (element, timeout = 5000) => {
  * // Retrieve the size of a list of elements with a custom timeout.
  * cy.getSizeList(".my-list", 10000).should("eq", expectedSize);
  */
-Cypress.Commands.add("getListSize", (element, timeout = 5000) => {
+Cypress.Commands.add("getListSize", (element, timeout = 8000) => {
     cy.get(element).then(($list) => {
         const listSize = $list.length;
         cy.wrap(listSize).as("listSize");

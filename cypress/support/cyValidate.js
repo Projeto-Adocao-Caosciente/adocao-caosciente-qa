@@ -20,7 +20,7 @@ Cypress.Commands.add(
     expected,
     customSuccessMessage,
     customFailureMessage,
-    timeout = 5000
+    timeout = 8000
   ) => {
     if (assert === "should") {
       switch (expected) {

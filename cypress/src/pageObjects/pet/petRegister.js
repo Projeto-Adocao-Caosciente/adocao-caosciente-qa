@@ -27,8 +27,6 @@ class petRegister {
       this.setProfilePhoto(petData.getImage());
     }
 
-    console.log(petData)
-
     this.fillNameField(petData.getName());
     this.fillBreedField(petData.getBreed());
     this.fillKindField(petData.getKind());

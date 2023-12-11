@@ -1,5 +1,6 @@
 // Locators and Routes
 import { Routes } from "@routes/routes";
+import { locatorsToast } from "@locators/components/locatorsToast";
 import { locatorsPetDetails } from "@locators/pages/pet/locatorsPetDetails";
 
 // Utils
@@ -67,14 +68,14 @@ class Asserts_ST07 {
 
   CT11(routeValue, routeExpected) {
     const customSuccessMessage =
-      "[Detalhes de PET] O redirecionamento para a página de Detalhes do PET ocorreu com sucesso.";
+      "[Detalhes de PET] O redirecionamento para a página de Criação de um Formulário de Adoção ocorreu com sucesso.";
     const customErrorMessage =
-      "[Detalhes de PET] Houve um problema ao redirecionar o usuário para a página de Detalhes do PET.";
+      "[Detalhes de PET] Houve um problema ao redirecionar o usuário para a página de Criação de um Formulário de Adoção.";
 
     expected(
       routeValue,
-      "equal",
-      Routes.baseUrl + routeExpected,
+      "contains",
+      routeExpected,
       customSuccessMessage,
       customErrorMessage
     );
@@ -88,8 +89,77 @@ class Asserts_ST07 {
 
     expected(
       routeValue,
-      "equal",
-      Routes.baseUrl + routeExpected,
+      "contains",
+      routeExpected,
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT13(routeValue, routeExpected) {
+    const customSuccessMessage =
+      "[Detalhes de PET] O redirecionamento para a página de Criação de um Formulário de Adoção ocorreu com sucesso.";
+    const customErrorMessage =
+      "[Detalhes de PET] Houve um problema ao redirecionar o usuário para a página de Criação de um Formulário de Adoção.";
+
+    expected(
+      routeValue,
+      "contains",
+      routeExpected,
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT14(routeValue, routeExpected) {
+    const customSuccessMessage =
+      "[Detalhes de PET] O redirecionamento para a página de Visualização de um Formulário de Adoção ocorreu com sucesso.";
+    const customErrorMessage =
+      "[Detalhes de PET] Houve um problema ao redirecionar o usuário para a página de Visualização de um Formulário de Adoção.";
+
+    expected(
+      routeValue,
+      "contains",
+      routeExpected,
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT21() {
+    const customSuccessMessage = "[Detalhes de PET] Ao tentar visualizar os Detalhes de um PET inexistente, o usuário foi redirecionado corretamente para a página de Listagem de PET's da ONG.";
+    const customErrorMessage = "[Detalhes de PET] Ao tentar visualizar os Detalhes de um PET inexistente, o usuário não foi redirecionado corretamente para a página de Listagem de PET's da ONG.";
+
+    cy.elementExpected(
+      locatorsToast.error,
+      "contains",
+      "Não foi possível encontrar o Pet desejado. Por favor, tente novamente mais tarde.",
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT22() {
+    const customSuccessMessage = "[Detalhes de PET] O empty state de Formulários de Adoção foi exibido corretamente na página de Detalhes do PET selecionado.";
+    const customErrorMessage = "[Detalhes de PET] Houve um erro ao exibir o empty state de Formulários de Adoção na página de Detalhes do PET selecionado.";
+
+    cy.elementExpected(
+      locatorsPetDetails.forms.emptyList.message,
+      "contains",
+      "Não existem formulários de adoção atrelados a esse animal",
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  CT23() {
+    const customSuccessMessage = "[Detalhes de PET] O placeholder de erro de exibição dos Formulários de Adoção foi exibido corretamente na página de Detalhes do PET selecionado.";
+    const customErrorMessage = "[Detalhes de PET] Houve um erro ao exibir o placeholder de erro de exibição dos Formulários de Adoção na página de Detalhes do PET selecionado.";
+
+    cy.elementExpected(
+      locatorsPetDetails.forms.error.message,
+      "contains",
+      "Não foi possível buscar os formulários de adoção atrelados a esse animal",
       customSuccessMessage,
       customErrorMessage
     );

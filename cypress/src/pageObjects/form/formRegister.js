@@ -32,7 +32,7 @@ class formRegister {
     });
 
     this.clickFinishFormButton();
-    this.fillSendEmailDialog(formData.emailListOfAdoptersToBeSent);
+    this.fillSendEmailDialog(formData.getEmailListOfAdoptersToBeSent());
   }
 
   fillFormTitle(formTitle) {

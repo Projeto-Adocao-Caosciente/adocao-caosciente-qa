@@ -45,16 +45,20 @@ class petDetails {
     });
   }
 
+  clickToViewFormDetails(index) {
+    cy.get(locatorsPetDetails.forms.form(index)).click();
+  }
+
   clickCreateAdoptionFormButton() {
-    cy.click(locatorsPetDetails.forms.addForm);
+    cy.get(locatorsPetDetails.forms.addForm).click();
   }
 
   clickCreateAdoptionFormButtonWhenEmptyList() {
-    cy.click(locatorsPetDetails.forms.emptyList.button);
+    cy.get(locatorsPetDetails.forms.emptyList.button).click();
   } 
 
   clickBackButton() {
-    cy.click(locatorsPetDetails.navigation.backButton);
+    cy.get(locatorsPetDetails.navigation.backButton).click();
   }
 }
 

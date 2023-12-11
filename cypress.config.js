@@ -14,7 +14,6 @@ module.exports = defineConfig({
       password: process.env.PASSWORD,
       userType: process.env.USER_TYPE,
       globalWaitTime: 1300,
-      defaultCommandTimeout: 10000,
     },
 
     setupNodeEvents(on, config) {
@@ -25,6 +24,10 @@ module.exports = defineConfig({
     experimentalOriginDependencies: true,
     experimentalRunAllSpecs: true,
   },
+  defaultCommandTimeout: 8000,
+  requestTimeout: 8000,
+  responseTimeout: 8000,
+
   reporter: "cypress-mochawesome-reporter",
   viewportWidth: 1366,
   viewportHeight: 768,

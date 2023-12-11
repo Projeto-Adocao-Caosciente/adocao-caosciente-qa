@@ -9,13 +9,17 @@ const locatorsPetDetails = {
   forms: {
     container: '[data-selector="form-container"]',
 
-    form: (index) => `[data-selector="form-pet-${index}"]`,
-    addForm: '[data-selector="form-add-pet"]',
+    form: (index) => `[data-selector="view-form"]:nth(${index})`,
+    addForm: '[data-selector="form-add"]',
 
     emptyList: {
       message: '[data-selector="form-empty-list"]',
       button: '[data-selector="form-empty-list"] a',
     },
+
+    error: {
+      message: '[data-selector="form-error-list"]',
+    }
   },
 
   navigation: {

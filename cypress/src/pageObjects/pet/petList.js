@@ -52,8 +52,10 @@ class petList {
     this._checkExistenceElementInList(locatorsPetList.list.card(cardIndex));
 
     cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
+    cy.intercept("GET", ApiRoutes.ong.pet.form.getAll).as("getAllForms");
     cy.get(locatorsPetList.list.child(cardIndex).actions.viewDetails).click();
     cy.wait("@getPetDetails");
+    cy.wait("@getAllForms");
     
     this._checkIfRouteWasAcessedSuccessfully(Routes.pet.details);
   }
