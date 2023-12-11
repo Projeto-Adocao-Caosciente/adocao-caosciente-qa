@@ -14,6 +14,7 @@ module.exports = defineConfig({
       password: process.env.PASSWORD,
       userType: process.env.USER_TYPE,
       globalWaitTime: 1300,
+      defaultCommandTimeout: 10000,
     },
 
     setupNodeEvents(on, config) {
