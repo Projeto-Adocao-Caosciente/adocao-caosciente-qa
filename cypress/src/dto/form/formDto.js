@@ -5,9 +5,10 @@ const randomNumber = Math.floor(Math.random() * 5) + 1;
 const randomTemplateForm = require(`../../../fixtures/form/randomData/randomForm${randomNumber}.json`);
 
 class formDto {
-  constructor({ formTitle, questions } = {}) {
+  constructor({ formTitle, questions, emailListOfAdoptersToBeSent } = {}) {
     this._formTitle = formTitle || randomTemplateForm.title;
     this._questions = questions || randomTemplateForm.questions;
+    this._emailListOfAdoptersToBeSent = emailListOfAdoptersToBeSent || ["ac_adopter@mailinator.com"];
   }
 
   getFormTitle() {
@@ -26,6 +27,10 @@ class formDto {
     return this._questions[questionNumber].choices;
   }
 
+  getEmailListOfAdoptersToBeSent() {
+    return this._emailListOfAdoptersToBeSent;
+  }
+
   setFormTitle(formTitle) {
     this._formTitle = formTitle;
   }
@@ -40,6 +45,10 @@ class formDto {
 
   setQuestionChoices(questionNumber, questionChoices) {
     this._questions[questionNumber].choices = questionChoices;
+  }
+
+  setEmailListOfAdoptersToBeSent(emailListOfAdoptersToBeSent) {
+    this._emailListOfAdoptersToBeSent = emailListOfAdoptersToBeSent;
   }
 }
 
