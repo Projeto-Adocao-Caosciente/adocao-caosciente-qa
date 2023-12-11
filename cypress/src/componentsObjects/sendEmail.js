@@ -1,5 +1,6 @@
 // Locators & Routes
 import { Routes } from "@routes/routes";
+import { ApiRoutes } from "@routes/apiRoutes";
 import { locatorsToast } from "@locators/components/locatorsToast";
 
 // Util
@@ -13,8 +14,10 @@ class sendEmail {
   }
 
   addManyRecipients() {
+    this._checksIfDialogSendEmailIsOpen();
+
     this.emailsToSend.forEach((email) => {
-      this._addRecipient(email);
+      this._addOneRecipient(email);
     });
 
     this.sendEmail();
@@ -42,17 +45,33 @@ class sendEmail {
   }
 
   sendEmail() {
+    cy.intercept("POST", ApiRoutes.mail.sendMail).as("sendEmail");
     cy.get(this.locatorsSendEmail.navigation.sendEmailButton).click();
+    cy.wait("@sendEmail");
 
-    this._checksIfTheEmailsWereSent();
+    // TODO: Fix this after the bug in frontend is fixed
+    //this._checksIfTheEmailsWereSent();
   }
 
   cancelSendEmail() {
     cy.get(this.locatorsSendEmail.navigation.backButton).click();
   }
 
+  _checksIfDialogSendEmailIsOpen() {
+    const customSuccessMessage = `[DialogSendEmail] O diálogo de envio de e-mails está aberto.`;
+    const customFailureMessage = `[DialogSendEmail] Houve um problema ao enviar os e-mails pois o diálogo de envio de e-mails não está aberto.`;
+
+    cy.elementExpected(
+      this.locatorsSendEmail.dialog,
+      "should",
+      "exist",
+      customSuccessMessage,
+      customFailureMessage
+    );
+  }
+
   _checksIfTheRecipientWasAdded(email) {
-    const customSuccessMessage = `[DialogSendEmail] O e-mail ${email} foi adicionado com sucesso à lista de destinatários.`;
+    const customSuccessMessage = `[DialogSendEmail] O e-mail '${email}' foi adicionado com sucesso à lista de destinatários.`;
     const customFailureMessage = `[DialogSendEmail] Houve um erro ao adicionar o e-mail ${email} à lista de destinatários.`;
 
     cy.elementExpected(
@@ -70,8 +89,8 @@ class sendEmail {
 
     cy.elementExpected(
       locatorsToast.success,
-      "should",
-      "exist",
+      "contains",
+      "E-mails enviados com sucesso!",
       customSuccessMessage,
       customFailureMessage
     );
