@@ -86,9 +86,9 @@ class Asserts_ST06 {
   }
 
   CT05(elementValue, expectedValue) {
-    const customSuccessMessage = `[Listagem de PET's] O resumo do PET '${expectedValue.name}' e os seus detalhes foram exibidos corretamente.`;
-    const customFailureMessage = `[Listagem de PET's] Houve um erro ao exibir o resumo do PET '${expectedValue.name}' e os seus detalhes, pois as informações são distintas.`;
-    console.log(expectedValue)
+    const customSuccessMessage = `[Listagem de PET's] O resumo do PET '${expectedValue.getName()}' e os seus detalhes foram exibidos corretamente.`;
+    const customFailureMessage = `[Listagem de PET's] Houve um erro ao exibir o resumo do PET '${expectedValue.getName()}' e os seus detalhes, pois as informações são distintas.`;
+
     expected(
       elementValue.name,
       "equal",
