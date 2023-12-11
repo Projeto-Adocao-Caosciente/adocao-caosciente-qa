@@ -16,8 +16,7 @@ import { formDto } from "@dto/form/formDto";
 import Asserts_ST07 from "./asserts_pet_details";
 
 describe("ST07: Análise do Funcionamento da Página de Detalhes de um PET", () => {
-  // TODO: Before init, its necessary register a pet
-  /*before(() => {
+  before(() => {
     const formData = require("../../../../fixtures/form/randomData/simpleForm.json");
 
     cy.login();
@@ -30,7 +29,7 @@ describe("ST07: Análise do Funcionamento da Página de Detalhes de um PET", () 
     petDetails.clickCreateAdoptionFormButtonWhenEmptyList();
 
     formRegister.fillFormData(new formDto({title: formData.title, questions: formData.questions}));
-  });*/
+  });
 
   beforeEach(() => {
     cy.login();
@@ -42,10 +41,8 @@ describe("ST07: Análise do Funcionamento da Página de Detalhes de um PET", () 
       const petIndex = 0;
 
       const petCard = await petList.getPet(petIndex);
-      console.log(petCard)
       petList.viewPetDetails(petIndex);
       const petDetailsDto = await petDetails.getPetDetails();
-      console.log(petDetailsDto)
 
       Asserts_ST07.CT01(petCard, petDetailsDto);
     });
