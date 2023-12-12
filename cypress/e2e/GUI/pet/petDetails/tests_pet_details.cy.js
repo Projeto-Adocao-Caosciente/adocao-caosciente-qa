@@ -37,7 +37,7 @@ describe("ST07: Análise do Funcionamento da Página de Detalhes de um PET", () 
   });
 
   context("Context 01: Visualização das Informações do PET", () => {
-    it("CT01: Visualizar os detalhes de um PET", async() => {
+    it("CT01: Visualizar os detalhes de um PET", async () => {
       const petIndex = 0;
 
       const petCard = await petList.getPet(petIndex);

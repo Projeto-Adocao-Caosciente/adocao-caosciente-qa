@@ -44,9 +44,6 @@ class Asserts_ST07 {
 
     let thereIDifferentValues = false;
 
-    console.log(elementValue)
-    console.log(expectedValue)
-
     if (
       elementValue.name !== expectedValue.getName() ||
       elementValue.breed !== expectedValue.getBreed() ||

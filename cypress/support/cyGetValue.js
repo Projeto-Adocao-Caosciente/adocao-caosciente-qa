@@ -2,7 +2,7 @@
  * Custom Cypress command to retrieve and return the text content of an element. To get the text value, you need to use await promisify().
  *
  * @param {string} element - The CSS selector or Cypress chain of the element.
- * @param {number} [timeout=5000] - Optional timeout for the command.
+ * @param {number} [timeout=8000] - Optional timeout for the command.
  * @returns {Cypress.Chainable} - A chainable object representing the Cypress command.
  *
  * @example
@@ -25,7 +25,7 @@ Cypress.Commands.add("getText", (element, timeout = 8000) => {
  * Custom Cypress command to retrieve and return the value content of an element. To get the value, you need to use await promisify().
  *
  * @param {string} element - The CSS selector or Cypress chain of the element.
- * @param {number} [timeout=5000] - Optional timeout for the command.
+ * @param {number} [timeout=8000] - Optional timeout for the command.
  * @returns {Cypress.Chainable} - A chainable object representing the Cypress command.
  *
  * @example
@@ -49,7 +49,7 @@ Cypress.Commands.add("getValue", (element, timeout = 8000) => {
  * This command is useful when the input element has the readonly attribute.
  * 
  * @param {string} element - The CSS selector or Cypress chain of the element.
- * @param {number} [timeout=5000] - Optional timeout for the command.
+ * @param {number} [timeout=8000] - Optional timeout for the command.
  * @returns {Cypress.Chainable} - A chainable object representing the Cypress command.
  * 
  * @example
@@ -69,10 +69,33 @@ Cypress.Commands.add("getInputValue", (element, timeout = 8000) => {
 })
 
 /**
+ * Custom Cypress command to retrieve and return the if the element is checked or not. To get the value, you need to use await promisify().
+ * 
+ * @param {string} element - The CSS selector or Cypress chain of the element.
+ * @param {number} [timeout=8000] - Optional timeout for the command.
+ * @returns {Cypress.Chainable} - A chainable object representing the Cypress command.
+ * 
+ * @example
+ * // Retrieve if the element is checked or not with a default timeout of 5 seconds.
+ * cy.getCheckedValue(".my-input").should("eq", true);
+ * 
+ * // Retrieve if the element is checked or not with a custom timeout.
+ * cy.getCheckedValue(".my-input", 10000).should("eq", true);
+ */
+Cypress.Commands.add("getCheckedValue", (element, timeout = 8000) => {
+    cy.get(element).then(($element) => {
+        const isChecked = $element.attr("data-selected") ? true : false;
+        cy.wrap(isChecked).as("isChecked");
+
+        return cy.get("@isChecked", { timeout: timeout });
+    });
+});
+
+/**
  * Custom Cypress command to retrieve and return the size (length) of a list of elements. To get the text value, you need to use await promisify().
  *
  * @param {string} element - The CSS selector or Cypress chain of the list of elements.
- * @param {number} [timeout=5000] - Optional timeout for the command.
+ * @param {number} [timeout=8000] - Optional timeout for the command.
  * @returns {Cypress.Chainable} - A chainable object representing the Cypress command.
  *
  * @example

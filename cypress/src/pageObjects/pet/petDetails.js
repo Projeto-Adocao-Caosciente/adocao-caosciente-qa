@@ -16,6 +16,15 @@ import promisify from "cypress-promise";
 class petDetails {
   constructor() {}
 
+  viewMockedFormList(formListMock) {
+    const execute = {
+      name: "click",
+      command: locatorsPetList.list.child(0).actions.viewDetails,
+    };
+
+    cy.interceptRequest(formListMock, execute);
+  }
+
   viewMockedPetDetails(petDetailsMock) {
     const execute = {
       name: "click",
@@ -23,6 +32,15 @@ class petDetails {
     };
 
     cy.interceptRequest(petDetailsMock, execute);
+  }
+
+  viewMockedFormDetails(formDetailsMock, indexForm) {
+    const execute = {
+      name: "click",
+      command: locatorsPetDetails.forms.form(indexForm),
+    };
+
+    cy.interceptRequest(formDetailsMock, execute);
   }
 
   async getPetDetails() {
@@ -57,8 +75,16 @@ class petDetails {
     return nameOfForms;
   }
 
-  clickToViewFormDetails(index) {
+  async getOneFormAssociatedWithPet(formIndex) {
+    const name = await promisify(cy.getText(locatorsPetDetails.forms.form(formIndex)));
+
+    return name;
+  }
+
+  async clickToViewFormDetails(index) {
+    cy.intercept("GET", ApiRoutes.ong.pet.form.getOne).as("getOneForm");
     cy.get(locatorsPetDetails.forms.form(index)).click();
+    await promisify(cy.wait("@getOneForm"));
   }
 
   clickCreateAdoptionFormButton() {
