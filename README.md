@@ -10,7 +10,7 @@ ___
 - [X] Módulo 2: Cadastrar-se
 - [X] Módulo 3: ONG
   - [X] Módulo 3.1: Visualizar Detalhes
-  - [ ] Módulo 3.2: Editar Detalhes
+  - [-] Módulo 3.2: Editar Detalhes
   - [X] Módulo 3.3: Animais
     - [X] Módulo 3.3.1: Listar Animais Existentes
     - [X] Módulo 3.3.2: Criar Animal
