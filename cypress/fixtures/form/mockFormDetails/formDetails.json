@@ -1,0 +1,134 @@
+{
+  "message": "Form retrieved successfully",
+  "data": {
+    "id": 1,
+    "title": "[Mock] Formulário de Adoção de Animais 1",
+    "questions": [
+      {
+        "question": "Você possui espaço suficiente em casa para um animal de grande porte?",
+        "choices": [
+          {
+            "id": 0,
+            "label": "Sim",
+            "is_correct": true
+          },
+          {
+            "id": 1,
+            "label": "Não",
+            "is_correct": false
+          },
+          {
+            "id": 2,
+            "label": "Não sei",
+            "is_correct": false
+          },
+          {
+            "id": 3,
+            "label": "Varia",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "question": "Qual é a sua experiência prévia com animais de estimação?",
+        "choices": [
+          {
+            "id": 0,
+            "label": "Nunca tive um animal de estimação",
+            "is_correct": false
+          },
+          {
+            "id": 1,
+            "label": "Já tive animais de pequeno porte",
+            "is_correct": true
+          },
+          {
+            "id": 2,
+            "label": "Já tive animais de grande porte",
+            "is_correct": true
+          },
+          {
+            "id": 3,
+            "label": "Trabalho com cuidado de animais",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "question": "Você está disposto a levar o animal para consultas veterinárias regulares?",
+        "choices": [
+          {
+            "id": 0,
+            "label": "Sim",
+            "is_correct": true
+          },
+          {
+            "id": 1,
+            "label": "Não",
+            "is_correct": false
+          },
+          {
+            "id": 2,
+            "label": "Não sei",
+            "is_correct": false
+          },
+          {
+            "id": 3,
+            "label": "Depende",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "question": "Como você descreveria sua rotina diária?",
+        "choices": [
+          {
+            "id": 0,
+            "label": "Muito ocupado, pouco tempo em casa",
+            "is_correct": false
+          },
+          {
+            "id": 1,
+            "label": "Moderadamente ocupado, tempo em casa",
+            "is_correct": true
+          },
+          {
+            "id": 2,
+            "label": "Pouco ocupado, muito tempo em casa",
+            "is_correct": true
+          },
+          {
+            "id": 3,
+            "label": "Varia",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "question": "Você concorda em fornecer um ambiente seguro e amoroso para o animal?",
+        "choices": [
+          {
+            "id": 0,
+            "label": "Sim",
+            "is_correct": true
+          },
+          {
+            "id": 1,
+            "label": "Não",
+            "is_correct": false
+          },
+          {
+            "id": 2,
+            "label": "Não sei",
+            "is_correct": false
+          },
+          {
+            "id": 3,
+            "label": "Depende",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  }
+}
