@@ -5,6 +5,8 @@ import { locatorsSendEmail } from "@locators/components/locatorsSendEmail";
 const locatorsFormRegister = {
   titleForm: "[data-selector='form-title-input']",
 
+  listOfQuestions: "[data-selector='question-form']",
+
   questions: (questionNumber) => {
     return locatorsFormQuestion(questionNumber);
   },

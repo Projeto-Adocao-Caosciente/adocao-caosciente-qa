@@ -3,8 +3,10 @@ const locatorsFormQuestion = (indexQuestion) => {
   const question = `[data-selector='question-form']:nth(${index})`
 
   return {
+    card: question,
     questionTitle: `${question} [data-selector='question-title-input']`,
 
+    listOfOptions: `${question} [data-selector='question-option']`,
     option: (indexOption) => {
       return {
         isCorrect: `${question} [data-selector='question-option-checkbox']:nth(${indexOption})`,

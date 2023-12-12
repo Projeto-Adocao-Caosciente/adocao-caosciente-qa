@@ -14,13 +14,19 @@ class sendEmail {
   }
 
   addManyRecipients() {
+    const numberOfEmailsToSend = this.emailsToSend.length;
     this._checksIfDialogSendEmailIsOpen();
 
-    this.emailsToSend.forEach((email) => {
-      this._addOneRecipient(email);
-    });
+    if (numberOfEmailsToSend > 0) {
+      this.emailsToSend.forEach((email) => {
+        this._addOneRecipient(email);
+      });
 
-    this.sendEmail();
+      this.sendEmail();
+
+    } else {
+      this.cancelSendEmail();
+    }
   }
 
   _addOneRecipient(email) {
@@ -58,7 +64,11 @@ class sendEmail {
   }
 
   cancelSendEmail() {
+    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
+    cy.intercept("GET", ApiRoutes.ong.pet.form.getAll).as("getAllForms");
     cy.get(this.locatorsSendEmail.navigation.backButton).click();
+    cy.wait("@getPetDetails");
+    cy.wait("@getAllForms");
   }
 
   _checksIfDialogSendEmailIsOpen() {

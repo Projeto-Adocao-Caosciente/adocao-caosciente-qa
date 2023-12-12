@@ -44,12 +44,18 @@ class formQuestion {
     cy.get(this.locatorsFormQuestion.option(optionNumber).optionDescription).type(optionDescription);
   }
 
-  dellOption(optionNumber) {
-    cy.get(this.locatorsFormQuestion.option(optionNumber).deleteOption).click();
-  }
-
   clickAddOptionButton() {
     cy.get(this.locatorsFormQuestion.addOptionButton).click();
+
+    cy.getListSize(this.locatorsFormQuestion.listOfOptions).then((size) => {
+      this._checksIfOptionWasAdded(size - 1);
+    });
+  }
+
+  clickDeleteOption(optionNumber) {
+    cy.get(this.locatorsFormQuestion.option(optionNumber).deleteOption).click();
+
+    this._checksIfOptionWasRemoved(optionNumber);
   }
 
   clickDeleteQuestionButton() {
@@ -60,6 +66,32 @@ class formQuestion {
     cy.get(this.locatorsFormQuestion.navigation.confirmQuestionButton).click();
 
     this._checksIfQuestionWasAdded();
+  }
+
+  _checksIfOptionWasAdded(optionNumber) {
+    const customSuccessMessage = `[Questão do Formulário] A opção ${optionNumber + 1} foi adicionada com sucesso à questão ${this.questionNumber + 1}.`;
+    const customErrorMessage = `[Questão do Formulário] Houve um erro ao adicionar a opção ${optionNumber + 1} à questão ${this.questionNumber + 1}.`;
+
+    cy.elementExpected(
+      this.locatorsFormQuestion.option(optionNumber).optionDescription,
+      "should",
+      "exist",
+      customSuccessMessage,
+      customErrorMessage
+    );
+  }
+
+  _checksIfOptionWasRemoved(optionNumber) {
+    const customSuccessMessage = `[Questão do Formulário] A opção ${optionNumber + 1} foi removida com sucesso da questão ${this.questionNumber + 1}.`;
+    const customErrorMessage = `[Questão do Formulário] Houve um erro ao remover a opção ${optionNumber + 1} da questão ${this.questionNumber + 1}.`;
+
+    cy.elementExpected(
+      this.locatorsFormQuestion.option(optionNumber).optionDescription,
+      "should",
+      "not.exist",
+      customSuccessMessage,
+      customErrorMessage
+    );
   }
 
   _checksIfQuestionWasAdded() {

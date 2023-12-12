@@ -1,5 +1,5 @@
 {
-  "title": "Formulário de Adoção de Animais Com Apenas uma Opção",
+  "title": "Formulário de Adoção de Animais Sem Opção Correta",
   "questions": [
     {
       "question": "Você possui espaço suficiente em casa para um animal de grande porte?",
@@ -7,7 +7,12 @@
         {
           "id": 0,
           "label": "Sim",
-          "is_correct": true
+          "is_correct": false
+        },
+        {
+          "id": 1,
+          "label": "Não",
+          "is_correct": false
         }
       ]
     }

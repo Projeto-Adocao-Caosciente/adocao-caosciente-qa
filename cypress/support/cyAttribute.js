@@ -31,6 +31,17 @@ Cypress.Commands.add(
         });
         break;
 
+      case "data-disabled":
+        cy.get(element, { timeout: timeout }).should(($element) => {
+          const actualValue = Boolean($element.attr(attribute));
+
+          const elementHasAttribute = actualValue == expectedValue
+              ? customSuccessMessage
+              : customFailureMessage;
+          expect(actualValue).to.eq(expectedValue, elementHasAttribute);
+        });
+        break;
+
       default:
         break;
     }
