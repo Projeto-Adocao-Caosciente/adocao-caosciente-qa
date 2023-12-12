@@ -8,22 +8,20 @@ ___
 
 - [X] Módulo 1: Login
 - [X] Módulo 2: Cadastrar-se
-- [ ] Módulo 3: Esqueci a Senha
-- [ ] Módulo 4: ONG
-  - [ ] Módulo 4.1: Visualizar Detalhes
-  - [ ] Módulo 4.2: Editar Detalhes
-  - [ ] Módulo 4.3: Animais
-    - [X] Módulo 4.3.1: Listar Animais Existentes
-    - [X] Módulo 4.3.2: Criar Animal
-    - [ ] Módulo 4.3.3: Editar Animal
-    - [ ] Módulo 4.3.4: Criar Formulário de Adoção
-    - [ ] Módulo 4.3.5: Editar Formulário de Adoção
-    - [ ] Módulo 4.3.6: Excluir Formulário de Adoção
-- [ ] Módulo 5: Adotante
-  - [ ] Módulo 4.1: Visualizar Detalhes
-  - [ ] Módulo 4.2: Editar Detalhes
-  - [ ] Módulo 4.2: Responder Formulário de Adoção
-- [ ] Módulo 6: Vonluntário
+- [X] Módulo 3: ONG
+  - [X] Módulo 3.1: Visualizar Detalhes
+  - [ ] Módulo 3.2: Editar Detalhes
+  - [X] Módulo 3.3: Animais
+    - [X] Módulo 3.3.1: Listar Animais Existentes
+    - [X] Módulo 3.3.2: Criar Animal
+    - [-] Módulo 3.3.3: Editar Animal
+    - [X] Módulo 3.3.4: Criar Formulário de Adoção
+    - [-] Módulo 3.3.5: Editar Formulário de Adoção
+    - [-] Módulo 3.3.6: Excluir Formulário de Adoção
+- [X] Módulo 4: Adotante
+  - [X] Módulo 4.1: Visualizar Detalhes
+  - [-] Módulo 4.2: Editar Detalhes
+  - [-] Módulo 4.2: Responder Formulário de Adoção
 ___
 
 ### 🖥️ Pre-requisitos

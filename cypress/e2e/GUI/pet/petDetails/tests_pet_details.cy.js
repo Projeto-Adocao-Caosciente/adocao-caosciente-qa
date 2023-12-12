@@ -14,6 +14,7 @@ import { formDto } from "@dto/form/formDto";
 
 // Asserts to Suite Test: ST07: Análise do Funcionamento da Página de Detalhes de um PET
 import Asserts_ST07 from "./asserts_pet_details";
+import promisify from "cypress-promise";
 
 describe("ST07: Análise do Funcionamento da Página de Detalhes de um PET", () => {
   before(() => {
@@ -42,6 +43,7 @@ describe("ST07: Análise do Funcionamento da Página de Detalhes de um PET", () 
 
       const petCard = await petList.getPet(petIndex);
       petList.viewPetDetails(petIndex);
+      await promisify(cy.wait(3500));
       const petDetailsDto = await petDetails.getPetDetails();
 
       Asserts_ST07.CT01(petCard, petDetailsDto);
@@ -58,8 +60,9 @@ describe("ST07: Análise do Funcionamento da Página de Detalhes de um PET", () 
       }
 
       petDetails.viewMockedPetDetails(petDetailsMock);
-
+      await promisify(cy.wait(3500));
       const petDetailsDto = await petDetails.getPetDetails();
+
       Asserts_ST07.CT02(mockData.data, petDetailsDto);
     });
   });
