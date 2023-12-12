@@ -4,7 +4,7 @@ const webpack = require("@cypress/webpack-preprocessor");
 const options = require("./aliases.config");
 
 module.exports = defineConfig({
-  projectId: '4nu1ow',
+  projectId: '41k6xy',
   e2e: {
     baseUrl: "https://adocao-caosciente-frontend.vercel.app",
     env: {
