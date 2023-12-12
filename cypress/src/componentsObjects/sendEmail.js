@@ -46,8 +46,12 @@ class sendEmail {
 
   sendEmail() {
     cy.intercept("POST", ApiRoutes.mail.sendMail).as("sendEmail");
+    cy.intercept("GET", ApiRoutes.ong.pet.getOne).as("getPetDetails");
+    cy.intercept("GET", ApiRoutes.ong.pet.form.getAll).as("getAllForms");
     cy.get(this.locatorsSendEmail.navigation.sendEmailButton).click();
     cy.wait("@sendEmail");
+    cy.wait("@getPetDetails");
+    cy.wait("@getAllForms");
 
     // TODO: Fix this after the bug in frontend is fixed
     //this._checksIfTheEmailsWereSent();

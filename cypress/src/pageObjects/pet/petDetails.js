@@ -45,6 +45,18 @@ class petDetails {
     });
   }
 
+  async getAllFormsAssociatedWithPet() {
+    const listSizeOfForms = await promisify(cy.getListSize(locatorsPetDetails.forms.listOfForms));
+    const nameOfForms = [];
+
+    for (let index = 0; index < listSizeOfForms; index++) {
+      const name = await promisify(cy.getText(locatorsPetDetails.forms.form(index)));
+      nameOfForms.push(name);
+    }
+
+    return nameOfForms;
+  }
+
   clickToViewFormDetails(index) {
     cy.get(locatorsPetDetails.forms.form(index)).click();
   }

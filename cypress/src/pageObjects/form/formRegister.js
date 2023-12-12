@@ -22,21 +22,24 @@ class formRegister {
 
   fillFormData(formData) {
     this.fillFormTitle(formData.getFormTitle());
+    this.fillAllQuestionsData(formData.getQuestions());
+    this.clickFinishFormButton();
 
-    formData.getQuestions().forEach((question, indexQuestion) => {
+    this.fillSendEmailDialog(formData.getEmailListOfAdoptersToBeSent());
+  }
+
+  fillFormTitle(formTitle) {
+    cy.get(locatorsFormRegister.titleForm).type(formTitle);
+  }
+
+  fillAllQuestionsData(questions) {
+    questions.forEach((question, indexQuestion) => {
       this.formQuestion = new formQuestion(indexQuestion, locatorsFormRegister.questions(indexQuestion));
 
       this.clickAddQuestionButton();
       this.fillQuestionData(question.question, question.choices);
       this.clickConfirmQuestionButton();
     });
-
-    this.clickFinishFormButton();
-    this.fillSendEmailDialog(formData.getEmailListOfAdoptersToBeSent());
-  }
-
-  fillFormTitle(formTitle) {
-    cy.get(locatorsFormRegister.titleForm).type(formTitle);
   }
 
   fillQuestionData(questionTitle, listOfOptions) {
@@ -49,11 +52,16 @@ class formRegister {
   }
 
   clickConfirmQuestionButton() {
-    this.formQuestion.clickConfirmQuestionButton();
+    const questionIndex = this.formQuestion ? this.formQuestion.questionNumber : 0;
+    cy.get(locatorsFormRegister.questions(questionIndex).navigation.confirmQuestionButton).click();
   }
 
   clickAddQuestionButton() {
     cy.get(locatorsFormRegister.addQuestionButton).click();
+  }
+
+  clickFinishFormButtonWithoutValidation() {
+    cy.get(locatorsFormRegister.navigation.finishFormButton).click();
   }
 
   clickFinishFormButton() {

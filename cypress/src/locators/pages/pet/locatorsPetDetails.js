@@ -9,6 +9,7 @@ const locatorsPetDetails = {
   forms: {
     container: '[data-selector="form-container"]',
 
+    listOfForms: '[data-selector="view-form"]',
     form: (index) => `[data-selector="view-form"]:nth(${index})`,
     addForm: '[data-selector="form-add"]',
 
