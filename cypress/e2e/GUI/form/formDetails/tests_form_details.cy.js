@@ -43,44 +43,48 @@ describe("ST10: Análise do Funcionamento da Página de Detalhes de um Formulár
   context(
     "Context 01: Visualização das Informações de um Formulário de Adoção",
     () => {
-      it("CT01: Visualizar os detalhes de um Formulário de Adoção", async () => {
-        const formDetailsIndex = 0;
+      it("CT01: Visualizar os detalhes de um Formulário de Adoção", () => {
+        new Cypress.Promise(async (resolve) => {
+          const formDetailsIndex = 0;
 
-        const formName = await petDetails.getOneFormAssociatedWithPet(
-          formDetailsIndex
-        );
-        await petDetails.clickToViewFormDetails(formDetailsIndex);
-        const formDetailsDto = await formDetails.getFormDetails();
-
-        Asserts_ST10.CT01(formName, formDetailsDto);
+          const formName = await petDetails.getOneFormAssociatedWithPet(
+            formDetailsIndex
+          );
+          await petDetails.clickToViewFormDetails(formDetailsIndex);
+          const formDetailsDto = await formDetails.getFormDetails();
+  
+          Asserts_ST10.CT01(formName, formDetailsDto);
+        });
       });
 
-      it("CT02: [Mockado] Visualizar os detalhes de um Formulário de Adoção", async () => {
-        const formIndex = 0;
-        const mockListFormData = require("../../../../fixtures/form/mockFormList/mockFormList.json");
-        const mockFormData = require("../../../../fixtures/form//mockFormDetails/formDetails.json");
-
-        const formListMock = {
-          method: "GET",
-          url: ApiRoutes.ong.pet.form.getAll,
-          response: mockListFormData,
-          status: 200,
-        };
-
-        const formDetailsMock = {
-          method: "GET",
-          url: ApiRoutes.ong.pet.form.getOne,
-          response: mockFormData,
-          status: 200,
-        };
-
-        cy.visit(Routes.home);
-
-        petDetails.viewMockedFormList(formListMock);
-        petDetails.viewMockedFormDetails(formDetailsMock, formIndex);
-        const formDetailsDto = await formDetails.getFormDetails();
-
-        Asserts_ST10.CT02(mockFormData.data, formDetailsDto);
+      it("CT02: [Mockado] Visualizar os detalhes de um Formulário de Adoção", () => {
+        new Cypress.Promise(async (resolve) => {
+          const formIndex = 0;
+          const mockListFormData = require("../../../../fixtures/form/mockFormList/mockFormList.json");
+          const mockFormData = require("../../../../fixtures/form//mockFormDetails/formDetails.json");
+  
+          const formListMock = {
+            method: "GET",
+            url: ApiRoutes.ong.pet.form.getAll,
+            response: mockListFormData,
+            status: 200,
+          };
+  
+          const formDetailsMock = {
+            method: "GET",
+            url: ApiRoutes.ong.pet.form.getOne,
+            response: mockFormData,
+            status: 200,
+          };
+  
+          cy.visit(Routes.home);
+  
+          petDetails.viewMockedFormList(formListMock);
+          petDetails.viewMockedFormDetails(formDetailsMock, formIndex);
+          const formDetailsDto = await formDetails.getFormDetails();
+  
+          Asserts_ST10.CT02(mockFormData.data, formDetailsDto);
+        });
       });
 
       it.skip("CT03: Enviar o convite de adoção para uma lista de E-mails de adotantes", () => {

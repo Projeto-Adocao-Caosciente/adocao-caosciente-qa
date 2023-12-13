@@ -24,22 +24,26 @@ describe("ST05: Análise do Funcionamento da Página de Cadastro de PET", () => 
   });
 
   context("Context 02: Cenários de Sucesso de Criação de PET.", () => {
-    it("CT09: Preenchimento de Todos os Campos.", async () => {
-      const petData = petRegister.fillAllFields(true);
-      petRegister.registerPet();
-
-      const allPets = await petList.getAllPets();
-
-      Asserts_ST05.CT09(allPets, petData);
+    it("CT09: Preenchimento de Todos os Campos.", () => {
+      new Cypress.Promise(async (resolve) => {
+        const petData = petRegister.fillAllFields(true);
+        petRegister.registerPet();
+  
+        const allPets = await petList.getAllPets();
+  
+        Asserts_ST05.CT09(allPets, petData);
+      });
     });
 
-    it("CT10: Preenchimento de Apenas os Campos Obrigatórios.", async () => {
-      const petData = petRegister.fillAllRequiredFields(true);
-      petRegister.registerPet();
-
-      const allPets = await petList.getAllPets();
-
-      Asserts_ST05.CT10(allPets, petData);
+    it("CT10: Preenchimento de Apenas os Campos Obrigatórios.", () => {
+      new Cypress.Promise(async (resolve) => {
+        const petData = petRegister.fillAllRequiredFields(true);
+        petRegister.registerPet();
+  
+        const allPets = await petList.getAllPets();
+  
+        Asserts_ST05.CT10(allPets, petData);
+      });
     });
   });
 
